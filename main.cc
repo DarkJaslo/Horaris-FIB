@@ -156,17 +156,14 @@ int main(){
     cin >> tipus;
     while(tipus != "endtipus"){
       cin >> dia;
-      while(dia != "enddia"){
+      cin >> hora;
+      while(hora != -1){
+        TipusClasse tip;
+        if(tipus == "teoria") tip = teoria;
+        else tip = laboratori;
+        HoraClasse hcl(hora,false,nom,grup,tip,stringToDia(dia));
+        ass.push_back(hcl);
         cin >> hora;
-        while(hora != -1){
-          TipusClasse tip;
-          if(tipus == "teoria") tip = teoria;
-          else tip = laboratori;
-          HoraClasse hcl(hora,false,nom,grup,tip,stringToDia(dia));
-          ass.push_back(hcl);
-          cin >> hora;
-        }
-        cin >> dia;
       }
       cin >> tipus;
     }
