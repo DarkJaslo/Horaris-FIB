@@ -1,0 +1,124 @@
+TC 11
+teoria dilluns 12 13 -1 enddia
+lab dijous 12 13 -1 enddia
+endtipus
+
+TC 12
+teoria dilluns 10 11 -1 enddia
+lab dijous 10 11 -1 enddia
+endtipus
+
+A 11
+teoria dimecres 10 11 -1 enddia
+lab dijous 10 11 -1 enddia
+endtipus
+
+A 12
+teoria dimecres 10 11 -1 enddia
+lab divendres 10 11 -1 enddia
+endtipus
+
+IA 11
+teoria dilluns 9 -1 enddia
+teoria dimarts 10 11 -1 enddia
+lab dilluns 8 -1 enddia
+endtipus
+
+IA 13
+teoria dilluns 9 -1 enddia
+teoria dimarts 10 11 -1 enddia
+lab dijous 10 -1 enddia
+endtipus
+
+LI 11
+teoria divendres 12 13 -1 enddia
+lab dimarts 12 13 -1 enddia
+endtipus
+
+PR 11
+teoria dilluns 10 11 -1 enddia
+lab dijous 10 11 -1 enddia
+endtipus
+
+PR 12
+teoria dilluns 10 11 -1 enddia
+lab dimecres 10 11 -1 enddia
+endtipus
+
+PR 13
+teoria dilluns 10 11 -1 enddia
+lab divendres 10 11 -1 enddia
+endtipus
+
+PR 21
+teoria dimarts 12 13 -1 enddia
+lab dimecres 8 9 -1 enddia
+endtipus
+
+PR 22
+teoria dimarts 12 13 -1 enddia
+lab divendres 12 13 -1 enddia
+endtipus
+
+PR 23
+teoria dimarts 12 13 -1 enddia
+lab dijous 12 13 -1 enddia
+endtipus
+
+PR 31
+teoria dilluns 12 13 -1 enddia
+lab dijous 8 9 -1 enddia
+endtipus
+
+PR 32
+teoria dilluns 12 13 -1 enddia
+lab divendres 10 11 -1 enddia
+endtipus
+
+PR 33
+teoria dilluns 12 13 -1 enddia
+lab dijous 10 11 -1 enddia
+endtipus
+
+PA 11
+teoria dilluns 8 9 -1 enddia
+lab dimarts 8 9 -1 enddia
+endtipus
+
+PA 12
+teoria dilluns 8 9 -1 enddia
+lab dimecres 8 9 -1 enddia
+endtipus
+
+PA 13
+teoria dilluns 8 9 -1 enddia
+lab dijous 12 13 -1 enddia
+endtipus
+
+PA 21
+teoria dilluns 10 11 -1 enddia
+lab dimecres 10 11 -1 enddia
+endtipus
+
+PA 22
+teoria dilluns 10 11 -1 enddia
+lab dimarts 10 11 -1 enddia
+endtipus
+
+PA 23
+teoria dilluns 10 11 -1 enddia
+lab dijous 8 9 -1 enddia
+endtipus
+
+G 11
+teoria dimarts 8 9 -1 enddia
+lab dijous 8 9 -1 enddia
+endtipus
+
+LP 11
+teoria divendres 8 9 -1 enddia
+lab dimecres 8 9 -1 enddia
+endtipus
+end
+
+TC A IA PR
