@@ -1,4 +1,4 @@
-# horaris
+# Horaris-FIB
 
 ## Generador de horarios sencillo para la FIB-UPC
 Genera todos los horarios posibles de un conjunto de asignaturas.
