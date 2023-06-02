@@ -52,9 +52,12 @@ public:
   void ocupa(){
     _ocupada = true;
   }
+  TipusClasse tipus() const{
+    return _tipus;
+  }
   friend std::ostream& operator<<(std::ostream& os, const HoraClasse& h);
-  void print(){
-    cout << assignatura() << " " << grup() << _tipus;
+  void print() const{
+    cout << assignatura() << " " << grup() << tipus();
   }
 private:
   int _hora;
@@ -84,7 +87,13 @@ public:
     }
   }
   bool encaixa(const HoraClasse& hora){
-    return not h[hora.dia()][hora.hora()].ocupada();
+    return not h[hora.dia()][hora.hora()-8].ocupada();
+  }
+  bool encaixaAssig(const vector<HoraClasse>& assig){
+    for(const HoraClasse& hcl : assig){
+      if(not encaixa(hcl)){ return false; }
+    }
+    return true;
   }
   void afegeix(const vector<HoraClasse>& hores){
     //cout << "afegeix" << endl;
@@ -97,7 +106,7 @@ public:
   }
   int nassig(){return assigs.size();}
 
-  void print(){
+  void print()const{
     //cout << "print horari" << endl;
     cout << "\tDilluns" << "\tDimarts" << "\tDimecr" << "\tDijous" << "\tDivend" << endl;
 
