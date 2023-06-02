@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-using namespace std;
+using namespace std;  //Yes, it's not like it will cause any errors here
 
 enum DiaSetmana{
   dilluns,
