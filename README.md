@@ -9,8 +9,6 @@ Genera todos los horarios posibles de un conjunto de asignaturas.
 ### Problemas: 
 -La entrada de asignaturas es a mano. Recomiendo usar un fichero de texto como el de <tt>input_example.txt</tt> y redirigir tanto entrada como salida.
 
--De momento, requiere al menos una asignatura obligatoria y una no obligatoria (será arreglado pronto).
-
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un Makefile (make) y poder compilar C++11.
 
