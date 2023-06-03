@@ -247,12 +247,23 @@ int main(){
   extraCombinations(mapping.size()-oblig,oblig,5-nomsObligatories.size(),extraPermutations);
 
   //Combine them in allPermutations
-  vector<vector<int>> allPermutations(permutations.size()*extraPermutations.size(),vector<int>(permutations[0].size()+extraPermutations[0].size()));
-  int cur = 0;
-  for(int i = 0; i < allPermutations.size(); i +=extraPermutations.size()){
-    copyVector(permutations[cur],extraPermutations,allPermutations,i);
-    ++cur;
+  vector<vector<int>> allPermutations;
+  if(permutations.size() == 0){
+    allPermutations = extraPermutations;
   }
+  else if(extraPermutations.size() == 0){
+    allPermutations = permutations;
+  }
+  else{
+    allPermutations = vector<vector<int>>(permutations.size()*extraPermutations.size(),vector<int>(permutations[0].size()+extraPermutations[0].size()));
+
+    int cur = 0;
+    for(int i = 0; i < allPermutations.size(); i +=extraPermutations.size()){
+      copyVector(permutations[cur],extraPermutations,allPermutations,i);
+      ++cur;
+    }
+  }
+  
 
   //Print all permutations
   /*for(int i = 0; i < allPermutations.size(); ++i){
