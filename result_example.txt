@@ -1,25 +1,10 @@
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	  -  	  -  	  -  	
-9h	IA 11T	  -  	  -  	  -  	  -  	
-10h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
-11h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
-12h	TC 11T	LI 11L	  -  	TC 11L	LI 11T	
-13h	TC 11T	LI 11L	  -  	TC 11L	LI 11T	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	G 11T	  -  	G 11L	  -  	
-9h	IA 11T	G 11T	  -  	G 11L	  -  	
-10h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
-11h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
-12h	TC 11T	  -  	  -  	TC 11L	  -  	
-13h	TC 11T	  -  	  -  	TC 11L	  -  	
+8h	IA 11L	  -  	PR 21L	PA 23L	  -  	
+9h	IA 11T	  -  	PR 21L	PA 23L	  -  	
+10h	PA 23T	IA 11T	A 11T	A 11L	  -  	
+11h	PA 23T	IA 11T	A 11T	A 11L	  -  	
+12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
+13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
 14h	  -  	  -  	  -  	  -  	  -  	
 15h	  -  	  -  	  -  	  -  	  -  	
 16h	  -  	  -  	  -  	  -  	  -  	
@@ -31,25 +16,10 @@
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
 8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
 9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
-10h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
-11h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
-12h	TC 11T	  -  	  -  	TC 11L	  -  	
-13h	TC 11T	  -  	  -  	TC 11L	  -  	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	PR 21L	PA 23L	  -  	
-9h	IA 11T	  -  	PR 21L	PA 23L	  -  	
-10h	PA 23T	IA 11T	A 11T	A 11L	  -  	
-11h	PA 23T	IA 11T	A 11T	A 11L	  -  	
-12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
-13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	  -  	PR 23T	  -  	PR 23L	  -  	
+13h	  -  	PR 23T	  -  	PR 23L	  -  	
 14h	  -  	  -  	  -  	  -  	  -  	
 15h	  -  	  -  	  -  	  -  	  -  	
 16h	  -  	  -  	  -  	  -  	  -  	
@@ -74,42 +44,12 @@
 20h	  -  	  -  	  -  	  -  	  -  	
 
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	  -  	PA 23L	  -  	
-9h	IA 11T	  -  	  -  	PA 23L	  -  	
-10h	PA 23T	IA 11T	A 11T	A 11L	  -  	
-11h	PA 23T	IA 11T	A 11T	A 11L	  -  	
-12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	G 11T	  -  	G 11L	  -  	
-9h	IA 11T	G 11T	  -  	G 11L	  -  	
-10h	  -  	IA 11T	A 11T	A 11L	  -  	
-11h	  -  	IA 11T	A 11T	A 11L	  -  	
-12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
-9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
-10h	  -  	IA 11T	A 11T	A 11L	  -  	
-11h	  -  	IA 11T	A 11T	A 11L	  -  	
-12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+8h	IA 11L	  -  	  -  	  -  	  -  	
+9h	IA 11T	  -  	  -  	  -  	  -  	
+10h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
+11h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
+12h	TC 11T	LI 11L	  -  	TC 11L	LI 11T	
+13h	TC 11T	LI 11L	  -  	TC 11L	LI 11T	
 14h	  -  	  -  	  -  	  -  	  -  	
 15h	  -  	  -  	  -  	  -  	  -  	
 16h	  -  	  -  	  -  	  -  	  -  	
@@ -134,10 +74,40 @@
 20h	  -  	  -  	  -  	  -  	  -  	
 
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	G 11T	  -  	G 11L	  -  	
-9h	IA 11T	G 11T	  -  	G 11L	  -  	
-10h	PR 11T	IA 11T	A 12T	PR 11L	A 12L	
-11h	PR 11T	IA 11T	A 12T	PR 11L	A 12L	
+8h	IA 11L	  -  	  -  	PR 31L	  -  	
+9h	IA 11T	  -  	  -  	PR 31L	  -  	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	PR 31T	LI 11L	  -  	  -  	LI 11T	
+13h	PR 31T	LI 11L	  -  	  -  	LI 11T	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	  -  	  -  	  -  	PA 23L	  -  	
+9h	IA 13T	  -  	  -  	PA 23L	  -  	
+10h	PA 23T	IA 13T	A 12T	IA 13L	A 12L	
+11h	PA 23T	IA 13T	A 12T	  -  	A 12L	
+12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
+9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
+10h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
+11h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
 12h	TC 11T	  -  	  -  	TC 11L	  -  	
 13h	TC 11T	  -  	  -  	TC 11L	  -  	
 14h	  -  	  -  	  -  	  -  	  -  	
@@ -164,42 +134,12 @@
 20h	  -  	  -  	  -  	  -  	  -  	
 
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	PR 21L	PA 23L	  -  	
-9h	IA 11T	  -  	PR 21L	PA 23L	  -  	
-10h	PA 23T	IA 11T	A 12T	  -  	A 12L	
-11h	PA 23T	IA 11T	A 12T	  -  	A 12L	
-12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
-13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	G 11T	PR 21L	G 11L	  -  	
-9h	IA 11T	G 11T	PR 21L	G 11L	  -  	
-10h	  -  	IA 11T	A 12T	  -  	A 12L	
-11h	  -  	IA 11T	A 12T	  -  	A 12L	
-12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
-13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	  -  	PA 23L	  -  	
-9h	IA 11T	  -  	  -  	PA 23L	  -  	
-10h	PA 23T	IA 11T	A 12T	  -  	A 12L	
-11h	PA 23T	IA 11T	A 12T	  -  	A 12L	
-12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
+9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	  -  	PR 22T	  -  	  -  	PR 22L	
+13h	  -  	PR 22T	  -  	  -  	PR 22L	
 14h	  -  	  -  	  -  	  -  	  -  	
 15h	  -  	  -  	  -  	  -  	  -  	
 16h	  -  	  -  	  -  	  -  	  -  	
@@ -211,25 +151,10 @@
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
 8h	IA 11L	G 11T	  -  	G 11L	  -  	
 9h	IA 11T	G 11T	  -  	G 11L	  -  	
-10h	  -  	IA 11T	A 12T	  -  	A 12L	
-11h	  -  	IA 11T	A 12T	  -  	A 12L	
-12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
-9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
-10h	  -  	IA 11T	A 12T	  -  	A 12L	
-11h	  -  	IA 11T	A 12T	  -  	A 12L	
-12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
-13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	  -  	PR 22T	  -  	  -  	PR 22L	
+13h	  -  	PR 22T	  -  	  -  	PR 22L	
 14h	  -  	  -  	  -  	  -  	  -  	
 15h	  -  	  -  	  -  	  -  	  -  	
 16h	  -  	  -  	  -  	  -  	  -  	
@@ -254,10 +179,130 @@
 20h	  -  	  -  	  -  	  -  	  -  	
 
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	  -  	G 11T	PR 21L	G 11L	  -  	
-9h	IA 13T	G 11T	PR 21L	G 11L	  -  	
-10h	  -  	IA 13T	A 12T	IA 13L	A 12L	
-11h	  -  	IA 13T	A 12T	  -  	A 12L	
+8h	IA 11L	  -  	LP 11L	PR 31L	LP 11T	
+9h	IA 11T	  -  	LP 11L	PR 31L	LP 11T	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	PR 31T	  -  	  -  	  -  	  -  	
+13h	PR 31T	  -  	  -  	  -  	  -  	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	G 11T	PR 21L	G 11L	  -  	
+9h	IA 11T	G 11T	PR 21L	G 11L	  -  	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	  -  	PR 21T	  -  	  -  	  -  	
+13h	  -  	PR 21T	  -  	  -  	  -  	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	  -  	  -  	PA 23L	  -  	
+9h	IA 11T	  -  	  -  	PA 23L	  -  	
+10h	PA 23T	IA 11T	A 11T	A 11L	  -  	
+11h	PA 23T	IA 11T	A 11T	A 11L	  -  	
+12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	G 11T	  -  	G 11L	  -  	
+9h	IA 11T	G 11T	  -  	G 11L	  -  	
+10h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
+11h	PR 13T	IA 11T	A 11T	A 11L	PR 13L	
+12h	TC 11T	  -  	  -  	TC 11L	  -  	
+13h	TC 11T	  -  	  -  	TC 11L	  -  	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	G 11T	  -  	G 11L	  -  	
+9h	IA 11T	G 11T	  -  	G 11L	  -  	
+10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
+12h	  -  	PR 23T	  -  	PR 23L	  -  	
+13h	  -  	PR 23T	  -  	PR 23L	  -  	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	G 11T	  -  	G 11L	  -  	
+9h	IA 11T	G 11T	  -  	G 11L	  -  	
+10h	PR 11T	IA 11T	A 12T	PR 11L	A 12L	
+11h	PR 11T	IA 11T	A 12T	PR 11L	A 12L	
+12h	TC 11T	  -  	  -  	TC 11L	  -  	
+13h	TC 11T	  -  	  -  	TC 11L	  -  	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	  -  	  -  	PA 23L	  -  	
+9h	IA 11T	  -  	  -  	PA 23L	  -  	
+10h	PA 23T	IA 11T	A 12T	  -  	A 12L	
+11h	PA 23T	IA 11T	A 12T	  -  	A 12L	
+12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
+9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
+10h	  -  	IA 11T	A 12T	  -  	A 12L	
+11h	  -  	IA 11T	A 12T	  -  	A 12L	
+12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	  -  	PR 21L	PA 23L	  -  	
+9h	IA 11T	  -  	PR 21L	PA 23L	  -  	
+10h	PA 23T	IA 11T	A 12T	  -  	A 12L	
+11h	PA 23T	IA 11T	A 12T	  -  	A 12L	
 12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
 13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
 14h	  -  	  -  	  -  	  -  	  -  	
@@ -269,10 +314,10 @@
 20h	  -  	  -  	  -  	  -  	  -  	
 
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	  -  	  -  	  -  	PA 23L	  -  	
-9h	IA 13T	  -  	  -  	PA 23L	  -  	
-10h	PA 23T	IA 13T	A 12T	IA 13L	A 12L	
-11h	PA 23T	IA 13T	A 12T	  -  	A 12L	
+8h	  -  	  -  	LP 11L	  -  	LP 11T	
+9h	IA 13T	  -  	LP 11L	  -  	LP 11T	
+10h	  -  	IA 13T	A 12T	IA 13L	A 12L	
+11h	  -  	IA 13T	A 12T	  -  	A 12L	
 12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
 13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
 14h	  -  	  -  	  -  	  -  	  -  	
@@ -299,10 +344,55 @@
 20h	  -  	  -  	  -  	  -  	  -  	
 
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	  -  	  -  	LP 11L	  -  	LP 11T	
-9h	IA 13T	  -  	LP 11L	  -  	LP 11T	
+8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
+9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
+10h	  -  	IA 11T	A 11T	A 11L	  -  	
+11h	  -  	IA 11T	A 11T	A 11L	  -  	
+12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	G 11T	  -  	G 11L	  -  	
+9h	IA 11T	G 11T	  -  	G 11L	  -  	
+10h	  -  	IA 11T	A 11T	A 11L	  -  	
+11h	  -  	IA 11T	A 11T	A 11L	  -  	
+12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	  -  	G 11T	PR 21L	G 11L	  -  	
+9h	IA 13T	G 11T	PR 21L	G 11L	  -  	
 10h	  -  	IA 13T	A 12T	IA 13L	A 12L	
 11h	  -  	IA 13T	A 12T	  -  	A 12L	
+12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
+13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
+14h	  -  	  -  	  -  	  -  	  -  	
+15h	  -  	  -  	  -  	  -  	  -  	
+16h	  -  	  -  	  -  	  -  	  -  	
+17h	  -  	  -  	  -  	  -  	  -  	
+18h	  -  	  -  	  -  	  -  	  -  	
+19h	  -  	  -  	  -  	  -  	  -  	
+20h	  -  	  -  	  -  	  -  	  -  	
+
+	Dilluns	Dimarts	Dimecr	Dijous	Divend
+8h	IA 11L	G 11T	  -  	G 11L	  -  	
+9h	IA 11T	G 11T	  -  	G 11L	  -  	
+10h	  -  	IA 11T	A 12T	  -  	A 12L	
+11h	  -  	IA 11T	A 12T	  -  	A 12L	
 12h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
 13h	TC 11T	PR 22T	  -  	TC 11L	PR 22L	
 14h	  -  	  -  	  -  	  -  	  -  	
@@ -316,100 +406,10 @@
 	Dilluns	Dimarts	Dimecr	Dijous	Divend
 8h	IA 11L	G 11T	PR 21L	G 11L	  -  	
 9h	IA 11T	G 11T	PR 21L	G 11L	  -  	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	  -  	PR 21T	  -  	  -  	  -  	
-13h	  -  	PR 21T	  -  	  -  	  -  	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	G 11T	  -  	G 11L	  -  	
-9h	IA 11T	G 11T	  -  	G 11L	  -  	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	  -  	PR 22T	  -  	  -  	PR 22L	
-13h	  -  	PR 22T	  -  	  -  	PR 22L	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
-9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	  -  	PR 22T	  -  	  -  	PR 22L	
-13h	  -  	PR 22T	  -  	  -  	PR 22L	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	G 11T	  -  	G 11L	  -  	
-9h	IA 11T	G 11T	  -  	G 11L	  -  	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	  -  	PR 23T	  -  	PR 23L	  -  	
-13h	  -  	PR 23T	  -  	PR 23L	  -  	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	LP 11L	  -  	LP 11T	
-9h	IA 11T	  -  	LP 11L	  -  	LP 11T	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	  -  	PR 23T	  -  	PR 23L	  -  	
-13h	  -  	PR 23T	  -  	PR 23L	  -  	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	  -  	PR 31L	  -  	
-9h	IA 11T	  -  	  -  	PR 31L	  -  	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	PR 31T	LI 11L	  -  	  -  	LI 11T	
-13h	PR 31T	LI 11L	  -  	  -  	LI 11T	
-14h	  -  	  -  	  -  	  -  	  -  	
-15h	  -  	  -  	  -  	  -  	  -  	
-16h	  -  	  -  	  -  	  -  	  -  	
-17h	  -  	  -  	  -  	  -  	  -  	
-18h	  -  	  -  	  -  	  -  	  -  	
-19h	  -  	  -  	  -  	  -  	  -  	
-20h	  -  	  -  	  -  	  -  	  -  	
-
-	Dilluns	Dimarts	Dimecr	Dijous	Divend
-8h	IA 11L	  -  	LP 11L	PR 31L	LP 11T	
-9h	IA 11T	  -  	LP 11L	PR 31L	LP 11T	
-10h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-11h	TC 12T	IA 11T	A 12T	TC 12L	A 12L	
-12h	PR 31T	  -  	  -  	  -  	  -  	
-13h	PR 31T	  -  	  -  	  -  	  -  	
+10h	  -  	IA 11T	A 12T	  -  	A 12L	
+11h	  -  	IA 11T	A 12T	  -  	A 12L	
+12h	TC 11T	PR 21T	  -  	TC 11L	  -  	
+13h	TC 11T	PR 21T	  -  	TC 11L	  -  	
 14h	  -  	  -  	  -  	  -  	  -  	
 15h	  -  	  -  	  -  	  -  	  -  	
 16h	  -  	  -  	  -  	  -  	  -  	

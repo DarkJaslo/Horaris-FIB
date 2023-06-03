@@ -79,6 +79,7 @@ inline std::ostream& operator<<(std::ostream& os, const HoraClasse& h){
 class Horari{
 public:
   Horari(){
+    _valor = 0;
     h = vector<vector<HoraClasse>>(5,vector<HoraClasse>(13));
     for(int i = 0; i < h.size(); ++i){
       for(int j = 0; j < h[i].size(); ++j){
@@ -105,6 +106,10 @@ public:
     if(index == -1) assigs.push_back(hores[0].assignatura());
   }
   int nassig(){return assigs.size();}
+  int valor()const { return _valor; }
+  bool operator<(const Horari& other)const{
+    return _valor > other._valor;
+  }
 
   void print()const{
     //cout << "print horari" << endl;
@@ -120,6 +125,39 @@ public:
       cout << endl;
     }
   }
+  void calculaValor(){
+    _valor = 0;
+    for(int i = 0; i < h.size(); ++i){
+      bool diaLliure = true;
+      int horesBuides = 0;
+      int horesTotal = 0;
+      bool hiHaHoresBuides = false;
+      for(int j = 0; j < h[i].size(); ++j){
+        if(h[i][j].ocupada()){
+          diaLliure = false;
+          horesTotal++;
+          if(j == 0){
+            _valor -= 50;
+          }
+          else if(j == 1){
+            _valor -= 50;
+          }
+        }
+        if(not diaLliure and not h[i][j].ocupada()){
+          horesBuides++;
+        }
+        else if(not diaLliure and h[i][j].ocupada()){
+          _valor -= 250*horesBuides;
+          horesBuides = 0;
+          if(not hiHaHoresBuides) hiHaHoresBuides = true;
+        }
+      }
+      if(diaLliure){_valor += 1000;}
+      if(horesTotal < 3){_valor -= 100;}
+      else if(horesTotal == 4 and not hiHaHoresBuides){_valor += 100;}
+      else if(horesTotal > 5){_valor -= 150;}
+    }
+  }
 private:
   template<typename T>
   int findInVector(const vector<T>& vec, const T& thing){
@@ -130,6 +168,7 @@ private:
   }
   std::vector<std::vector<HoraClasse>> h;
   vector<string> assigs;
+  int _valor;
 };
 
 #endif

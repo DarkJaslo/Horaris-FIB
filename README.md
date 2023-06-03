@@ -4,10 +4,10 @@
 Genera todos los horarios posibles de un conjunto de asignaturas.
 ### Plus: 
 -Permite escoger asignaturas "obligatorias" (que saldrán sí o sí en el horario).
+
+-Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 ### Problemas: 
 -La entrada de asignaturas es a mano. Recomiendo usar un fichero de texto como el de <tt>input_example.txt</tt> y redirigir tanto entrada como salida.
-
--No filtra los horarios malos ni ordena de mejor a peor (de momento).
 
 -De momento, requiere al menos una asignatura obligatoria y una no obligatoria (será arreglado pronto).
 

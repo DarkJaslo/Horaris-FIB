@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Horari.hh"
 using namespace std;
 typedef vector<HoraClasse> assignatura;
@@ -264,6 +265,12 @@ int main(){
   //Makes valid schedules
   vector<Horari> horarisValids;
   fesHoraris(horarisValids, allPermutations,mapping,assigs);
+
+  //Sorts them
+  for(Horari& h : horarisValids){
+    h.calculaValor();
+  }
+  sort(horarisValids.begin(),horarisValids.end());
 
   //Prints them
   for(const Horari& h : horarisValids){
