@@ -91,19 +91,28 @@ public:
     return not h[hora.dia()][hora.hora()-8].ocupada();
   }
   bool encaixaAssig(const vector<HoraClasse>& assig){
+    int index = findInVector(assigs,assig[0].assignatura());
+    if(index != -1){
+      int index2 = findInVector(grups,assig[0].grup());
+      if(index2 == -1) return false;
+    }
     for(const HoraClasse& hcl : assig){
       if(not encaixa(hcl)){ return false; }
     }
     return true;
   }
   void afegeix(const vector<HoraClasse>& hores){
+    int index = findInVector(assigs,hores[0].assignatura());
+    if(index == -1){
+      assigs.push_back(hores[0].assignatura());
+      grups.push_back(hores[0].grup());
+    }
     //cout << "afegeix" << endl;
     for(int i = 0; i < hores.size(); ++i){
       h[hores[i].dia()][hores[i].hora()-8] = hores[i];
       h[hores[i].dia()][hores[i].hora()-8].ocupa();
     }
-    int index = findInVector(assigs,hores[0].assignatura());
-    if(index == -1) assigs.push_back(hores[0].assignatura());
+    
   }
   int nassig(){return assigs.size();}
   int valor()const { return _valor; }
@@ -168,6 +177,7 @@ private:
   }
   std::vector<std::vector<HoraClasse>> h;
   vector<string> assigs;
+  vector<int> grups;
   int _valor;
 };
 
