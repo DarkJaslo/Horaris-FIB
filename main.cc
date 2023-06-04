@@ -54,7 +54,7 @@ void perms(const vector<vector<int>>& grups, vector<vector<int>>& allPerms){
 //extracombs
 int from;
 
-void print_sol(const vector<int>& sol,vector<vector<int>>& extraPermutations){
+void pushPermExtra(const vector<int>& sol,vector<vector<int>>& extraPermutations){
   vector<int> sol2 = sol;
   for(int& i : sol2) i += from;
   extraPermutations.push_back(sol2);
@@ -62,7 +62,7 @@ void print_sol(const vector<int>& sol,vector<vector<int>>& extraPermutations){
 
 void combinations(int in, const vector<int>& opt, vector<int>& sol, vector<bool>& u,vector<vector<int>>& extraPermutations){
   if(in == sol.size()){
-    print_sol(sol,extraPermutations);
+    pushPermExtra(sol,extraPermutations);
   }
   else{
     for(int i = 0; i < opt.size(); ++i){
@@ -92,7 +92,7 @@ void extraCombinations(int elems, int fromWhere, int groupSize,vector<vector<int
 }
 
 //all combs
-void copyVector(const vector<int>& source1, const vector<vector<int>>& source2, vector<vector<int>>& dest, int loc){
+void copiaVector(const vector<int>& source1, const vector<vector<int>>& source2, vector<vector<int>>& dest, int loc){
   for(int i = 0; i < source2.size(); ++i){
     int j;
     for(j = 0; j < source1.size(); ++j){
@@ -190,7 +190,7 @@ int main(){
     nomsAssignatures.push_back(ass[0].assignatura());
   }
 
-  //Separate subjects in groups
+  //Group all groups that share the same subject (S1 Gr10, S1 Gr11, etc.)
   vector<vector<pair<string,int>>> obligatories(nomsObligatories.size());
   vector<vector<pair<string,int>>> resta(nomsAssignatures.size());
 
@@ -259,11 +259,10 @@ int main(){
 
     int cur = 0;
     for(int i = 0; i < allPermutations.size(); i +=extraPermutations.size()){
-      copyVector(permutations[cur],extraPermutations,allPermutations,i);
+      copiaVector(permutations[cur],extraPermutations,allPermutations,i);
       ++cur;
     }
   }
-  
 
   //Print all permutations
   /*for(int i = 0; i < allPermutations.size(); ++i){
