@@ -1,6 +1,35 @@
 # Horaris-FIB
 
-## Generador de horarios sencillo para la FIB-UPC
+## [English] Schedule generator for FIB-UPC 
+Generates all possible schedules given a set of subjects.
+### Merits:
+-Allows choosing "mandatory" subjects (that will always appear in every schedule generated).
+
+-Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
+
+### Issues:
+-Subjects are entered manually. I greatly recommend using an input file like <tt>input_example.txt</tt> and redirecting stdin as well as stdout.
+
+-It's only designed for making schedules with five different subjects at a time.
+
+### How to build and use
+Requirements: being able to use a Makefile, or at least being able to compile C++11.
+
+In any console, navigate to the repository's directory and enter <tt>make</tt>. Then, type <tt>./main.exe < [input_file]</tt>.
+  
+The program's output can be redirected (so it does not appear in the console) by adding <tt> > [output_file]</tt>. The whole command would be <tt>./main.exe < [input_file] > [output_file]</tt>.
+
+### Input format
+I recommend looking at the example input file in order to understand everything. Some clarifications:
+1. Every subgroup is added separately, but groups that share subject must share the same name (for instance, PRO1 11 and PRO1 12 are different groups of the same subject and should be added separately).
+  2. There's theory classes and labs (in Spanish, <tt>teoría</tt> and <tt>laboratorio</tt>. Consult the example). Understandably, some subjects are structured differently, but you get the idea.
+  3. If a subject has theory classes in two different days, they must be added in two separated lines. Consult the example for more info.
+  4. To end class hours input, type -1. To end subject groups input, type <tt>endtipus</tt>.
+  5. To end all subjects, type <tt>end</tt>.
+  6. After said <tt>end</tt>, you can write the names of mandatory subjects (that will be included in every schedule forcefully) as seen in the example.  
+
+  
+## [Español] Generador de horarios sencillo para la FIB-UPC 
 Genera todos los horarios posibles de un conjunto de asignaturas.
 ### Ventajas: 
 -Permite escoger asignaturas "obligatorias" (que saldrán sí o sí en el horario).
