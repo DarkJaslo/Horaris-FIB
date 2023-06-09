@@ -155,7 +155,7 @@ int main(){
     cin >> grup;
 
     cin >> tipus;
-    while(tipus != "endtipus"){
+    while(tipus != "endassig"){
       cin >> dia;
       cin >> hora;
       while(hora != -1){

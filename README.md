@@ -24,7 +24,7 @@ I recommend looking at the example input file in order to understand everything.
 1. Every subgroup is added separately, but groups that share subject must share the same name (for instance, PRO1 11 and PRO1 12 are different groups of the same subject and should be added separately).
   2. There's theory classes and labs (in Spanish, <tt>teoría</tt> and <tt>laboratorio</tt>. Consult the example). Understandably, some subjects are structured differently, but you get the idea.
   3. If a subject has theory classes in two different days, they must be added in two separated lines. Consult the example for more info.
-  4. To end class hours input, type -1. To end subject groups input, type <tt>endtipus</tt>.
+  4. To end class hours input, type -1. To end subject groups input, type <tt>endassig</tt>.
   5. To end all subjects, type <tt>end</tt>.
   6. After said <tt>end</tt>, you can write the names of mandatory subjects (that will be included in every schedule forcefully) as seen in the example.  
 
@@ -52,6 +52,6 @@ Recomiendo mirar el fichero de ejemplo para entenderlo. Algunas aclaraciones:
 1.  Se añade cada subgrupo por separado, pero todos los que sean de la misma asignatura deben compartir el mismo nombre (por ejemplo, PRO1 11 y PRO1 12 son grupos distintos, pero de la misma asignatura)
   2.  Hay <tt>teoría</tt> y <tt>laboratorio</tt>. Obviamente, algunas asignaturas tienen problemas y otras cosas, pero se puede mapear a teoría y laboratorio.
   3. Si una asignatura tiene teoría dos días distintos (por ejemplo, 2 horas el lunes y 1 hora el miércoles), deben ponerse dos líneas separadas. Véase en el ejemplo la entrada para IA 11 o IA 13.
-  4. Al acabar de poner las horas, se pone -1, y al acabar de poner un grupo de asignatura, se pone <tt>endtipus</tt>.
+  4. Al acabar de poner las horas, se pone -1, y al acabar de poner un grupo de asignatura, se pone <tt>endassig</tt>.
   5. Al acabar la entrada de asignaturas, se pone <tt>end</tt>.
   6. Para añadir asignaturas obligatorias, se escriben sus nombres al final del fichero, como en el ejemplo.
