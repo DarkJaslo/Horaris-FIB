@@ -1,0 +1,124 @@
+TC 11
+teoria lunes 12 13 -1 
+lab jueves 12 13 -1 
+endassig
+
+TC 12
+teoria lunes 10 11 -1 
+lab jueves 10 11 -1 
+endassig
+
+A 11
+teoria miercoles 10 11 -1 
+lab jueves 10 11 -1 
+endassig
+
+A 12
+teoria miercoles 10 11 -1 
+lab viernes 10 11 -1 
+endassig
+
+IA 11
+teoria lunes 9 -1 
+teoria martes 10 11 -1 
+lab lunes 8 -1 
+endassig
+
+IA 13
+teoria lunes 9 -1 
+teoria martes 10 11 -1 
+lab jueves 10 -1 
+endassig
+
+LI 11
+teoria viernes 12 13 -1 
+lab martes 12 13 -1 
+endassig
+
+PR 11
+teoria lunes 10 11 -1 
+lab jueves 10 11 -1 
+endassig
+
+PR 12
+teoria lunes 10 11 -1 
+lab miercoles 10 11 -1 
+endassig
+
+PR 13
+teoria lunes 10 11 -1 
+lab viernes 10 11 -1 
+endassig
+
+PR 21
+teoria martes 12 13 -1 
+lab miercoles 8 9 -1 
+endassig
+
+PR 22
+teoria martes 12 13 -1 
+lab viernes 12 13 -1 
+endassig
+
+PR 23
+teoria martes 12 13 -1 
+lab jueves 12 13 -1 
+endassig
+
+PR 31
+teoria lunes 12 13 -1 
+lab jueves 8 9 -1 
+endassig
+
+PR 32
+teoria lunes 12 13 -1 
+lab viernes 10 11 -1 
+endassig
+
+PR 33
+teoria lunes 12 13 -1 
+lab jueves 10 11 -1 
+endassig
+
+PA 11
+teoria lunes 8 9 -1 
+lab martes 8 9 -1 
+endassig
+
+PA 12
+teoria lunes 8 9 -1 
+lab miercoles 8 9 -1 
+endassig
+
+PA 13
+teoria lunes 8 9 -1 
+lab jueves 12 13 -1 
+endassig
+
+PA 21
+teoria lunes 10 11 -1 
+lab miercoles 10 11 -1 
+endassig
+
+PA 22
+teoria lunes 10 11 -1 
+lab martes 10 11 -1 
+endassig
+
+PA 23
+teoria lunes 10 11 -1 
+lab jueves 8 9 -1 
+endassig
+
+G 11
+teoria martes 8 9 -1 
+lab jueves 8 9 -1 
+endassig
+
+LP 11
+teoria viernes 8 9 -1 
+lab miercoles 8 9 -1 
+endassig
+end
+
+TC A IA PR
