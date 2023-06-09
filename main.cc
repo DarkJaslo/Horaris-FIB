@@ -6,11 +6,14 @@ using namespace std;
 typedef vector<HoraClasse> assignatura;
 
 DiaSetmana stringToDia(const string& str){
-  if(str == "dilluns") return dilluns;
-  else if(str == "dimarts") return dimarts;
-  else if(str == "dimecres") return dimecres;
-  else if(str == "dijous") return dijous;
-  return divendres;
+  if(str == "dilluns" or str == "lunes" or str == "monday") return dilluns;
+  else if(str == "dimarts" or str == "martes" or str == "tuesday") return dimarts;
+  else if(str == "dimecres" or str == "miercoles" or str == "miércoles" or str == "wednesday") return dimecres;
+  else if(str == "dijous" or str == "jueves" or str == "thursday") return dijous;
+  else if(str == "divendres" or str == "viernes" or str == "friday") return divendres;
+  
+  cerr << "one of the weekdays could not be recognized, are you typing them in lowercase?" << endl;
+  exit(1);
 }
 template<typename T>
 int findInVector(const vector<T>& vec, const T& thing){
@@ -288,6 +291,7 @@ int main(){
     cout << endl;
   }
 
+  /*
   //Print subjects
   cout << "no obligatòries" << endl;
 
@@ -300,4 +304,5 @@ int main(){
   for(const string& no : nomsObligatories){
     cout << no << endl;
   }
+  */
 }
