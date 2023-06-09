@@ -22,11 +22,12 @@ The program's output can be redirected (so it does not appear in the console) by
 ### Input format
 I recommend looking at the example input file in order to understand everything. Some clarifications:
 1. Every subgroup is added separately, but groups that share subject must share the same name (for instance, PRO1 11 and PRO1 12 are different groups of the same subject and should be added separately).
-  2. There's theory classes and labs (in Spanish, <tt>teoría</tt> and <tt>laboratorio</tt>. Consult the example). Understandably, some subjects are structured differently, but you get the idea.
+  2. There's theory classes and labs. Understandably, some subjects are structured differently, but you get the idea.
   3. If a subject has theory classes in two different days, they must be added in two separated lines. Consult the example for more info.
   4. To end class hours input, type -1. To end subject groups input, type <tt>endassig</tt>.
   5. To end all subjects, type <tt>end</tt>.
   6. After said <tt>end</tt>, you can write the names of mandatory subjects (that will be included in every schedule forcefully) as seen in the example.  
+  7. I recommend using very short names, with two characters.
 
   
 ## [Español] Generador de horarios sencillo para la FIB-UPC 
@@ -55,3 +56,4 @@ Recomiendo mirar el fichero de ejemplo para entenderlo. Algunas aclaraciones:
   4. Al acabar de poner las horas, se pone -1, y al acabar de poner un grupo de asignatura, se pone <tt>endassig</tt>.
   5. Al acabar la entrada de asignaturas, se pone <tt>end</tt>.
   6. Para añadir asignaturas obligatorias, se escriben sus nombres al final del fichero, como en el ejemplo.
+  7. Recomiendo usar nombres de asignatura muy cortos, de uno o dos caracteres.
