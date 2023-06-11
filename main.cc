@@ -23,7 +23,7 @@ int findInVector(const vector<T>& vec, const T& thing){
   return -1;
 }
 
-//compulsory combs
+//compulsory combinations
 void pushPerm(const vector<int>& perm, vector<vector<int>>& allPerms){
   vector<int> p;
   for(int i = 0 ; i < perm.size(); ++i){
@@ -54,7 +54,7 @@ void perms(const vector<vector<int>>& grups, vector<vector<int>>& allPerms){
   perms(0,grups,used,permutation,allPerms);
 }
 
-//extracombs
+//extra combinations
 int from;
 
 void pushPermExtra(const vector<int>& sol,vector<vector<int>>& extraPermutations){
@@ -94,7 +94,7 @@ void extraCombinations(int elems, int fromWhere, int groupSize,vector<vector<int
   combinations(opt,groupSize, extraPermutations);
 }
 
-//all combs
+//all combinations
 void copiaVector(const vector<int>& source1, const vector<vector<int>>& source2, vector<vector<int>>& dest, int loc){
   for(int i = 0; i < source2.size(); ++i){
     int j;
@@ -165,7 +165,7 @@ int main(){
         TipusClasse tip;
         if(tipus == "teoria") tip = teoria;
         else tip = laboratori;
-        HoraClasse hcl(hora,false,nom,grup,tip,stringToDia(dia));
+        HoraClasse hcl(hora,grup,tip,stringToDia(dia),false,nom);
         ass.push_back(hcl);
         cin >> hora;
       }
@@ -290,19 +290,4 @@ int main(){
     h.print();
     cout << endl;
   }
-
-  /*
-  //Print subjects
-  cout << "no obligatòries" << endl;
-
-  for(const string& no : nomsAssignatures){
-    cout << no << endl;
-  }
-
-  cout << endl << "obligatòries: " << endl;
-
-  for(const string& no : nomsObligatories){
-    cout << no << endl;
-  }
-  */
 }
