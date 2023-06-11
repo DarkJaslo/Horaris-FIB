@@ -2,7 +2,7 @@
 
 ## [English] Schedule generator for FIB-UPC 
 Generates all possible schedules given a set of subjects.
-### Merits:
+### Good stuff:
 -Allows choosing "mandatory" subjects (that will always appear in every schedule generated).
 
 -Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
@@ -10,7 +10,7 @@ Generates all possible schedules given a set of subjects.
 ### Issues:
 -Subjects are entered manually. I greatly recommend using an input file like <tt>input_example.txt</tt> and redirecting stdin as well as stdout.
 
--It's only designed for making schedules with five different subjects at a time.
+-It's intended to work with schedules of exactly five different subjects at a time.
 
 ### How to build and use
 Requirements: being able to use a Makefile, or at least being able to compile C++11.
@@ -21,7 +21,7 @@ The program's output can be redirected (so it does not appear in the console) by
 
 ### Input format
 I recommend looking at the example input file in order to understand everything. Some clarifications:
-1. Every subgroup is added separately, but groups that share subject must share the same name (for instance, PRO1 11 and PRO1 12 are different groups of the same subject and should be added separately).
+  1. Every subgroup is added separately, but groups that share subject must share the same name (for instance, PRO1 11 and PRO1 12 are different groups of the same subject and should be added separately).
   2. There's theory classes and labs. Understandably, some subjects are structured differently, but you get the idea.
   3. If a subject has theory classes in two different days, they must be added in two separated lines. Consult the example for more info.
   4. To end class hours input, type -1. To end subject groups input, type <tt>endassig</tt>.
