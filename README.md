@@ -3,7 +3,7 @@
 ## [English] Schedule generator for FIB-UPC 
 Generates all possible schedules given a set of subjects.
 ### Good stuff:
--Allows choosing "mandatory" subjects (that will always appear in every schedule generated).
+-Allows choosing "mandatory" subjects (that will always appear in every generated schedule).
 
 -Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
