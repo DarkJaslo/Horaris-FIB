@@ -32,11 +32,11 @@ I recommend looking at the example input file in order to understand everything.
   
 ## [Español] Generador de horarios sencillo para la FIB-UPC 
 Genera todos los horarios posibles de un conjunto de asignaturas.
-### Ventajas: 
+### Utilidades: 
 -Permite escoger asignaturas "obligatorias" (que saldrán sí o sí en el horario).
 
 -Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
-### Problemas: 
+### Limitaciones: 
 -La entrada de asignaturas es a mano. Recomiendo usar un fichero de texto como el de <tt>input_example.txt</tt> y redirigir tanto entrada como salida.
 
 -Está pensado para hacer horarios con 5 asignaturas.
