@@ -133,11 +133,14 @@ public:
         if(h[i][j].ocupada()){
           diaLliure = false;
           horesTotal++;
-          if(j == 0){
+          if(j == 0){ //Les 8
             _valor -= 50;
           }
-          else if(j == 1){
+          else if(j == 1){ //Les 9
             _valor -= 50;
+          }
+          else if(j >= 6){ //Les 14h o més
+            _valor -= 200;
           }
         }
         if(not diaLliure and not h[i][j].ocupada()){
