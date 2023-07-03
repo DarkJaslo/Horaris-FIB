@@ -1,5 +1,3 @@
-# Detect all native players (files matching "AI*.cc")
-
 # Rules
 COMP = g++
 CC = main.cc
