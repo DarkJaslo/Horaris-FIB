@@ -286,9 +286,12 @@ int main(){
   sort(horarisValids.begin(),horarisValids.end());
 
   //Prints them
+  int horarisImpresos = 0;
   for(const Horari& h : horarisValids){
     h.print();
     cout << endl;
+    if(++horarisImpresos == 1000) break;
   }
-  cout << "Horaris: " << horarisValids.size() << endl;
+  cout << "Impresos: " << horarisImpresos << endl; 
+  cout << "Total horaris: " << horarisValids.size() << endl;
 }
