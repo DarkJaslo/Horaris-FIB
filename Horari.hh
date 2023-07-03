@@ -140,22 +140,26 @@ public:
             _valor -= 50;
           }
           else if(j >= 6){ //Les 14h o més
-            _valor -= 200;
+            _valor -= 20;
           }
         }
         if(not diaLliure and not h[i][j].ocupada()){
           horesBuides++;
         }
         else if(not diaLliure and h[i][j].ocupada()){
-          _valor -= 250*horesBuides;
+          _valor -= 200*horesBuides;
+          if(horesBuides > 0){
+            if(horesTotal == 4) _valor+=100*horesBuides;
+          }
           horesBuides = 0;
           if(not hiHaHoresBuides) hiHaHoresBuides = true;
         }
       }
-      if(diaLliure){_valor += 1000;}
-      if(horesTotal < 3){_valor -= 100;}
+      if(diaLliure){_valor += 750;}
+      if(horesTotal < 3){_valor -= 150;}
       else if(horesTotal == 4 and not hiHaHoresBuides){_valor += 100;}
-      else if(horesTotal > 5){_valor -= 150;}
+      else if(horesTotal == 6){_valor -= 100;}
+      else if(horesTotal > 6){ _valor -= 375*(horesTotal-6);}
     }
   }
 private:

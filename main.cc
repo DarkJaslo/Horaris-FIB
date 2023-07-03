@@ -290,4 +290,5 @@ int main(){
     h.print();
     cout << endl;
   }
+  cout << "Horaris: " << horarisValids.size() << endl;
 }
