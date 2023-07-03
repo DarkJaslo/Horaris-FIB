@@ -163,7 +163,7 @@ int main(){
       cin >> hora;
       while(hora != -1){
         TipusClasse tip;
-        if(tipus == "teoria") tip = teoria;
+        if(tipus == "teoria" or tipus == "theory") tip = teoria;
         else tip = laboratori;
         HoraClasse hcl(hora,grup,tip,stringToDia(dia),false,nom);
         ass.push_back(hcl);
