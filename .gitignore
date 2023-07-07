@@ -2,3 +2,5 @@ main.exe
 main.o
 input.txt
 output.txt
+input_extended.txt
+output_extended.txt
