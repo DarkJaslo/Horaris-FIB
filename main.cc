@@ -141,6 +141,10 @@ void fesHoraris(vector<Horari>& horarisValids, const vector<vector<int>>& perms,
 }
 
 int main(){
+
+  int sizeHorari;
+  cin >> sizeHorari;
+
   vector<assignatura> assigs;
 
   string nom;
@@ -247,7 +251,7 @@ int main(){
 
   //Make permutations of extra subjects
   vector<vector<int>> extraPermutations;
-  extraCombinations(mapping.size()-oblig,oblig,5-nomsObligatories.size(),extraPermutations);
+  extraCombinations(mapping.size()-oblig,oblig,sizeHorari-nomsObligatories.size(),extraPermutations);
 
   //Combine them in allPermutations
   vector<vector<int>> allPermutations;
