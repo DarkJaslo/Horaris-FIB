@@ -13,6 +13,7 @@ DiaSetmana stringToDia(const string& str){
   else if(str == "divendres" or str == "viernes" or str == "friday") return divendres;
   
   cerr << "one of the weekdays could not be recognized, are you typing them in lowercase?" << endl;
+  cerr << "input: " << str << endl;
   exit(1);
 }
 template<typename T>
