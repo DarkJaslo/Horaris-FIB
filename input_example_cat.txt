@@ -1,3 +1,5 @@
+5
+
 TC 11
 teoria dilluns 12 13 -1 
 lab dijous 12 13 -1 

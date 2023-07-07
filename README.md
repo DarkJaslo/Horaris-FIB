@@ -10,8 +10,6 @@ Generates all possible schedules given a set of subjects.
 ### Issues:
 -Subjects are entered manually. I greatly recommend using an input file like <tt>input_example.txt</tt> and redirecting stdin as well as stdout.
 
--It's intended to work with schedules of exactly five different subjects at a time.
-
 ### How to build and use
 Requirements: being able to use a Makefile, or at least being able to compile C++11.
 
@@ -28,6 +26,7 @@ I recommend looking at the example input file in order to understand everything.
   5. To end all subjects, type <tt>end</tt>.
   6. After said <tt>end</tt>, you can write the names of mandatory subjects (that will be included in every schedule forcefully) as seen in the example.  
   7. I recommend using very short names, with two characters.
+  8. The first number in input files specifies the number of subjects you want the schedule to have.
 
   
 ## [Español] Generador de horarios sencillo para la FIB-UPC 
@@ -38,8 +37,6 @@ Genera todos los horarios posibles de un conjunto de asignaturas.
 -Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 ### Limitaciones: 
 -La entrada de asignaturas es a mano. Recomiendo usar un fichero de texto como el de <tt>input_example.txt</tt> y redirigir tanto entrada como salida.
-
--Está pensado para hacer horarios con 5 asignaturas.
 
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un Makefile (make) y poder compilar C++11.
@@ -57,3 +54,4 @@ Recomiendo mirar el fichero de ejemplo para entenderlo. Algunas aclaraciones:
   5. Al acabar la entrada de asignaturas, se pone <tt>end</tt>.
   6. Para añadir asignaturas obligatorias, se escriben sus nombres al final del fichero, como en el ejemplo.
   7. Recomiendo usar nombres de asignatura muy cortos, de uno o dos caracteres.
+  8. El primer número de los archivos de input sirve para indicar el número de asignaturas que se quieren en el horario.
