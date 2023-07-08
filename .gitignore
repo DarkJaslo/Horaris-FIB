@@ -1,11 +1,3 @@
 main.exe
 main.o
-input.txt
-output.txt
-input_extended.txt
-output_extended.txt
-input_q2.txt
-output_q2.txt
-input_q2_cond.txt
-output_q2_cond.txt
-output_LP_LI_G.txt
+*.txt
