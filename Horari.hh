@@ -140,7 +140,7 @@ public:
             _valor -= 50;
           }
           else if(j >= 6){ //Les 14h o més
-            _valor -= 20;
+            _valor -= 50;
           }
         }
         if(not diaLliure and not h[i][j].ocupada()){
