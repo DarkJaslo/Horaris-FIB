@@ -8,7 +8,7 @@ Generates all possible schedules given a set of subjects.
 -Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
 ### Issues:
--Subjects are entered manually. I greatly recommend using an input file like <tt>input_example.txt</tt> and redirecting stdin as well as stdout.
+-Subjects are entered manually. I greatly recommend using an input file like <tt>input_example.inp</tt> and redirecting stdin as well as stdout.
 
 ### How to build and use
 Requirements: being able to use a Makefile, or at least being able to compile C++11.
@@ -36,7 +36,7 @@ Genera todos los horarios posibles de un conjunto de asignaturas.
 
 -Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 ### Limitaciones: 
--La entrada de asignaturas es a mano. Recomiendo usar un fichero de texto como el de <tt>input_example.txt</tt> y redirigir tanto entrada como salida.
+-La entrada de asignaturas es a mano. Recomiendo usar un fichero de texto como el de <tt>input_example.inp</tt> y redirigir tanto entrada como salida.
 
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un Makefile (make) y poder compilar C++11.
