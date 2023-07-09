@@ -46,6 +46,12 @@ teoria martes 10 11 -1
 lab lunes 8 -1 
 endassig
 
+IA 12
+teoria lunes 9 -1 
+teoria martes 10 11 -1 
+lab jueves 9 -1 
+endassig
+
 IA 13
 teoria lunes 9 -1 
 teoria martes 10 11 -1 
@@ -55,13 +61,13 @@ endassig
 IA 21
 teoria lunes 18 19 -1 
 teoria martes 16 -1 
-lab jueves 18 -1 
+lab miercoles 18 -1 
 endassig
 
 IA 22
 teoria lunes 18 19 -1 
 teoria martes 16 -1 
-lab jueves 17 -1 
+lab miercoles 17 -1 
 endassig
 
 LI 11
@@ -199,6 +205,24 @@ teoria viernes 14 15 -1
 lab martes 14 15 -1
 endassig
 
+AP 11
+teoria lunes 16 17 -1
+teoria martes 17 -1
+lab viernes 14 15 -1
+endassig
+
+AP 12
+teoria lunes 16 17 -1
+teoria martes 17 -1
+lab viernes 16 17 -1
+endassig
+
+AP 13
+teoria lunes 16 17 -1
+teoria martes 17 -1
+lab miercoles 15 16 -1
+endassig
+
 end
 
-PR TC A IA
+PR TC A
