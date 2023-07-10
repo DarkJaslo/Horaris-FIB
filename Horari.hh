@@ -44,13 +44,13 @@ public:
   HoraClasse(){}
   HoraClasse(int hora, int grup, TipusClasse tipus, DiaSetmana dia, bool ocupada, std::string assignatura) 
     : _hora(hora), _grup(grup), _tipus(tipus), _dia(dia), _ocupada(ocupada), ass(assignatura){}
-  std::string assignatura()const{ return ass; }
-  int grup()const{ return _grup; }
-  DiaSetmana dia()const{ return _dia; }
-  int hora()const{ return _hora; }
-  bool ocupada()const{ return _ocupada; }
-  void ocupa(){ _ocupada = true; }
-  TipusClasse tipus() const{ return _tipus; }
+  std::string   assignatura() const { return ass;      }
+  int           grup()        const { return _grup;    }
+  DiaSetmana    dia()         const { return _dia;     }
+  int           hora()        const { return _hora;    }
+  bool          ocupada()     const { return _ocupada; }
+  void          ocupa()             { _ocupada = true; }
+  TipusClasse   tipus()       const { return _tipus;   }
   friend std::ostream& operator<<(std::ostream& os, const HoraClasse& h);
   void print() const{
     std::cout << assignatura() << " " << grup() << tipus();
