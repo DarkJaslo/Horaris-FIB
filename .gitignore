@@ -1,5 +1,5 @@
 main.exe
-main.o
+*.o
 *.txt
 .vscode/settings.json
 .gitignore
