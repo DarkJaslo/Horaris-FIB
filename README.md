@@ -5,7 +5,7 @@ Generates all possible schedules given a set of subjects.
 ### Good stuff:
 -Parses the document at FIB's API, simplifying input.
 
--Allows choosing what subjects appear always and what subjects can appear with them. 
+-Allows choosing which subjects appear always and what subjects can appear with them. 
 
 -Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
