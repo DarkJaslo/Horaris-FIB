@@ -81,22 +81,27 @@ public:
         h[i][j] = HoraClasse(j+8,-1,teoria,dies[i],false,"");
     }
   }
-  bool encaixa(const HoraClasse& hora){
+  bool encaixa(const HoraClasse& hora)
+  {
     return not h[hora.dia()][hora.hora()-8].ocupada();
   }
-  bool encaixaAssig(const std::vector<HoraClasse>& assig){
+  bool encaixaAssig(const std::vector<HoraClasse>& assig)
+  {
     int index = findInVector(assigs,assig[0].assignatura());
     if(index != -1){
       return false;
+
+      /*In theory, bad/unnecessary
       int index2 = findInVector(grups,assig[0].grup());
-      if(index2 == -1) return false;
+      if(index2 == -1) return false;*/
     }
     for(const HoraClasse& hcl : assig){
       if(not encaixa(hcl)){ return false; }
     }
     return true;
   }
-  void afegeix(const std::vector<HoraClasse>& hores){
+  void afegeix(const std::vector<HoraClasse>& hores)
+  {
     int index = findInVector(assigs,hores[0].assignatura());
     if(index == -1){
       assigs.push_back(hores[0].assignatura());
@@ -110,7 +115,8 @@ public:
   int nassig(){return assigs.size();}
   int valor()const { return _valor; }
   bool operator<(const Horari& other)const{ return _valor > other._valor; }
-  void print()const{
+  void print()const
+  {
     std::cout << "\tDilluns" << "\t\tDimarts" << "\t\tDimecres" << "\tDijous" << "\t\tDivendres" << std::endl;
 
     for(int j = 0; j < h[0].size(); ++j){
@@ -124,7 +130,8 @@ public:
       std::cout << std::endl;
     }
   }
-  void calculaValor(){
+  void calculaValor()
+  {
     _valor = 0;
     for(int i = 0; i < h.size(); ++i){
       bool diaLliure = true;
