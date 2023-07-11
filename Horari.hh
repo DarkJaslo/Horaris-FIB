@@ -87,6 +87,7 @@ public:
   bool encaixaAssig(const std::vector<HoraClasse>& assig){
     int index = findInVector(assigs,assig[0].assignatura());
     if(index != -1){
+      return false;
       int index2 = findInVector(grups,assig[0].grup());
       if(index2 == -1) return false;
     }
