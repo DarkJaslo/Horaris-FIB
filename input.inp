@@ -7,3 +7,11 @@ A PROP TC END_INPUT
 INCLUDE:
 
 IA G LP LI PAR END_INPUT
+
+Information for users:
+
+Anything after the second END_INPUT isn't read.
+
+The first number (5) is the number of subjects you want in the generated schedules.
+Under ALWAYS:, put mandatory subjects, which will appear in every schedule. There can be 0 mandatory subjects.
+Under INCLUDE:, put general subjects, which don't include mandatory subjects. These are the rest of subjects you want to include in the generation.
