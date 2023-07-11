@@ -30,7 +30,7 @@ Requirements: being able to use a Makefile, or at least being able to compile C+
 
 ### Input format
 
-I recommend looking at <tt>input.inp</tt> and using it as a template.
+I recommend looking at <tt>input.txt</tt> and using it as a template.
 
 ## [Español] Generador de horarios sencillo para la FIB-UPC 
 Genera todos los horarios posibles de un conjunto de asignaturas.
@@ -62,4 +62,4 @@ Requisitos: poder usar un Makefile (make) y poder compilar C++11.
 
 ### Formato de la entrada
 
-Recomiendo mirar el fichero <tt>input.inp</tt> y usarlo como plantilla.
+Recomiendo mirar el fichero <tt>input.txt</tt> y usarlo como plantilla.
