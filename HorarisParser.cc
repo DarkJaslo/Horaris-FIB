@@ -45,7 +45,8 @@ void Data::pushHorariObj(const HorariObj& o)
   _info.emplace_back(o);
 }
 
-void Data::print(){
+void Data::print()
+{
   for(const HorariObj& o : _info){
     std::cout << o << std::endl;
   }
@@ -64,7 +65,8 @@ std::vector<std::string> Data::names() const
 {
   std::vector<std::string> names;
   std::string aux = "this will never be a name for a subject, but who knows, so let's make it as difficult as possible!";
-  for(const HorariObj& o : _info){
+  for(const HorariObj& o : _info)
+  {
     if(o.code() != aux){
       names.push_back(o.code());
       aux = o.code();
