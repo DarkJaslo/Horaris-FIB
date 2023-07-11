@@ -24,7 +24,7 @@ inline std::ostream& operator<<(std::ostream& os, const DiaSetmana& d){
   return os;
 }
 
-const DiaSetmana dies[5] = {dilluns,dimarts,dimecres,dijous,divendres};
+const DiaSetmana dies[5] = {DiaSetmana::dilluns,DiaSetmana::dimarts,DiaSetmana::dimecres,DiaSetmana::dijous,DiaSetmana::divendres};
 
 enum TipusClasse{
   teoria,
@@ -110,7 +110,7 @@ public:
   int valor()const { return _valor; }
   bool operator<(const Horari& other)const{ return _valor > other._valor; }
   void print()const{
-    std::cout << "\tDilluns" << "\tDimarts" << "\tDimecr" << "\tDijous" << "\tDivend" << std::endl;
+    std::cout << "\tDilluns" << "\t\tDimarts" << "\t\tDimecres" << "\tDijous" << "\t\tDivendres" << std::endl;
 
     for(int j = 0; j < h[0].size(); ++j){
       std::cout << 8+j << "h\t";
@@ -118,6 +118,7 @@ public:
         if(h[i][j].ocupada()) h[i][j].print();
         else std::cout << "  -  ";
         std::cout << "\t";
+        if(h[i][j].assignatura().length()<=3) std::cout << "\t";
       }
       std::cout << std::endl;
     }
