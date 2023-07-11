@@ -156,6 +156,7 @@ int main(int argc, char** argv)
   if(argc != 2)
   {
     std::cerr << "Usage: ./main.exe [FIB's_data_filename]" << std::endl;
+    std::cerr << "The FIB file is passed as a parameter, while the user's input is passed through standard input. You may want to execute this program with something like ./main.exe FIB_DATA.txt < my_input_file.txt > my_output_file.txt" << std::endl;
     exit(1);
   }
   
