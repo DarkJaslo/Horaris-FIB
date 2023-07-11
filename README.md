@@ -26,7 +26,7 @@ Requirements: being able to use a Makefile, or at least being able to compile C+
 2. Log in if needed.
 3. Field <tt>"id"</tt> is the current semester.
 4. Enter the link in field <tt>"classes"</tt>.
-5. This is the file this program can read. You can easily copy it to a local file with CTRL+A and copy. You can leave the file without removing anything, because the program ignores all lines until <tt>"count":</tt>.
+5. This is the file this program can read. You can easily copy it to a local file with CTRL+A and copy. You can leave the file as it is without removing anything, because the program ignores all lines until <tt>"count":</tt>.
 
 ### Input format
 
