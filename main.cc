@@ -1,31 +1,31 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <algorithm>
-#include "Horari.hh"
+#include "HorarisParser.hh"
+//#include "SocketWrap.hh" not ready yet
+
+using namespace jaslo;
 using namespace std;
+
 typedef vector<HoraClasse> assignatura;
 
-DiaSetmana stringToDia(const string& str){
-  if(str == "dilluns" or str == "lunes" or str == "monday") return dilluns;
-  else if(str == "dimarts" or str == "martes" or str == "tuesday") return dimarts;
-  else if(str == "dimecres" or str == "miercoles" or str == "miércoles" or str == "wednesday") return dimecres;
-  else if(str == "dijous" or str == "jueves" or str == "thursday") return dijous;
-  else if(str == "divendres" or str == "viernes" or str == "friday") return divendres;
-  
-  cerr << "one of the weekdays could not be recognized, are you typing them in lowercase?" << endl;
-  cerr << "input: " << str << endl;
-  exit(1);
-}
+#define MAX_PRINTED_SCHEDULES 1000 //Change to print more if needed. Aims to avoid more than 500kB/file
+
+//TODO: Do the combinations in a class, simplify main() as much as possible
+
 template<typename T>
-int findInVector(const vector<T>& vec, const T& thing){
+int findInVector(const vector<T>& vec, const T& thing)
+{
   for(int i = 0; i < vec.size(); ++i){
     if(vec[i] == thing) return i;
   }
   return -1;
 }
 
-//compulsory combinations
-void pushPerm(const vector<int>& perm, vector<vector<int>>& allPerms){
+//Pushes a permutation into a group of permutations
+void pushPerm(const vector<int>& perm, vector<vector<int>>& allPerms)
+{
   vector<int> p;
   for(int i = 0 ; i < perm.size(); ++i){
     p.push_back(perm[i]);
@@ -33,7 +33,9 @@ void pushPerm(const vector<int>& perm, vector<vector<int>>& allPerms){
   allPerms.push_back(p);
 }
 
-void perms(int in, const vector<vector<int>>& grups, vector<vector<bool>>& used, vector<int>& perm, vector<vector<int>>& allPerms){
+//Recursive solution for perms
+void perms(int in, const vector<vector<int>>& grups, vector<vector<bool>>& used, vector<int>& perm, vector<vector<int>>& allPerms)
+{
   if(in == perm.size()) pushPerm(perm,allPerms);
   else{
     for(int i = 0; i < grups[in].size(); ++i){
@@ -44,8 +46,9 @@ void perms(int in, const vector<vector<int>>& grups, vector<vector<bool>>& used,
   }
 }
 
-void perms(const vector<vector<int>>& grups, vector<vector<int>>& allPerms){
-  
+//Gets all permutations of compulsory subjects
+void perms(const vector<vector<int>>& grups, vector<vector<int>>& allPerms)
+{  
   vector<vector<bool>> used(grups.size());
 
   for(int i = 0; i < grups.size(); ++i){
@@ -58,13 +61,15 @@ void perms(const vector<vector<int>>& grups, vector<vector<int>>& allPerms){
 //extra combinations
 int from;
 
-void pushPermExtra(const vector<int>& sol,vector<vector<int>>& extraPermutations){
+void pushPermExtra(const vector<int>& sol,vector<vector<int>>& extraPermutations)
+{
   vector<int> sol2 = sol;
   for(int& i : sol2) i += from;
   extraPermutations.push_back(sol2);
 }
 
-void combinations(int in, const vector<int>& opt, vector<int>& sol, vector<bool>& u,vector<vector<int>>& extraPermutations){
+void combinations(int in, const vector<int>& opt, vector<int>& sol, vector<bool>& u,vector<vector<int>>& extraPermutations)
+{
   if(in == sol.size()){
     pushPermExtra(sol,extraPermutations);
   }
@@ -80,23 +85,26 @@ void combinations(int in, const vector<int>& opt, vector<int>& sol, vector<bool>
   }
 }
 
-void combinations(const vector<int>& opt, int groupSize, vector<vector<int>>& extraPermutations){
-  vector<int> sol(groupSize);
-  vector<bool> u(opt.size(),false);
-  combinations(0,opt,sol,u,extraPermutations);
-}
+/*void combinations(const vector<int>& opt, int groupSize, vector<vector<int>>& extraPermutations){
+  
+}*/
 
-void extraCombinations(int elems, int fromWhere, int groupSize,vector<vector<int>>& extraPermutations){
+void extraCombinations(int elems, int fromWhere, int groupSize,vector<vector<int>>& extraPermutations)
+{
   from = fromWhere;
   vector<int> opt(elems);
   for(int i = 0; i < opt.size(); ++i){
     opt[i] = i;
   }
-  combinations(opt,groupSize, extraPermutations);
+  vector<int> sol(groupSize);
+  vector<bool> u(opt.size(),false);
+  combinations(0,opt,sol,u,extraPermutations);
+  //combinations(opt,groupSize, extraPermutations);
 }
 
 //all combinations
-void copiaVector(const vector<int>& source1, const vector<vector<int>>& source2, vector<vector<int>>& dest, int loc){
+void copiaVector(const vector<int>& source1, const vector<vector<int>>& source2, vector<vector<int>>& dest, int loc)
+{
   for(int i = 0; i < source2.size(); ++i){
     int j;
     for(j = 0; j < source1.size(); ++j){
@@ -110,7 +118,8 @@ void copiaVector(const vector<int>& source1, const vector<vector<int>>& source2,
   }
 }
 
-void getAssignatura(assignatura& ass, const pair<string,int>& info, const vector<assignatura>& assigs){
+void getAssignatura(assignatura& ass, const pair<string,int>& info, const vector<assignatura>& assigs)
+{
   for(const assignatura& a : assigs){
     if(a[0].assignatura() == info.first and a[0].grup() == info.second){
       ass = a;
@@ -120,7 +129,8 @@ void getAssignatura(assignatura& ass, const pair<string,int>& info, const vector
 }
 
 //schedule making
-void fesHoraris(vector<Horari>& horarisValids, const vector<vector<int>>& perms, const vector<pair<string,int>>& map, const vector<assignatura>& assigs){
+void fesHoraris(vector<Horari>& horarisValids, const vector<vector<int>>& perms, const vector<pair<string,int>>& map, const vector<assignatura>& assigs)
+{
   for(int i = 0; i < perms.size(); ++i){
     Horari h;
     bool ok = true;
@@ -141,108 +151,102 @@ void fesHoraris(vector<Horari>& horarisValids, const vector<vector<int>>& perms,
   }
 }
 
-int main(){
+int main(int argc, char** argv)
+{
+  if(argc != 2)
+  {
+    std::cerr << "Usage: ./main.exe [FIB's_data_filename]" << std::endl;
+    exit(1);
+  }
+  
+  std::string filename = argv[1];
+
+  /*SocketWrap sw;
+  sw.getAPIinFile("inputweb.txt");
+  exit(0);*/
+
+  Parser parser;
+  parser.openFile(filename);
+  parser.getCount();
+  Data data(parser.count());
+  
+  HorariObj obj;
+
+  while(parser.readHorariObj(obj)){
+    data.pushHorariObj(obj);
+  }
+  data.pushHorariObj(obj);
+  //data.print();
 
   int sizeHorari;
   cin >> sizeHorari;
 
-  vector<assignatura> assigs;
-
-  string nom;
-  cin >> nom;
-
-  //reads everything
-  while(nom != "end"){
-    assignatura ass;
-    
-    string tipus;
-    int grup;
-    string dia;
-    int hora;
-
-    cin >> grup;
-
-    cin >> tipus;
-    while(tipus != "endassig"){
-      cin >> dia;
-      cin >> hora;
-      while(hora != -1){
-        TipusClasse tip;
-        if(tipus == "teoria" or tipus == "theory") tip = teoria;
-        else tip = laboratori;
-        HoraClasse hcl(hora,grup,tip,stringToDia(dia),false,nom);
-        ass.push_back(hcl);
-        cin >> hora;
-      }
-      cin >> tipus;
-    }
-    cin >> nom;
-    assigs.push_back(ass);
-  }
-
+  vector<assignatura> assigs = data.allAssignatures();
 
   vector<string> nomsObligatories;
   vector<string> nomsAssignatures;
 
   //Fill names
   string auxAssig;
-  while(cin >> auxAssig){
+  cin >> auxAssig;  //Read the "ALWAYS:"
+  cin >> auxAssig;
+  while(auxAssig != "END_INPUT"){
     nomsObligatories.push_back(auxAssig);
+    cin >> auxAssig;
   }
 
-  for(const assignatura& ass: assigs){
-    int index = findInVector(nomsObligatories,ass[0].assignatura());
-    if(index != -1) continue;
-    index = findInVector(nomsAssignatures,ass[0].assignatura());
-    if(index != -1) continue;
-    nomsAssignatures.push_back(ass[0].assignatura());
+  cin >> auxAssig;  //Read the "INCLUDE:"
+  while(auxAssig != "END_INPUT"){
+    nomsAssignatures.push_back(auxAssig);
+    cin >> auxAssig;
   }
 
-  //Group all groups that share the same subject (S1 Gr10, S1 Gr11, etc.)
+  //Group all groups that share the same subject code/name (S1 Gr10, S1 Gr11, etc.)
   vector<vector<pair<string,int>>> obligatories(nomsObligatories.size());
   vector<vector<pair<string,int>>> resta(nomsAssignatures.size());
 
-  for(const assignatura& ass : assigs){
+  for(const assignatura& ass : assigs)
+  {
     string nom = ass[0].assignatura();
     int grup = ass[0].grup();
     int index = findInVector(nomsObligatories,nom);
-    if(index == -1){
+    if(index == -1){ //not found
       index = findInVector(nomsAssignatures,nom);
-      if(index == -1) continue;
+      if(index == -1) continue; //not found
       resta[index].push_back(make_pair(nom,grup));
     }
     else{
       obligatories[index].push_back(make_pair(nom,grup));
     }
-    
   }
 
-  //Mapping to manage permutations with integers instead of pair<string,int>
-  vector<pair<string,int>> mapping;
+  //Map to manage permutations with integers instead of pair<string,int>
+  vector<pair<string,int>> map;
 
   //Make groups with integers
   int aux = 0;
   vector<vector<int>> grupsObligatories(1);
 
   for(int i = 0; i < obligatories.size(); ++i){
-    for(int j = 0; j < obligatories[i].size(); ++j){
-      mapping.push_back(obligatories[i][j]);
+    for(int j = 0; j < obligatories[i].size(); ++j)
+    {
+      map.push_back(obligatories[i][j]);
       if(obligatories[i][j].first == nomsObligatories[aux]){
-        grupsObligatories[aux].push_back(mapping.size()-1);
+        grupsObligatories[aux].push_back(map.size()-1);
       }
       else{
         aux++;
         grupsObligatories.push_back(vector<int>());
-        grupsObligatories[aux].push_back(mapping.size()-1);
+        grupsObligatories[aux].push_back(map.size()-1);
       }
     }
   }
 
-  int oblig = mapping.size();
+  int oblig = map.size();
 
   for(int i = 0; i < resta.size(); ++i){
     for(int j = 0; j < resta[i].size(); ++j){
-      mapping.push_back(resta[i][j]);
+      map.push_back(resta[i][j]);
     }
   }
 
@@ -252,7 +256,7 @@ int main(){
 
   //Make permutations of extra subjects
   vector<vector<int>> extraPermutations;
-  extraCombinations(mapping.size()-oblig,oblig,sizeHorari-nomsObligatories.size(),extraPermutations);
+  extraCombinations(map.size()-oblig,oblig,sizeHorari-nomsObligatories.size(),extraPermutations);
 
   //Combine them in allPermutations
   vector<vector<int>> allPermutations;
@@ -282,7 +286,7 @@ int main(){
 
   //Makes valid schedules
   vector<Horari> horarisValids;
-  fesHoraris(horarisValids, allPermutations,mapping,assigs);
+  fesHoraris(horarisValids, allPermutations,map,assigs);
 
   //Sorts them
   for(Horari& h : horarisValids){
@@ -295,8 +299,9 @@ int main(){
   for(const Horari& h : horarisValids){
     h.print();
     cout << endl;
-    if(++horarisImpresos == 1000) break;
+    if(++horarisImpresos == MAX_PRINTED_SCHEDULES) break;
   }
   cout << "Impresos: " << horarisImpresos << endl; 
   cout << "Total horaris: " << horarisValids.size() << endl;
 }
+
