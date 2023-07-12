@@ -1,7 +1,7 @@
 # Horaris-FIB
 
 ## [English] Schedule generator for FIB-UPC 
-Generates all possible schedules given a set of subjects.
+Generates all possible schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
 ### Good stuff:
 -Automatically downloads and parses the document at FIB's API, simplifying input.
 
@@ -23,7 +23,7 @@ Having python3 installed (uses a python script to download data from https://api
 I recommend looking at <tt>input.txt</tt> and using it as a template.
 
 ## [Español] Generador de horarios sencillo para la FIB-UPC 
-Genera todos los horarios posibles de un conjunto de asignaturas.
+Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
 
 -Descarga automáticamente y parsea el documento oficial de horarios de la API de la FIB, cosa que simplifica mucho el proceso de input.
