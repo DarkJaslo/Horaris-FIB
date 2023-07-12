@@ -72,7 +72,7 @@
                                 
                                     <li>
                                         <form class="" action="/v2/i18n/setlang/"
-                                              method="post"><input type="hidden" name="csrfmiddlewaretoken" value="q9DP1MB3ccP5XUUwcRAEOeBf8uCS96zmbMbNQJyYXF45HeNsrzB2vdxKmqA31jxQ">
+                                              method="post"><input type="hidden" name="csrfmiddlewaretoken" value="Fch8heWoccqkDKvLpZv53mp44yYZNcbgLaKpDrdHjtaMY6r3a5Vi29nlDJ8JFZta">
                                             <input name="next" type="hidden" value=""/>
                                             <button name="language" type="submit" value="ca"
                                                     class=" btn btn-link ">
@@ -85,7 +85,7 @@
                                 
                                     <li>
                                         <form class="" action="/v2/i18n/setlang/"
-                                              method="post"><input type="hidden" name="csrfmiddlewaretoken" value="q9DP1MB3ccP5XUUwcRAEOeBf8uCS96zmbMbNQJyYXF45HeNsrzB2vdxKmqA31jxQ">
+                                              method="post"><input type="hidden" name="csrfmiddlewaretoken" value="Fch8heWoccqkDKvLpZv53mp44yYZNcbgLaKpDrdHjtaMY6r3a5Vi29nlDJ8JFZta">
                                             <input name="next" type="hidden" value=""/>
                                             <button name="language" type="submit" value="es"
                                                     class=" btn btn-link ">
@@ -11626,7 +11626,7 @@
       <script>
         window.drf = {
           csrfHeaderName: "X-CSRFTOKEN",
-          csrfToken: "q9DP1MB3ccP5XUUwcRAEOeBf8uCS96zmbMbNQJyYXF45HeNsrzB2vdxKmqA31jxQ"
+          csrfToken: "Fch8heWoccqkDKvLpZv53mp44yYZNcbgLaKpDrdHjtaMY6r3a5Vi29nlDJ8JFZta"
         };
       </script>
       <script src="/static/rest_framework/js/jquery-3.3.1.min.js"></script>
