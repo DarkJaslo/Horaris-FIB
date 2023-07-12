@@ -26,6 +26,10 @@ Vary: Accept
             "comentari": "GRAU-MD: Assignatura amb docència en anglès"
         },
         {
+            "codi_assig": "PE",
+            "comentari": "GRAU-PE: Grups 12 i 13 EN ANGLÈS; Actualització horari grups 13 i 51 (11/7/23);  Grup 52 en reserva"
+        },
+        {
             "codi_assig": "SO",
             "comentari": "GRAU-SO: Grup 10 de teoria i grup 13 de laboratori amb docència en anglès: Grup 44 de Laboratori EN RESERVA"
         },
@@ -106,8 +110,18 @@ Vary: Accept
             "comentari": "GEI: Grups Mentories 10 a 70; <br> GCED: Grups Mentories 80;   GIA: Grups Mentories 90"
         }
     ],
-    "count": 1117,
+    "count": 1121,
     "results": [
+        {
+            "codi_assig": "A",
+            "grup": "13",
+            "dia_setmana": 1,
+            "inici": "12:00",
+            "durada": 2,
+            "tipus": "P",
+            "aules": "A5105",
+            "idioma": ""
+        },
         {
             "codi_assig": "A",
             "grup": "20",
@@ -137,6 +151,16 @@ Vary: Accept
             "tipus": "P",
             "aules": "A5204",
             "idioma": "Català"
+        },
+        {
+            "codi_assig": "A",
+            "grup": "14",
+            "dia_setmana": 4,
+            "inici": "12:00",
+            "durada": 2,
+            "tipus": "P",
+            "aules": "A5201",
+            "idioma": ""
         },
         {
             "codi_assig": "A",
@@ -336,7 +360,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5S108",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "AC2",
@@ -346,7 +370,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A6105",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "AC2",
@@ -356,7 +380,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5S108",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "AC2",
@@ -366,7 +390,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A6105",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "AC2",
@@ -376,7 +400,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6203",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "ACAP-MEI",
@@ -996,7 +1020,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6104",
-            "idioma": "Per determinar"
+            "idioma": "English"
         },
         {
             "codi_assig": "APSS",
@@ -1006,7 +1030,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "P",
             "aules": "A6104",
-            "idioma": "Per determinar"
+            "idioma": "English"
         },
         {
             "codi_assig": "AS",
@@ -1063,7 +1087,7 @@ Vary: Accept
             "grup": "12",
             "dia_setmana": 2,
             "inici": "12:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "A6104",
             "idioma": "Castellano"
@@ -1080,30 +1104,10 @@ Vary: Accept
         },
         {
             "codi_assig": "AS",
-            "grup": "12",
-            "dia_setmana": 2,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A6104",
-            "idioma": "Castellano"
-        },
-        {
-            "codi_assig": "AS",
-            "grup": "21",
-            "dia_setmana": 2,
-            "inici": "14:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A6104",
-            "idioma": "Castellano"
-        },
-        {
-            "codi_assig": "AS",
             "grup": "22",
             "dia_setmana": 2,
             "inici": "14:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "A6105",
             "idioma": "Català"
@@ -1112,11 +1116,21 @@ Vary: Accept
             "codi_assig": "AS",
             "grup": "21",
             "dia_setmana": 2,
-            "inici": "15:00",
-            "durada": 1,
+            "inici": "14:00",
+            "durada": 2,
             "tipus": "L",
             "aules": "A6104",
             "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "AS",
+            "grup": "22",
+            "dia_setmana": 2,
+            "inici": "15:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A6105",
+            "idioma": "Català"
         },
         {
             "codi_assig": "ASDP",
@@ -1126,7 +1140,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "C6003",
-            "idioma": "Per determinar"
+            "idioma": "English"
         },
         {
             "codi_assig": "ASDP",
@@ -1136,7 +1150,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "C6003",
-            "idioma": "Per determinar"
+            "idioma": "English"
         },
         {
             "codi_assig": "ASM-MDS",
@@ -1866,7 +1880,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5102",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CAIM",
@@ -1876,7 +1890,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A5102",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CAIM",
@@ -2146,7 +2160,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2156,7 +2170,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2166,7 +2180,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2176,7 +2190,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2186,7 +2200,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2196,7 +2210,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2206,7 +2220,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2216,7 +2230,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5E02",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2226,7 +2240,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI",
@@ -2236,7 +2250,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5E02",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2246,7 +2260,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI",
@@ -2256,7 +2270,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A5001",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2266,7 +2280,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A5E02",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2276,7 +2290,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2286,7 +2300,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2296,7 +2310,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2306,7 +2320,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5002",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2316,7 +2330,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI",
@@ -2326,7 +2340,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5002",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2336,7 +2350,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "CI",
@@ -2346,7 +2360,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI",
@@ -2356,7 +2370,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI",
@@ -2366,7 +2380,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI",
@@ -2376,7 +2390,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "CI-MAI",
@@ -2926,17 +2940,17 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "B5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "EC",
             "grup": "11",
             "dia_setmana": 1,
             "inici": "12:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "B5S201",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "EC",
@@ -2946,97 +2960,107 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "B5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "EC",
-            "grup": "11",
+            "grup": "10",
+            "dia_setmana": 2,
+            "inici": "08:00",
+            "durada": 2,
+            "tipus": "T",
+            "aules": "A5202",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "40",
+            "dia_setmana": 2,
+            "inici": "14:00",
+            "durada": 2,
+            "tipus": "T",
+            "aules": "A5202",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "10",
+            "dia_setmana": 4,
+            "inici": "08:00",
+            "durada": 2,
+            "tipus": "T",
+            "aules": "A5202",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "40",
+            "dia_setmana": 4,
+            "inici": "14:00",
+            "durada": 2,
+            "tipus": "T",
+            "aules": "A5202",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "42",
+            "dia_setmana": 5,
+            "inici": "14:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S109",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "41",
+            "dia_setmana": 5,
+            "inici": "14:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S108",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "42",
+            "dia_setmana": 5,
+            "inici": "15:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S109",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "EC",
+            "grup": "41",
+            "dia_setmana": 5,
+            "inici": "15:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S108",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "ECE",
+            "grup": "10",
             "dia_setmana": 1,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "B5S201",
-            "idioma": "Per determinar"
+            "inici": "14:00",
+            "durada": 2,
+            "tipus": "T",
+            "aules": "Aula Multimedia B3",
+            "idioma": "Català"
         },
         {
-            "codi_assig": "EC",
+            "codi_assig": "ECE",
             "grup": "10",
             "dia_setmana": 2,
-            "inici": "08:00",
+            "inici": "16:00",
             "durada": 2,
             "tipus": "T",
-            "aules": "A5202",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "40",
-            "dia_setmana": 2,
-            "inici": "14:00",
-            "durada": 2,
-            "tipus": "T",
-            "aules": "A5202",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "10",
-            "dia_setmana": 4,
-            "inici": "08:00",
-            "durada": 2,
-            "tipus": "T",
-            "aules": "A5202",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "40",
-            "dia_setmana": 4,
-            "inici": "14:00",
-            "durada": 2,
-            "tipus": "T",
-            "aules": "A5202",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "42",
-            "dia_setmana": 5,
-            "inici": "14:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S109",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "41",
-            "dia_setmana": 5,
-            "inici": "14:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S108",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "42",
-            "dia_setmana": 5,
-            "inici": "15:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S109",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EC",
-            "grup": "41",
-            "dia_setmana": 5,
-            "inici": "15:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S108",
-            "idioma": "Per determinar"
+            "aules": "Aula Multimedia B3",
+            "idioma": "Català"
         },
         {
             "codi_assig": "EDA",
@@ -3064,6 +3088,16 @@ Vary: Accept
             "dia_setmana": 2,
             "inici": "08:00",
             "durada": 1,
+            "tipus": "P",
+            "aules": "A5102",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "21",
+            "dia_setmana": 2,
+            "inici": "08:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "C6S306",
             "idioma": "Per determinar"
@@ -3080,12 +3114,12 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
-            "grup": "21",
+            "grup": "22",
             "dia_setmana": 2,
             "inici": "08:00",
             "durada": 1,
             "tipus": "P",
-            "aules": "A5102",
+            "aules": "A5103",
             "idioma": "Per determinar"
         },
         {
@@ -3096,16 +3130,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "C6S308",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "22",
-            "dia_setmana": 2,
-            "inici": "08:00",
-            "durada": 1,
-            "tipus": "P",
-            "aules": "A5103",
             "idioma": "Per determinar"
         },
         {
@@ -3116,36 +3140,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "C6S306",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "21",
-            "dia_setmana": 2,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "P",
-            "aules": "A5102",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "22",
-            "dia_setmana": 2,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "C6S308",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "22",
-            "dia_setmana": 2,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "P",
-            "aules": "A5103",
             "idioma": "Per determinar"
         },
         {
@@ -3160,9 +3154,19 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
-            "grup": "31",
+            "grup": "22",
             "dia_setmana": 2,
-            "inici": "10:00",
+            "inici": "09:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "C6S308",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "22",
+            "dia_setmana": 2,
+            "inici": "09:00",
             "durada": 1,
             "tipus": "P",
             "aules": "A5103",
@@ -3170,22 +3174,12 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
-            "grup": "32",
+            "grup": "21",
             "dia_setmana": 2,
-            "inici": "10:00",
+            "inici": "09:00",
             "durada": 1,
             "tipus": "P",
-            "aules": "A5106",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "32",
-            "dia_setmana": 2,
-            "inici": "10:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "C6S308",
+            "aules": "A5102",
             "idioma": "Per determinar"
         },
         {
@@ -3196,6 +3190,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "C6S306",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "31",
+            "dia_setmana": 2,
+            "inici": "10:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5103",
             "idioma": "Per determinar"
         },
         {
@@ -3212,7 +3216,7 @@ Vary: Accept
             "codi_assig": "EDA",
             "grup": "32",
             "dia_setmana": 2,
-            "inici": "11:00",
+            "inici": "10:00",
             "durada": 1,
             "tipus": "L",
             "aules": "C6S308",
@@ -3220,12 +3224,22 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
-            "grup": "31",
+            "grup": "32",
+            "dia_setmana": 2,
+            "inici": "10:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5106",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "32",
             "dia_setmana": 2,
             "inici": "11:00",
             "durada": 1,
-            "tipus": "P",
-            "aules": "A5103",
+            "tipus": "L",
+            "aules": "C6S308",
             "idioma": "Per determinar"
         },
         {
@@ -3236,6 +3250,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A5106",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "31",
+            "dia_setmana": 2,
+            "inici": "11:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5103",
             "idioma": "Per determinar"
         },
         {
@@ -3256,6 +3280,36 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "C6S306",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "13",
+            "dia_setmana": 2,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "C6S309",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "12",
+            "dia_setmana": 2,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5202",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "12",
+            "dia_setmana": 2,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "C6S308",
             "idioma": "Per determinar"
         },
         {
@@ -3282,60 +3336,30 @@ Vary: Accept
             "codi_assig": "EDA",
             "grup": "12",
             "dia_setmana": 2,
-            "inici": "12:00",
+            "inici": "13:00",
             "durada": 1,
-            "tipus": "L",
-            "aules": "C6S308",
+            "tipus": "P",
+            "aules": "A5202",
             "idioma": "Per determinar"
         },
         {
             "codi_assig": "EDA",
             "grup": "12",
             "dia_setmana": 2,
-            "inici": "12:00",
+            "inici": "13:00",
             "durada": 1,
-            "tipus": "P",
-            "aules": "A5202",
+            "tipus": "L",
+            "aules": "C6S308",
             "idioma": "Per determinar"
         },
         {
             "codi_assig": "EDA",
             "grup": "13",
             "dia_setmana": 2,
-            "inici": "12:00",
+            "inici": "13:00",
             "durada": 1,
             "tipus": "L",
             "aules": "C6S309",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "12",
-            "dia_setmana": 2,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "P",
-            "aules": "A5202",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "12",
-            "dia_setmana": 2,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "C6S308",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "11",
-            "dia_setmana": 2,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "P",
-            "aules": "A5201",
             "idioma": "Per determinar"
         },
         {
@@ -3350,12 +3374,12 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
-            "grup": "13",
+            "grup": "11",
             "dia_setmana": 2,
             "inici": "13:00",
             "durada": 1,
-            "tipus": "L",
-            "aules": "C6S309",
+            "tipus": "P",
+            "aules": "A5201",
             "idioma": "Per determinar"
         },
         {
@@ -3384,8 +3408,8 @@ Vary: Accept
             "dia_setmana": 4,
             "inici": "14:00",
             "durada": 1,
-            "tipus": "L",
-            "aules": "B5S101",
+            "tipus": "P",
+            "aules": "A5103",
             "idioma": "Per determinar"
         },
         {
@@ -3394,18 +3418,8 @@ Vary: Accept
             "dia_setmana": 4,
             "inici": "14:00",
             "durada": 1,
-            "tipus": "P",
-            "aules": "A5103",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "52",
-            "dia_setmana": 4,
-            "inici": "14:00",
-            "durada": 1,
             "tipus": "L",
-            "aules": "B5S201",
+            "aules": "B5S101",
             "idioma": "Per determinar"
         },
         {
@@ -3423,7 +3437,7 @@ Vary: Accept
             "grup": "52",
             "dia_setmana": 4,
             "inici": "14:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "P",
             "aules": "A5104",
             "idioma": "Per determinar"
@@ -3432,20 +3446,10 @@ Vary: Accept
             "codi_assig": "EDA",
             "grup": "52",
             "dia_setmana": 4,
-            "inici": "15:00",
-            "durada": 1,
+            "inici": "14:00",
+            "durada": 2,
             "tipus": "L",
             "aules": "B5S201",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "53",
-            "dia_setmana": 4,
-            "inici": "15:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "B5S202",
             "idioma": "Per determinar"
         },
         {
@@ -3460,22 +3464,32 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
+            "grup": "53",
+            "dia_setmana": 4,
+            "inici": "15:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "B5S202",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "52",
+            "dia_setmana": 4,
+            "inici": "15:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5104",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
             "grup": "51",
             "dia_setmana": 4,
             "inici": "15:00",
             "durada": 1,
             "tipus": "L",
             "aules": "B5S101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "EDA",
-            "grup": "41",
-            "dia_setmana": 4,
-            "inici": "18:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "C6S306",
             "idioma": "Per determinar"
         },
         {
@@ -3486,6 +3500,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A5101",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "41",
+            "dia_setmana": 4,
+            "inici": "18:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "C6S306",
             "idioma": "Per determinar"
         },
         {
@@ -3513,9 +3537,19 @@ Vary: Accept
             "grup": "43",
             "dia_setmana": 4,
             "inici": "18:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "C6S309",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "EDA",
+            "grup": "42",
+            "dia_setmana": 4,
+            "inici": "19:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5106",
             "idioma": "Per determinar"
         },
         {
@@ -3530,12 +3564,12 @@ Vary: Accept
         },
         {
             "codi_assig": "EDA",
-            "grup": "42",
+            "grup": "43",
             "dia_setmana": 4,
             "inici": "19:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "C6S308",
+            "aules": "C6S309",
             "idioma": "Per determinar"
         },
         {
@@ -3544,8 +3578,8 @@ Vary: Accept
             "dia_setmana": 4,
             "inici": "19:00",
             "durada": 1,
-            "tipus": "P",
-            "aules": "A5106",
+            "tipus": "L",
+            "aules": "C6S308",
             "idioma": "Per determinar"
         },
         {
@@ -3886,14 +3920,14 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A5101",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
             "grup": "10",
             "dia_setmana": 1,
             "inici": "08:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "T",
             "aules": "A5001",
             "idioma": "Català"
@@ -3906,7 +3940,17 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A5101",
-            "idioma": "Per determinar"
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "F",
+            "grup": "10",
+            "dia_setmana": 1,
+            "inici": "09:00",
+            "durada": 1,
+            "tipus": "T",
+            "aules": "A5001",
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -3980,20 +4024,10 @@ Vary: Accept
         },
         {
             "codi_assig": "F",
-            "grup": "50",
-            "dia_setmana": 1,
-            "inici": "17:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5001",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "F",
             "grup": "70",
             "dia_setmana": 1,
             "inici": "17:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "T",
             "aules": "A5E01",
             "idioma": "Català"
@@ -4002,10 +4036,20 @@ Vary: Accept
             "codi_assig": "F",
             "grup": "50",
             "dia_setmana": 1,
+            "inici": "17:00",
+            "durada": 2,
+            "tipus": "T",
+            "aules": "A5001",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "F",
+            "grup": "70",
+            "dia_setmana": 1,
             "inici": "18:00",
             "durada": 1,
             "tipus": "T",
-            "aules": "A5001",
+            "aules": "A5E01",
             "idioma": "Català"
         },
         {
@@ -4060,22 +4104,22 @@ Vary: Accept
         },
         {
             "codi_assig": "F",
-            "grup": "11",
-            "dia_setmana": 2,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A1S101, A6E02",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "F",
             "grup": "14",
             "dia_setmana": 2,
             "inici": "12:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A6E01",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "F",
+            "grup": "11",
+            "dia_setmana": 2,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A1S101, A6E02",
             "idioma": "Català"
         },
         {
@@ -4126,7 +4170,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A1S101, A5E01",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -4136,7 +4180,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A1S101, A5E01",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -4220,16 +4264,6 @@ Vary: Accept
         },
         {
             "codi_assig": "F",
-            "grup": "21",
-            "dia_setmana": 4,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A1S101, A6202",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "F",
             "grup": "24",
             "dia_setmana": 4,
             "inici": "12:00",
@@ -4242,7 +4276,7 @@ Vary: Accept
             "codi_assig": "F",
             "grup": "21",
             "dia_setmana": 4,
-            "inici": "13:00",
+            "inici": "12:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A6202",
@@ -4256,6 +4290,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A6203",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "F",
+            "grup": "21",
+            "dia_setmana": 4,
+            "inici": "13:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A1S101, A6202",
             "idioma": "Català"
         },
         {
@@ -4300,16 +4344,6 @@ Vary: Accept
         },
         {
             "codi_assig": "F",
-            "grup": "61",
-            "dia_setmana": 4,
-            "inici": "18:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A1S101, A5002",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "F",
             "grup": "50",
             "dia_setmana": 4,
             "inici": "18:00",
@@ -4322,11 +4356,11 @@ Vary: Accept
             "codi_assig": "F",
             "grup": "61",
             "dia_setmana": 4,
-            "inici": "19:00",
-            "durada": 1,
+            "inici": "18:00",
+            "durada": 2,
             "tipus": "L",
             "aules": "A1S101, A5002",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -4336,14 +4370,14 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A5204",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
             "grup": "30",
             "dia_setmana": 5,
             "inici": "08:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "T",
             "aules": "A5E01",
             "idioma": "Català"
@@ -4356,16 +4390,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A5204",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "F",
-            "grup": "30",
-            "dia_setmana": 5,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5E01",
             "idioma": "Català"
         },
         {
@@ -4385,8 +4409,8 @@ Vary: Accept
             "inici": "12:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "A1S101, A5201",
-            "idioma": "Per determinar"
+            "aules": "A1S101, A5205",
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -4400,22 +4424,32 @@ Vary: Accept
         },
         {
             "codi_assig": "F",
-            "grup": "44",
-            "dia_setmana": 5,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A1S101, A5201",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "F",
             "grup": "41",
             "dia_setmana": 5,
             "inici": "13:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A6E02",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "F",
+            "grup": "44",
+            "dia_setmana": 5,
+            "inici": "13:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A1S101, A5205",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "F",
+            "grup": "52",
+            "dia_setmana": 5,
+            "inici": "14:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A1S101, A5104",
             "idioma": "Català"
         },
         {
@@ -4432,11 +4466,11 @@ Vary: Accept
             "codi_assig": "F",
             "grup": "52",
             "dia_setmana": 5,
-            "inici": "14:00",
+            "inici": "15:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A1S101, A5104",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -4450,23 +4484,13 @@ Vary: Accept
         },
         {
             "codi_assig": "F",
-            "grup": "52",
-            "dia_setmana": 5,
-            "inici": "15:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A1S101, A5104",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "F",
             "grup": "53",
             "dia_setmana": 5,
             "inici": "16:00",
             "durada": 2,
             "tipus": "L",
             "aules": "A1S101, A5104",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "F",
@@ -4476,7 +4500,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A1S101, A5104",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "FC-GIA",
@@ -4590,16 +4614,6 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "41",
-            "dia_setmana": 2,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
             "grup": "42",
             "dia_setmana": 2,
             "inici": "09:00",
@@ -4610,12 +4624,12 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "43",
+            "grup": "41",
             "dia_setmana": 2,
-            "inici": "10:00",
+            "inici": "09:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "A5105",
+            "aules": "A5101",
             "idioma": "Per determinar"
         },
         {
@@ -4650,6 +4664,16 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
+            "grup": "43",
+            "dia_setmana": 2,
+            "inici": "10:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5105",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
             "grup": "30",
             "dia_setmana": 2,
             "inici": "12:00",
@@ -4670,22 +4694,22 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "51",
-            "dia_setmana": 2,
-            "inici": "15:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
             "grup": "53",
             "dia_setmana": 2,
             "inici": "15:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5105",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
+            "grup": "51",
+            "dia_setmana": 2,
+            "inici": "15:00",
+            "durada": 2,
+            "tipus": "L",
+            "aules": "A5101",
             "idioma": "Per determinar"
         },
         {
@@ -4710,16 +4734,6 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "51",
-            "dia_setmana": 2,
-            "inici": "16:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
             "grup": "63",
             "dia_setmana": 2,
             "inici": "17:00",
@@ -4756,16 +4770,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5104",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
-            "grup": "30",
-            "dia_setmana": 3,
-            "inici": "11:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5E01",
             "idioma": "Per determinar"
         },
         {
@@ -4776,6 +4780,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5E02",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
+            "grup": "30",
+            "dia_setmana": 3,
+            "inici": "11:00",
+            "durada": 1,
+            "tipus": "T",
+            "aules": "A5E01",
             "idioma": "Per determinar"
         },
         {
@@ -4800,16 +4814,6 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "10",
-            "dia_setmana": 4,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5001",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
             "grup": "40",
             "dia_setmana": 4,
             "inici": "09:00",
@@ -4820,6 +4824,26 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
+            "grup": "10",
+            "dia_setmana": 4,
+            "inici": "09:00",
+            "durada": 1,
+            "tipus": "T",
+            "aules": "A5001",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
+            "grup": "31",
+            "dia_setmana": 4,
+            "inici": "11:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5101",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
             "grup": "33",
             "dia_setmana": 4,
             "inici": "11:00",
@@ -4840,9 +4864,19 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
+            "grup": "33",
+            "dia_setmana": 4,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5105",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
             "grup": "31",
             "dia_setmana": 4,
-            "inici": "11:00",
+            "inici": "12:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5101",
@@ -4856,26 +4890,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5104",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
-            "grup": "31",
-            "dia_setmana": 4,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
-            "grup": "33",
-            "dia_setmana": 4,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5105",
             "idioma": "Per determinar"
         },
         {
@@ -4893,7 +4907,7 @@ Vary: Accept
             "grup": "61",
             "dia_setmana": 4,
             "inici": "16:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "A6101",
             "idioma": "Per determinar"
@@ -4910,12 +4924,12 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "72",
+            "grup": "61",
             "dia_setmana": 4,
-            "inici": "18:00",
+            "inici": "17:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "A5104",
+            "aules": "A6101",
             "idioma": "Per determinar"
         },
         {
@@ -4932,7 +4946,7 @@ Vary: Accept
             "codi_assig": "FM",
             "grup": "72",
             "dia_setmana": 4,
-            "inici": "19:00",
+            "inici": "18:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5104",
@@ -4946,6 +4960,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5103",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
+            "grup": "72",
+            "dia_setmana": 4,
+            "inici": "19:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5104",
             "idioma": "Per determinar"
         },
         {
@@ -4960,26 +4984,6 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "11",
-            "dia_setmana": 5,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
-            "grup": "13",
-            "dia_setmana": 5,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5105",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
             "grup": "12",
             "dia_setmana": 5,
             "inici": "09:00",
@@ -4992,10 +4996,20 @@ Vary: Accept
             "codi_assig": "FM",
             "grup": "13",
             "dia_setmana": 5,
-            "inici": "10:00",
+            "inici": "09:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5105",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
+            "grup": "11",
+            "dia_setmana": 5,
+            "inici": "09:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5101",
             "idioma": "Per determinar"
         },
         {
@@ -5016,6 +5030,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5101",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
+            "grup": "13",
+            "dia_setmana": 5,
+            "inici": "10:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5105",
             "idioma": "Per determinar"
         },
         {
@@ -5030,12 +5054,12 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
-            "grup": "30",
+            "grup": "23",
             "dia_setmana": 5,
             "inici": "12:00",
             "durada": 1,
-            "tipus": "T",
-            "aules": "A5E01",
+            "tipus": "L",
+            "aules": "A5105",
             "idioma": "Per determinar"
         },
         {
@@ -5050,22 +5074,22 @@ Vary: Accept
         },
         {
             "codi_assig": "FM",
+            "grup": "30",
+            "dia_setmana": 5,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "T",
+            "aules": "A5E01",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "FM",
             "grup": "21",
             "dia_setmana": 5,
             "inici": "12:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5101",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "FM",
-            "grup": "23",
-            "dia_setmana": 5,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5105",
             "idioma": "Per determinar"
         },
         {
@@ -5276,7 +5300,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "C6003",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GCS",
@@ -5286,7 +5310,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "C6003",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GEOC",
@@ -5346,7 +5370,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6E01",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GPS",
@@ -5356,7 +5380,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A6201",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GPS",
@@ -5366,7 +5390,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6101",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GPS",
@@ -5376,7 +5400,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A6101",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GPS",
@@ -5386,7 +5410,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A6101",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GPS",
@@ -5396,7 +5420,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A6103",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GPS",
@@ -5406,7 +5430,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A6103",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "GTCG-MIRI",
@@ -5680,6 +5704,16 @@ Vary: Accept
         },
         {
             "codi_assig": "IC",
+            "grup": "33",
+            "dia_setmana": 1,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S104",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "IC",
             "grup": "40",
             "dia_setmana": 1,
             "inici": "12:00",
@@ -5692,8 +5726,8 @@ Vary: Accept
             "codi_assig": "IC",
             "grup": "33",
             "dia_setmana": 1,
-            "inici": "12:00",
-            "durada": 2,
+            "inici": "13:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S104",
             "idioma": "Català"
@@ -5753,7 +5787,7 @@ Vary: Accept
             "grup": "12",
             "dia_setmana": 2,
             "inici": "10:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "A5S104",
             "idioma": "Català"
@@ -5766,16 +5800,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5E01",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "IC",
-            "grup": "12",
-            "dia_setmana": 2,
-            "inici": "11:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S104",
             "idioma": "Català"
         },
         {
@@ -5880,20 +5904,10 @@ Vary: Accept
         },
         {
             "codi_assig": "IC",
-            "grup": "40",
-            "dia_setmana": 4,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5E02",
-            "idioma": "Castellano"
-        },
-        {
-            "codi_assig": "IC",
             "grup": "23",
             "dia_setmana": 4,
             "inici": "12:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S104",
             "idioma": "Català"
@@ -5902,11 +5916,21 @@ Vary: Accept
             "codi_assig": "IC",
             "grup": "40",
             "dia_setmana": 4,
-            "inici": "13:00",
-            "durada": 1,
+            "inici": "12:00",
+            "durada": 2,
             "tipus": "T",
             "aules": "A5E02",
             "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "IC",
+            "grup": "23",
+            "dia_setmana": 4,
+            "inici": "13:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S104",
+            "idioma": "Català"
         },
         {
             "codi_assig": "IC",
@@ -5923,7 +5947,7 @@ Vary: Accept
             "grup": "50",
             "dia_setmana": 4,
             "inici": "15:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "T",
             "aules": "A5001",
             "idioma": "Català"
@@ -5933,27 +5957,7 @@ Vary: Accept
             "grup": "62",
             "dia_setmana": 4,
             "inici": "16:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S104",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "IC",
-            "grup": "50",
-            "dia_setmana": 4,
-            "inici": "16:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5001",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "IC",
-            "grup": "62",
-            "dia_setmana": 4,
-            "inici": "17:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "A5S104",
             "idioma": "Català"
@@ -5993,7 +5997,7 @@ Vary: Accept
             "grup": "42",
             "dia_setmana": 5,
             "inici": "10:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "A5S104",
             "idioma": "Català"
@@ -6006,16 +6010,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A5E01",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "IC",
-            "grup": "42",
-            "dia_setmana": 5,
-            "inici": "11:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S104",
             "idioma": "Català"
         },
         {
@@ -6043,7 +6037,7 @@ Vary: Accept
             "grup": "70",
             "dia_setmana": 5,
             "inici": "14:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "T",
             "aules": "A5E01",
             "idioma": "Català"
@@ -6056,16 +6050,6 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5S104",
-            "idioma": "Català"
-        },
-        {
-            "codi_assig": "IC",
-            "grup": "70",
-            "dia_setmana": 5,
-            "inici": "15:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5E01",
             "idioma": "Català"
         },
         {
@@ -6120,6 +6104,16 @@ Vary: Accept
         },
         {
             "codi_assig": "IDI",
+            "grup": "12",
+            "dia_setmana": 2,
+            "inici": "08:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S109",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "IDI",
             "grup": "11",
             "dia_setmana": 2,
             "inici": "08:00",
@@ -6133,6 +6127,26 @@ Vary: Accept
             "grup": "13",
             "dia_setmana": 2,
             "inici": "08:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S113",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "IDI",
+            "grup": "11",
+            "dia_setmana": 2,
+            "inici": "09:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S108",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "IDI",
+            "grup": "13",
+            "dia_setmana": 2,
+            "inici": "09:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5S113",
@@ -6142,30 +6156,10 @@ Vary: Accept
             "codi_assig": "IDI",
             "grup": "12",
             "dia_setmana": 2,
-            "inici": "08:00",
-            "durada": 2,
+            "inici": "09:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S109",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "IDI",
-            "grup": "13",
-            "dia_setmana": 2,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S113",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "IDI",
-            "grup": "11",
-            "dia_setmana": 2,
-            "inici": "09:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S108",
             "idioma": "Per determinar"
         },
         {
@@ -6180,22 +6174,22 @@ Vary: Accept
         },
         {
             "codi_assig": "IDI",
-            "grup": "22",
-            "dia_setmana": 2,
-            "inici": "12:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5S109",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "IDI",
             "grup": "21",
             "dia_setmana": 2,
             "inici": "12:00",
             "durada": 1,
             "tipus": "L",
             "aules": "A5S108",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "IDI",
+            "grup": "22",
+            "dia_setmana": 2,
+            "inici": "12:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S109",
             "idioma": "Per determinar"
         },
         {
@@ -6230,12 +6224,12 @@ Vary: Accept
         },
         {
             "codi_assig": "IDI",
-            "grup": "41",
+            "grup": "42",
             "dia_setmana": 2,
             "inici": "18:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "C6S306",
+            "aules": "C6S308",
             "idioma": "Per determinar"
         },
         {
@@ -6250,10 +6244,20 @@ Vary: Accept
         },
         {
             "codi_assig": "IDI",
-            "grup": "42",
+            "grup": "41",
             "dia_setmana": 2,
             "inici": "18:00",
-            "durada": 2,
+            "durada": 1,
+            "tipus": "L",
+            "aules": "C6S306",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "IDI",
+            "grup": "42",
+            "dia_setmana": 2,
+            "inici": "19:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "C6S308",
             "idioma": "Per determinar"
@@ -6390,6 +6394,16 @@ Vary: Accept
         },
         {
             "codi_assig": "IES",
+            "grup": "43",
+            "dia_setmana": 5,
+            "inici": "16:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A6103",
+            "idioma": "Català"
+        },
+        {
+            "codi_assig": "IES",
             "grup": "41",
             "dia_setmana": 5,
             "inici": "16:00",
@@ -6402,8 +6416,8 @@ Vary: Accept
             "codi_assig": "IES",
             "grup": "43",
             "dia_setmana": 5,
-            "inici": "16:00",
-            "durada": 2,
+            "inici": "17:00",
+            "durada": 1,
             "tipus": "P",
             "aules": "A6103",
             "idioma": "Català"
@@ -6456,7 +6470,7 @@ Vary: Accept
             "durada": 3,
             "tipus": "L",
             "aules": "A6106",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "IMAS-MAI",
@@ -7966,7 +7980,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A6105, C5S203",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "PDS",
@@ -7976,7 +7990,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6203",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "PE",
@@ -8013,39 +8027,9 @@ Vary: Accept
             "grup": "12",
             "dia_setmana": 2,
             "inici": "10:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "A5203",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "PE",
-            "grup": "13",
-            "dia_setmana": 2,
-            "inici": "10:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5201",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "PE",
-            "grup": "12",
-            "dia_setmana": 2,
-            "inici": "11:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5203",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "PE",
-            "grup": "13",
-            "dia_setmana": 2,
-            "inici": "11:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5201",
             "idioma": "Per determinar"
         },
         {
@@ -8093,7 +8077,7 @@ Vary: Accept
             "grup": "42",
             "dia_setmana": 2,
             "inici": "16:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "A5106",
             "idioma": "Per determinar"
@@ -8106,6 +8090,16 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5103",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "PE",
+            "grup": "42",
+            "dia_setmana": 2,
+            "inici": "17:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5106",
             "idioma": "Per determinar"
         },
         {
@@ -8125,7 +8119,7 @@ Vary: Accept
             "inici": "18:00",
             "durada": 2,
             "tipus": "P",
-            "aules": "A6104",
+            "aules": "A6204",
             "idioma": "Per determinar"
         },
         {
@@ -8163,7 +8157,7 @@ Vary: Accept
             "grup": "32",
             "dia_setmana": 3,
             "inici": "10:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "P",
             "aules": "A5206",
             "idioma": "Per determinar"
@@ -8180,22 +8174,22 @@ Vary: Accept
         },
         {
             "codi_assig": "PE",
+            "grup": "32",
+            "dia_setmana": 3,
+            "inici": "11:00",
+            "durada": 1,
+            "tipus": "P",
+            "aules": "A5206",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "PE",
             "grup": "22",
             "dia_setmana": 4,
             "inici": "08:00",
             "durada": 2,
             "tipus": "L",
             "aules": "A5204",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "PE",
-            "grup": "23",
-            "dia_setmana": 4,
-            "inici": "10:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5203",
             "idioma": "Per determinar"
         },
         {
@@ -8212,8 +8206,8 @@ Vary: Accept
             "codi_assig": "PE",
             "grup": "23",
             "dia_setmana": 4,
-            "inici": "11:00",
-            "durada": 1,
+            "inici": "10:00",
+            "durada": 2,
             "tipus": "L",
             "aules": "A5203",
             "idioma": "Per determinar"
@@ -8270,20 +8264,30 @@ Vary: Accept
         },
         {
             "codi_assig": "PE",
+            "grup": "51",
+            "dia_setmana": 4,
+            "inici": "18:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A6101",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "PE",
             "grup": "52",
             "dia_setmana": 4,
             "inici": "18:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "A6104",
+            "aules": "A6204",
             "idioma": "Per determinar"
         },
         {
             "codi_assig": "PE",
             "grup": "51",
             "dia_setmana": 4,
-            "inici": "18:00",
-            "durada": 2,
+            "inici": "19:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "A6101",
             "idioma": "Per determinar"
@@ -8295,7 +8299,17 @@ Vary: Accept
             "inici": "19:00",
             "durada": 1,
             "tipus": "L",
-            "aules": "A6104",
+            "aules": "A6204",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "PE",
+            "grup": "32",
+            "dia_setmana": 5,
+            "inici": "10:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5206",
             "idioma": "Per determinar"
         },
         {
@@ -8312,8 +8326,8 @@ Vary: Accept
             "codi_assig": "PE",
             "grup": "32",
             "dia_setmana": 5,
-            "inici": "10:00",
-            "durada": 2,
+            "inici": "11:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "A5206",
             "idioma": "Per determinar"
@@ -8329,6 +8343,16 @@ Vary: Accept
             "idioma": "Per determinar"
         },
         {
+            "codi_assig": "PE",
+            "grup": "13",
+            "dia_setmana": 5,
+            "inici": "12:00",
+            "durada": 2,
+            "tipus": "L",
+            "aules": "A5201",
+            "idioma": "Per determinar"
+        },
+        {
             "codi_assig": "PEC",
             "grup": "10",
             "dia_setmana": 2,
@@ -8336,7 +8360,7 @@ Vary: Accept
             "durada": 4,
             "tipus": "L",
             "aules": "A3204",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "PEGTI-MEI",
@@ -8346,7 +8370,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "T",
             "aules": "A6106",
-            "idioma": "Per determinar"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "PEGTI-MEI",
@@ -8356,7 +8380,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "P",
             "aules": "A6106",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "PES",
@@ -9430,6 +9454,16 @@ Vary: Accept
         },
         {
             "codi_assig": "PROP",
+            "grup": "43",
+            "dia_setmana": 3,
+            "inici": "15:00",
+            "durada": 2,
+            "tipus": "L",
+            "aules": "A6105",
+            "idioma": "Per determinar"
+        },
+        {
+            "codi_assig": "PROP",
             "grup": "41",
             "dia_setmana": 3,
             "inici": "17:00",
@@ -9523,7 +9557,7 @@ Vary: Accept
             "grup": "13",
             "dia_setmana": 5,
             "inici": "10:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "L",
             "aules": "A5103",
             "idioma": "Per determinar"
@@ -9540,32 +9574,12 @@ Vary: Accept
         },
         {
             "codi_assig": "PROP",
-            "grup": "13",
-            "dia_setmana": 5,
-            "inici": "11:00",
-            "durada": 1,
-            "tipus": "L",
-            "aules": "A5103",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "PROP",
             "grup": "22",
             "dia_setmana": 5,
             "inici": "12:00",
             "durada": 2,
             "tipus": "L",
             "aules": "A6104",
-            "idioma": "Per determinar"
-        },
-        {
-            "codi_assig": "PROP",
-            "grup": "43",
-            "dia_setmana": 5,
-            "inici": "16:00",
-            "durada": 2,
-            "tipus": "L",
-            "aules": "A6102",
             "idioma": "Per determinar"
         },
         {
@@ -9696,7 +9710,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "ROB",
@@ -9706,7 +9720,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "ROB",
@@ -9716,7 +9730,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5S202",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "SA-MIRI",
@@ -9816,7 +9830,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "C5011",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "SECS-MEI",
@@ -9826,7 +9840,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "C5011",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "SEU-MEI",
@@ -10213,7 +10227,7 @@ Vary: Accept
             "grup": "12",
             "dia_setmana": 1,
             "inici": "10:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S102",
             "idioma": "Català"
@@ -10227,6 +10241,16 @@ Vary: Accept
             "tipus": "T",
             "aules": "A5E01",
             "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "SO",
+            "grup": "12",
+            "dia_setmana": 1,
+            "inici": "11:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S102",
+            "idioma": "Català"
         },
         {
             "codi_assig": "SO",
@@ -10293,7 +10317,7 @@ Vary: Accept
             "grup": "44",
             "dia_setmana": 1,
             "inici": "18:00",
-            "durada": 2,
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S113",
             "idioma": "Castellano"
@@ -10307,6 +10331,16 @@ Vary: Accept
             "tipus": "L",
             "aules": "A5S102",
             "idioma": "Català"
+        },
+        {
+            "codi_assig": "SO",
+            "grup": "44",
+            "dia_setmana": 1,
+            "inici": "19:00",
+            "durada": 1,
+            "tipus": "L",
+            "aules": "A5S113",
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "SO",
@@ -10383,7 +10417,7 @@ Vary: Accept
             "grup": "10",
             "dia_setmana": 4,
             "inici": "12:00",
-            "durada": 1,
+            "durada": 2,
             "tipus": "T",
             "aules": "A5002",
             "idioma": "English"
@@ -10400,20 +10434,20 @@ Vary: Accept
         },
         {
             "codi_assig": "SO",
-            "grup": "10",
-            "dia_setmana": 4,
-            "inici": "13:00",
-            "durada": 1,
-            "tipus": "T",
-            "aules": "A5002",
-            "idioma": "English"
-        },
-        {
-            "codi_assig": "SO",
             "grup": "31",
             "dia_setmana": 5,
             "inici": "08:00",
             "durada": 2,
+            "tipus": "L",
+            "aules": "A5S102",
+            "idioma": "Castellano"
+        },
+        {
+            "codi_assig": "SO",
+            "grup": "32",
+            "dia_setmana": 5,
+            "inici": "12:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S102",
             "idioma": "Castellano"
@@ -10432,8 +10466,8 @@ Vary: Accept
             "codi_assig": "SO",
             "grup": "32",
             "dia_setmana": 5,
-            "inici": "12:00",
-            "durada": 2,
+            "inici": "13:00",
+            "durada": 1,
             "tipus": "L",
             "aules": "A5S102",
             "idioma": "Castellano"
@@ -10490,13 +10524,23 @@ Vary: Accept
         },
         {
             "codi_assig": "SOA",
-            "grup": "10",
+            "grup": "11",
             "dia_setmana": 1,
             "inici": "08:00",
             "durada": 2,
             "tipus": "L",
             "aules": "A5S103",
-            "idioma": "Català"
+            "idioma": ""
+        },
+        {
+            "codi_assig": "SOA",
+            "grup": "12",
+            "dia_setmana": 1,
+            "inici": "12:00",
+            "durada": 2,
+            "tipus": "L",
+            "aules": "A5S103",
+            "idioma": ""
         },
         {
             "codi_assig": "SOA",
@@ -10586,7 +10630,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "P",
             "aules": "A5203",
-            "idioma": "Castellano"
+            "idioma": "Català"
         },
         {
             "codi_assig": "TC",
@@ -10626,7 +10670,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "L",
             "aules": "A5203",
-            "idioma": "Català"
+            "idioma": "Castellano"
         },
         {
             "codi_assig": "TC",
@@ -11036,7 +11080,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6105",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "VLSI",
@@ -11046,7 +11090,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5S105",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "VLSI",
@@ -11056,7 +11100,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A6203",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "VLSI",
@@ -11066,7 +11110,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "L",
             "aules": "A5S105",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "VLSI",
@@ -11076,7 +11120,7 @@ Vary: Accept
             "durada": 1,
             "tipus": "P",
             "aules": "A6203",
-            "idioma": "Per determinar"
+            "idioma": "Català"
         },
         {
             "codi_assig": "VO-GIA",
@@ -11136,7 +11180,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "T",
             "aules": "A6102",
-            "idioma": "Per determinar"
+            "idioma": "English"
         },
         {
             "codi_assig": "WSE",
@@ -11146,7 +11190,7 @@ Vary: Accept
             "durada": 2,
             "tipus": "P",
             "aules": "A6102",
-            "idioma": "Per determinar"
+            "idioma": "English"
         },
         {
             "codi_assig": "XC",
@@ -11278,3 +11322,5 @@ Vary: Accept
             "aules": "A6203",
             "idioma": "Per determinar"
         }
+    ]
+}
