@@ -5,7 +5,6 @@
 #include <fcntl.h>
 #include <cstdlib>
 #include "HorarisParser.hh"
-#include "SocketWrapper.hh" //not ready yet
 
 using namespace jaslo;
 using namespace std;
