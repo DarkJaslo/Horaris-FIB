@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <fcntl.h>
 #include <cstdlib>
+#include <ctime>
 #include "HorarisParser.hh"
 
 using namespace jaslo;
@@ -161,6 +162,19 @@ int main(int argc, char** argv)
     exit(1);
   }
 
+  std::time_t currentTime = std::time(nullptr);
+
+  // Convert the current time to a struct tm
+  std::tm* currentTm = std::localtime(&currentTime);
+
+  // Extract the date components from the struct tm
+  int year = currentTm->tm_year + 1900;
+  int month = currentTm->tm_mon + 1;
+  int day = currentTm->tm_mday;
+  int hour = currentTm->tm_hour;
+  int minute = currentTm->tm_min;
+  int second = currentTm->tm_sec;
+
   std::string semester;
   std::cin >> semester;
 
@@ -302,6 +316,10 @@ int main(int argc, char** argv)
     h.calculaValor();
   }
   sort(horarisValids.begin(),horarisValids.end());
+
+  cout << "Printing schedules for " << semester << "   ";
+  // Print the current date
+  std::cout << "Current Date: " << year << "-" << month << "-" << day << ", " << hour << ":" << minute << ":" << second << std::endl << std::endl;
 
   //Prints them
   int horarisImpresos = 0;
