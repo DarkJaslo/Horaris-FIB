@@ -11,7 +11,6 @@
 /*
   My attempt at writing a very static and dumb parser for a FIB schedule generator.
   It can read, parse and store the Class list the FIB API provides.
-  Currently requires copying such data into a local file. Ideally, this should be automatically done via HTTPS, but we're not there yet.
 */
 
 namespace jaslo{
