@@ -2,6 +2,8 @@ import requests
 import html
 import sys
 
+# This python script downloads data from https://api.fib.upc.edu
+
 q = sys.argv[1]        #Something like '2023Q1'
 
 url = 'https://api.fib.upc.edu/v2/quadrimestres/'+q+'/classes/?format=api&client_id=liSPe2KsaYUovErkk1WyqgMdYxOD1Wqd3VCXwhoy'

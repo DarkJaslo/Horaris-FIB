@@ -7,6 +7,11 @@
 #include <ctime>
 #include "HorarisParser.hh"
 
+/*
+  Schedule generator for FIB-UPC. Downloads data from https://api.fib.upc.edu.
+*/
+
+
 using namespace jaslo;
 using namespace std;
 

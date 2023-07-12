@@ -10,7 +10,7 @@
 
 /*
   My attempt at writing a very static and dumb parser for a FIB schedule generator.
-  It can read, parse and store the Class list the FIB API provides.
+  It can read, parse and store the Class list the FIB API provides (https://api.fib.upc.edu)
 */
 
 namespace jaslo{
