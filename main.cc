@@ -2,8 +2,10 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <fcntl.h>
+#include <cstdlib>
 #include "HorarisParser.hh"
-//#include "SocketWrap.hh" not ready yet
+#include "SocketWrapper.hh" //not ready yet
 
 using namespace jaslo;
 using namespace std;
@@ -153,21 +155,28 @@ void fesHoraris(vector<Horari>& horarisValids, const vector<vector<int>>& perms,
 
 int main(int argc, char** argv)
 {
-  if(argc != 2)
+  if(argc > 1)
   {
-    std::cerr << "Usage: ./main.exe [FIB's_data_filename]" << std::endl;
-    std::cerr << "The FIB file is passed as a parameter, while the user's input is passed through standard input. You may want to execute this program with something like ./main.exe FIB_DATA.txt < my_input_file.txt > my_output_file.txt" << std::endl;
+    std::cerr << "Usage: ./main.exe" << std::endl;
+    std::cerr << "The semester is given in the input. The typical command you'd want to run would be < my_input_file.txt > my_output_file.txt" << std::endl;
     exit(1);
   }
-  
-  std::string filename = argv[1];
 
-  /*SocketWrap sw;
-  sw.getAPIinFile("inputweb.txt");
-  exit(0);*/
+  std::string semester;
+  std::cin >> semester;
+
+  char buffer[256];
+  sprintf(buffer,"python3 get.py %s > FIB_DATA.txt",semester.c_str());
+
+  //Executes python program that gets the data
+  if(std::system(buffer) < 0)
+  {
+    std::cerr << "Error: couldn't execute get program" << std::endl;
+    exit(1);
+  }
 
   Parser parser;
-  parser.openFile(filename);
+  parser.openFile("FIB_DATA.txt");
   parser.getCount();
   Data data(parser.count());
   
