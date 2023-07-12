@@ -158,7 +158,7 @@ int main(int argc, char** argv)
   if(argc > 1)
   {
     std::cerr << "Usage: ./main.exe" << std::endl;
-    std::cerr << "The semester is given in the input. The typical command you'd want to run would be < my_input_file.txt > my_output_file.txt" << std::endl;
+    std::cerr << "This program has no parameters. The typical command you'd want to run would be < my_input_file.txt > my_output_file.txt" << std::endl;
     exit(1);
   }
 
