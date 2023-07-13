@@ -1,6 +1,7 @@
 main.exe
 *.o
 *.out
+*.inp
 FIB_DATA.txt
 .vscode/settings.json
 .vscode/c_cpp_properties.json
