@@ -9,8 +9,10 @@
 #include "Horari.hh"
 
 /*
-  My attempt at writing a very static and dumb parser for a FIB schedule generator.
-  It can read, parse and store the Class list the FIB API provides (https://api.fib.upc.edu)
+  My attempt at writing a static parser for a FIB schedule generator.
+  It can read, parse and store the Class list the FIB API provides (https://api.fib.upc.edu).
+  
+  That is the only thing it can do, so don't try to use it for anything else. It only "looks generic" because that way it's more reusable.
 */
 
 namespace jaslo{
@@ -90,16 +92,16 @@ public:
   */
   int count()const;
   /*
-    Gets the information from the FIB API. Currently unused because HTTPS isn't implemented yet.
-  */
-  void getInfo();
-  /*
     Opens a local file with name [filename]
   */
   void openFile(const std::string& filename);
-  //Requires opening a file
+  /*
+    Requires having opened a file.
+    Reads everything until the "count": line in the file, and stores its value.
+  */
   void getCount();
   /*
+    Requires having opened a file and having called getCount() once.
     Reads an HorariObj. Returns false if it read the last one, and true otherwise
   */
   bool readHorariObj(HorariObj& o);
