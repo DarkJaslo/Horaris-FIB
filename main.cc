@@ -324,7 +324,13 @@ int main(int argc, char** argv)
 
   cout << "Printing schedules for " << semester << "   ";
   // Print the current date
-  std::cout << "Current Date: " << year << "-" << month << "-" << day << ", " << hour << ":" << minute << ":" << second << std::endl << std::endl;
+  std::cout << "Current Date: " << year << "-" << month << "-" << day << ", ";
+  
+  std::cout << hour << ":";
+  if(minute < 10) std::cout << '0';
+  std::cout << minute << ":";
+  if(second < 10) std::cout << '0';
+  std::cout << second << std::endl << std::endl;
 
   //Prints them
   int horarisImpresos = 0;
