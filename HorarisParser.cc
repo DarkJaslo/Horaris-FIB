@@ -13,6 +13,10 @@ int                     HorariObj::group() const { return _group; }
 DiaSetmana              HorariObj::day()   const { return _day;   }
 const std::vector<int>  HorariObj::hours() const { return _hours; }
 std::string             HorariObj::type()  const { return _type;  }
+bool                    HorariObj::equivalent(const HorariObj& other) const
+{
+  return (this->code() == other.code()) and (this->group() != other.group()) and ((this->group()/10) == (other.group()/10)) and (this->day() == other.day()) and (this->hours() == other.hours());
+}
 
 
 
@@ -74,6 +78,107 @@ std::vector<std::string> Data::names() const
   }
   return names;
 }
+
+void Data::deleteNonRequestedGroups(const std::vector<std::string>& names)
+{
+  std::vector<int> indicesToKeep;
+  for(int i = 0; i < _info.size(); ++i)
+  {
+    if(contains(names,_info[i].code()))
+    {
+      indicesToKeep.push_back(i);
+    }
+  }
+
+  std::vector<HorariObj> newInfo(indicesToKeep.size());
+  for(int i = 0; i < newInfo.size(); ++i)
+  {
+    newInfo[i] = _info[indicesToKeep[i]];
+  }
+
+  _info = newInfo;
+}
+
+void Data::joinGroups()
+{
+  std::vector<bool> ignore(_info.size(),false);
+  int ignoredGroups = 0;
+  int i = 0;
+
+  while(i < _info.size())
+  {
+    if(ignore[i]){
+      ++i;
+      continue;
+    }
+    HorariObj cur = _info[i];
+    
+    for(int j = i+1; j < _info.size(); ++j)
+    {
+      if(ignore[j]) continue;
+      HorariObj subCur = _info[j];
+      if(cur.code() == subCur.code() and cur.group() == subCur.group() and cur.day() == subCur.day()){
+        ignore[j] = true;
+        ignoredGroups++;
+        for(int h : subCur.hours()) _info[i]._hours.push_back(h);
+      }
+    }
+
+    ++i;
+  }
+
+  std::vector<HorariObj> newInfo(_info.size()-ignoredGroups);
+  i = 0;
+  int j = 0;
+  while(i < _info.size())
+  {
+    if(not ignore[i]){
+      newInfo[j] = _info[i];
+      ++j;
+    }
+    ++i;
+  }
+
+  _info = newInfo;
+}
+
+void Data::deleteRedundantGroups()
+{
+  std::vector<bool> toDelete(_info.size(),false);
+  int deletedGroups = 0;
+
+  for(int i = 0; i < _info.size(); ++i)
+  {
+    if(toDelete[i]) continue;
+    HorariObj cur = _info[i];
+
+    for(int j = i+1; j < _info.size(); ++j)
+    {
+      if(toDelete[j]) continue;
+      HorariObj nextCur = _info[j];
+      if(cur.code() != nextCur.code()) break;
+      if(cur.equivalent(nextCur))
+      {
+        toDelete[j] = true;
+        ++deletedGroups;
+      }
+    }
+  }
+
+  std::vector<HorariObj> newInfo(_info.size()-deletedGroups);
+  int i,j;
+  i = 0; j = 0;
+  while(i < _info.size())
+  {
+    if(not toDelete[i]){
+      newInfo[j] = _info[i];
+      ++j;
+    }
+    ++i;
+  }
+  _info = newInfo;
+}
+
 
 std::vector<std::vector<HoraClasse>> Data::allAssignatures() const
 {
@@ -209,6 +314,15 @@ int Data::binarySearch(int l, int r, const std::string& thing) const
   else if(_info[m].code() < thing)
     return binarySearch(m+1,r,thing);
   return m;
+}
+
+bool Data::contains(const std::vector<std::string>& names, const std::string& name)
+{
+  for(const std::string& s : names)
+  {
+    if(s == name) return true;
+  }
+  return false;
 }
 
 

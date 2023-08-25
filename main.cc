@@ -209,8 +209,6 @@ int main(int argc, char** argv)
   int sizeHorari;
   cin >> sizeHorari;
 
-  vector<assignatura> assigs = data.allAssignatures();
-
   vector<string> nomsObligatories;
   vector<string> nomsAssignatures;
 
@@ -228,6 +226,16 @@ int main(int argc, char** argv)
     nomsAssignatures.push_back(auxAssig);
     cin >> auxAssig;
   }
+
+  vector<string> names(nomsObligatories.size()+nomsAssignatures.size());
+  for(const string& s : nomsObligatories) names.emplace_back(s);
+  for(const string& s : nomsAssignatures) names.emplace_back(s);
+
+  data.deleteNonRequestedGroups(names);
+  data.joinGroups();
+  data.deleteRedundantGroups();
+
+  vector<assignatura> assigs = data.allAssignatures();
 
   //Group all groups that share the same subject code/name (S1 Gr10, S1 Gr11, etc.)
   vector<vector<pair<string,int>>> obligatories(nomsObligatories.size());

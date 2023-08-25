@@ -26,6 +26,7 @@ public:
   DiaSetmana              day()   const;
   const std::vector<int>  hours() const;
   std::string             type()  const;
+  bool                    equivalent(const HorariObj& other) const;
   
   //Mainly used to debug
   friend std::ostream& operator<<(std::ostream& os, const HorariObj& o);
@@ -33,6 +34,7 @@ public:
 private:
 
   friend class Parser;
+  friend class Data;
 
   std::string       _code;
   int               _group;
@@ -68,6 +70,9 @@ public:
   void                        print();
   int                         firstOccurrence(const std::string& assignatura) const;
   std::vector<std::string>    names() const;
+  void                        deleteNonRequestedGroups(const std::vector<std::string>& names);
+  void                        joinGroups();
+  void                        deleteRedundantGroups();
   /*
     Converts this data to vector<vector<HoraClasse>> format.
   */
@@ -78,6 +83,7 @@ public:
   inline const HorariObj&     operator[](int)const;
 
 private:
+  static bool contains(const std::vector<std::string>& names, const std::string& name);
   int binarySearch(int l, int r, const std::string& thing) const;
   
   std::vector<HorariObj> _info; //Input is ordered alphabetically
