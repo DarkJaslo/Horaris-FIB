@@ -1,0 +1,5 @@
+1. Con una asignatura como Gràfics que tiene 3 subgrupos con el mismo horario, simplificar a uno solo con G 1X
+2. Permitir especificar subgrupos necesarios
+3. Permitir indicar preferencia entre mañana y tarde
+4. Permitir especificar subgrupos preferidos (que salgan antes los horarios que los contienen)
+5. Hacer un .exe que haga todo en un click usando input y output prehechos
