@@ -222,6 +222,7 @@ int main(int argc, char** argv)
   }
 
   cin >> auxAssig;  //Read the "INCLUDE:"
+  cin >> auxAssig;
   while(auxAssig != "END_INPUT"){
     nomsAssignatures.push_back(auxAssig);
     cin >> auxAssig;
@@ -339,6 +340,17 @@ int main(int argc, char** argv)
   std::cout << minute << ":";
   if(second < 10) std::cout << '0';
   std::cout << second << std::endl << std::endl;
+  std::cout << "Always appear:";
+
+  for(const std::string& s : nomsObligatories) std::cout << " " << s;
+  std::cout << std::endl;
+
+  std::cout << "Can appear:";
+  for(const std::string& s : nomsAssignatures) std::cout << " " << s;
+  std::cout << std::endl << std::endl;
+
+  std::cout << "Warning: remember to check the schedule you want actually exists in https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/horaris." << std::endl;
+  std::cout << "When there are equivalent lab groups, ONLY ONE (not necessarily the smallest number) is shown. Check if there are more should you need them." << std::endl << std::endl;
 
   //Prints them
   int horarisImpresos = 0;
@@ -347,7 +359,7 @@ int main(int argc, char** argv)
     cout << endl;
     if(++horarisImpresos == MAX_PRINTED_SCHEDULES) break;
   }
-  cout << "Impresos: " << horarisImpresos << endl; 
-  cout << "Total horaris: " << horarisValids.size() << endl;
+  cout << "Printed: " << horarisImpresos << endl; 
+  cout << "Total schedules: " << horarisValids.size() << endl;
 }
 
