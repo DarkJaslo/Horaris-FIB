@@ -349,7 +349,7 @@ int main(int argc, char** argv)
   for(const std::string& s : nomsAssignatures) std::cout << " " << s;
   std::cout << std::endl << std::endl;
 
-  std::cout << "Warning: remember to check the schedule you want actually exists in https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/horaris." << std::endl;
+  std::cout << "Warning: remember to check if the schedule you want actually exists in https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/horaris." << std::endl;
   std::cout << "When there are equivalent lab groups, ONLY ONE (not necessarily the smallest number) is shown. Check if there are more should you need them." << std::endl << std::endl;
 
   //Prints them
