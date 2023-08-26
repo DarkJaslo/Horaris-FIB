@@ -117,7 +117,7 @@ public:
   bool operator<(const Horari& other)const{ return _valor > other._valor; }
   void print()const
   {
-    std::cout << "\tDilluns" << "\t\tDimarts" << "\t\tDimecres" << "\tDijous" << "\t\tDivendres" << std::endl;
+    std::cout << "\tMonday" << "\t\tTuesday" << "\t\tWednesday" << "\tThursday" << "\tFriday" << std::endl;
 
     for(int j = 0; j < h[0].size(); ++j){
       std::cout << 8+j << "h\t";
