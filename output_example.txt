@@ -1,9 +1,9 @@
-Printing schedules for 2023Q1   Current Date: 2023-8-26, 14:16:10
+Printing schedules for 2023Q1   Current Date: 2023-8-26, 14:19:39
 
 Always appear: A PROP TC
 Can appear: IA G LP LI PAR
 
-Warning: remember to check the schedule you want actually exists in https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/horaris.
+Warning: remember to check if the schedule you want actually exists in https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/horaris.
 When there are equivalent lab groups, ONLY ONE (not necessarily the smallest number) is shown. Check if there are more should you need them.
 
 	Monday		Tuesday		Wednesday	Thursday	Friday
