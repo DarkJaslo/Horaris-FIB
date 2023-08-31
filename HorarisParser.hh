@@ -73,6 +73,7 @@ public:
   void                        deleteNonRequestedGroups(const std::vector<std::string>& names);
   void                        joinGroups();
   void                        deleteRedundantGroups();
+  void                        deleteExcludedGroups(const std::vector<std::pair<std::string,int>>& groups);
   /*
     Converts this data to vector<vector<HoraClasse>> format.
   */

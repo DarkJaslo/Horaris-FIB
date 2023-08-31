@@ -179,6 +179,43 @@ void Data::deleteRedundantGroups()
   _info = newInfo;
 }
 
+void Data::deleteExcludedGroups(const std::vector<std::pair<std::string,int>>& groups)
+{
+  std::vector<bool> indicesToDelete(_info.size(),false);
+  int toDelete = 0;
+
+  for(int i = 0; i < groups.size(); ++i)
+  {
+    std::string subject = groups[i].first;
+    int group = groups[i].second;
+    int index = firstOccurrence(subject);
+    if(index != -1)
+    {
+      for(int j = index; j < _info.size(); ++j)
+      {
+        if(_info[j].group() == group)
+        {
+          indicesToDelete[j] = true;
+          toDelete++;
+          break;
+        }
+      }
+    }
+    
+  }
+
+  std::vector<HorariObj> newInfo(_info.size()-toDelete);
+  int j = 0;
+  for(int i = 0; i < _info.size(); ++i){
+    if(not indicesToDelete[i]){
+      newInfo[j] = _info[i];
+      ++j;
+    }
+  }
+
+  _info = newInfo;
+}
+
 
 std::vector<std::vector<HoraClasse>> Data::allAssignatures() const
 {

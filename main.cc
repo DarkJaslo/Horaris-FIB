@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <cstdlib>
 #include <ctime>
+#include <regex>
 #include "HorarisParser.hh"
 
 /*
@@ -158,6 +159,13 @@ void fesHoraris(vector<Horari>& horarisValids, const vector<vector<int>>& perms,
   }
 }
 
+bool isNumber(const std::string& str) {
+  // Define the regex pattern for a number
+  std::regex numRegex("^[0-9]*$");
+  // Match the input string against the regex pattern
+  return std::regex_match(str, numRegex);
+}
+
 int main(int argc, char** argv)
 {
   if(argc > 1)
@@ -211,6 +219,7 @@ int main(int argc, char** argv)
 
   vector<string> nomsObligatories;
   vector<string> nomsAssignatures;
+  vector<pair<string,int>> groupsToExclude;
 
   //Fill names
   string auxAssig;
@@ -228,12 +237,31 @@ int main(int argc, char** argv)
     cin >> auxAssig;
   }
 
+  cin >> auxAssig;  //Read the "EXCLUDE:"
+  cin >> auxAssig;
+  std::string actAssig = "not really a subject";
+  while(auxAssig != "END_INPUT")
+  {
+    if(isNumber(auxAssig)){
+
+      if(actAssig != "not really a subject"){
+        pair<string,int> item = make_pair(actAssig,stoi(auxAssig));
+        groupsToExclude.push_back(item);
+      }
+    }
+    else{
+      actAssig = auxAssig;
+    }
+    cin >> auxAssig;
+  }
+
   vector<string> names(nomsObligatories.size()+nomsAssignatures.size());
   for(const string& s : nomsObligatories) names.emplace_back(s);
   for(const string& s : nomsAssignatures) names.emplace_back(s);
 
   data.deleteNonRequestedGroups(names);
   data.joinGroups();
+  data.deleteExcludedGroups(groupsToExclude);
   data.deleteRedundantGroups();
 
   vector<assignatura> assigs = data.allAssignatures();
