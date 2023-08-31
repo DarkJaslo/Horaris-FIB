@@ -78,7 +78,7 @@ public:
     Converts this data to vector<vector<HoraClasse>> format.
   */
   std::vector<
-    std::vector<HoraClasse>>  allAssignatures() const;
+    std::vector<HoraClasse>>  allAssignatures(bool mixGroups) const;
 
   inline HorariObj&           operator[](int);
   inline const HorariObj&     operator[](int)const;

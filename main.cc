@@ -190,6 +190,7 @@ int main(int argc, char** argv)
 
   std::string semester;
   std::cin >> semester;
+  std::cin >> semester;
 
   char buffer[256];
   sprintf(buffer,"python3 get.py %s > FIB_DATA.txt",semester.c_str());
@@ -214,8 +215,31 @@ int main(int argc, char** argv)
   data.pushHorariObj(obj);
   //data.print();
 
+  {
+    std::string numberOfSubjects;
+    cin >> numberOfSubjects;
+  }
   int sizeHorari;
   cin >> sizeHorari;
+
+  {
+    std::string mixGroupsString;
+    cin >> mixGroupsString;
+  }
+
+  bool mixGroups = false;
+  {
+    std::string doMixGroups;
+    cin >> doMixGroups;
+    if(doMixGroups == "true") mixGroups = true;
+    else if(doMixGroups != "false"){
+      std::__throw_invalid_argument("Wrong input. Expected 'true' or 'false' after 'MIX_GROUPS:'");
+    }
+  }
+
+  if(mixGroups) cerr << "mixing...";
+  else cerr << "not mixing...";
+  cerr << endl;
 
   vector<string> nomsObligatories;
   vector<string> nomsAssignatures;
@@ -264,7 +288,7 @@ int main(int argc, char** argv)
   data.deleteExcludedGroups(groupsToExclude);
   data.deleteRedundantGroups();
 
-  vector<assignatura> assigs = data.allAssignatures();
+  vector<assignatura> assigs = data.allAssignatures(mixGroups);
 
   //Group all groups that share the same subject code/name (S1 Gr10, S1 Gr11, etc.)
   vector<vector<pair<string,int>>> obligatories(nomsObligatories.size());

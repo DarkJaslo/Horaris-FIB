@@ -217,7 +217,7 @@ void Data::deleteExcludedGroups(const std::vector<std::pair<std::string,int>>& g
 }
 
 
-std::vector<std::vector<HoraClasse>> Data::allAssignatures() const
+std::vector<std::vector<HoraClasse>> Data::allAssignatures(bool mixGroups) const
 {
   std::vector<std::vector<HoraClasse>> result;
   std::string currentSubj = "this will never be a name for a subject, but who knows, so let's make it as difficult as possible!";
@@ -231,7 +231,7 @@ std::vector<std::vector<HoraClasse>> Data::allAssignatures() const
     //std::cout << "vuelta bucle i" << std::endl;
     //i > 0 and foundNonTheory and (
     if(i == 0){
-      currentSubj = currentSubj = _info[i].code();
+      currentSubj = _info[i].code();
     }
     else if(_info[i].code() != currentSubj or i == _info.size()-1)
     {
@@ -256,7 +256,7 @@ std::vector<std::vector<HoraClasse>> Data::allAssignatures() const
           for(int k = 0; k < currentTheoryIndices.size(); ++k)
           {
             int index = currentTheoryIndices[k];
-            if(abs(_info[index].group()-result[j][0].grup()) > 5) continue;
+            if(not mixGroups and abs(_info[index].group()-result[j][0].grup()) > 5) continue;
             for(int t = 0; t < _info[index].hours().size(); ++t)
             {
               HoraClasse hcl(_info[index].hours()[t],result[j][0].grup(),TipusClasse::teoria,_info[index].day(),false,_info[index].code());
