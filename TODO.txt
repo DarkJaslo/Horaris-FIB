@@ -1,3 +1,4 @@
 1. Opción activable para formar horarios con teoria distinta de lab (G 20 con G 12)
 2. Permitir indicar preferencia entre mañana y tarde
 3. Hacer un .exe que haga todo en un click usando input y output prehechos
+4. Permitir excluir grupos enteros (G 10, G 20)
