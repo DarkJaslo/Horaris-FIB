@@ -1,4 +1,3 @@
-1. Permitir eliminar subgrupos
-2. Opción activable para formar horarios con teoria distinta de lab (G 20 con G 12)
-3. Permitir indicar preferencia entre mañana y tarde
-4. Hacer un .exe que haga todo en un click usando input y output prehechos
+1. Opción activable para formar horarios con teoria distinta de lab (G 20 con G 12)
+2. Permitir indicar preferencia entre mañana y tarde
+3. Hacer un .exe que haga todo en un click usando input y output prehechos
