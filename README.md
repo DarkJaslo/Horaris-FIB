@@ -5,7 +5,9 @@ Generates all possible schedules given a set of subjects. Works in Linux (only t
 ### Good stuff:
 -Automatically downloads and parses the document at FIB's API, simplifying input.
 
--Allows choosing which subjects appear always and what subjects can appear with them. 
+-Allows choosing which subjects appear always and what subjects can appear with them.
+
+-Allows choosing which subgroups don't appear in schedules, which can be useful sometimes.
 
 -Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
@@ -29,6 +31,8 @@ Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Li
 -Descarga automáticamente y parsea el documento oficial de horarios de la API de la FIB, cosa que simplifica mucho el proceso de input.
 
 -Permite escoger qué asignaturas forman parte de los horarios, y se puede imponer que algunas aparezcan en todos.
+
+-Permite escoger qué subgrupos no aparecen en los horarios, cosa que puede ser útil a veces.
 
 -Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 
