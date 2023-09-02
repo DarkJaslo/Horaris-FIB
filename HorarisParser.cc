@@ -224,18 +224,13 @@ std::vector<std::vector<HoraClasse>> Data::allAssignatures(bool mixGroups) const
   std::vector<int> currentTheoryIndices;
   bool foundNonTheory = false;
 
-  //std::cout << "antes del i" << std::endl;
-
   for(int i = 0; i < _info.size(); ++i)
   {
-    //std::cout << "vuelta bucle i" << std::endl;
-    //i > 0 and foundNonTheory and (
     if(i == 0){
       currentSubj = _info[i].code();
     }
     else if(_info[i].code() != currentSubj or i == _info.size()-1)
     {
-      //std::cout << "entra primer if" << std::endl;
 
       if(i == _info.size()-1){
         if(_info[i].type() == "T" or _info[i].group()%10==0){
@@ -249,14 +244,14 @@ std::vector<std::vector<HoraClasse>> Data::allAssignatures(bool mixGroups) const
       bool foundOne = false;
       for(int j = 0; j < result.size(); ++j)
       {
-        //std::cout << "vuelta bucle j" << std::endl;
         if(result[j][0].assignatura() == currentSubj){
           foundOne = true;
 
           for(int k = 0; k < currentTheoryIndices.size(); ++k)
           {
             int index = currentTheoryIndices[k];
-            if(not mixGroups and abs(_info[index].group()-result[j][0].grup()) > 5) continue;
+            if(abs(_info[index].group()-result[j][0].grup()) > 5) continue;
+
             for(int t = 0; t < _info[index].hours().size(); ++t)
             {
               HoraClasse hcl(_info[index].hours()[t],result[j][0].grup(),TipusClasse::teoria,_info[index].day(),false,_info[index].code());
@@ -305,29 +300,51 @@ std::vector<std::vector<HoraClasse>> Data::allAssignatures(bool mixGroups) const
       for(int k = 0; k < _info[i].hours().size(); ++k){
         HoraClasse hcl(_info[i].hours()[k],_info[i].group(),TipusClasse::laboratori,_info[i].day(),false,_info[i].code());
         hcls.push_back(hcl);
-      }
-
-      //std::cout << "paso primer for" << std::endl;
-      
-
-
+      }   
 
       //Put into a vector
       bool found = false;
-      for(int j = 0; j < result.size(); ++j){
-        //std::cout << "vuelta bucle j interno" << std::endl;
+      for(int j = 0; j < result.size(); ++j)
+      {
         if(result[j][0].assignatura() == _info[i].code() and result[j][0].grup() == _info[i].group()){
           for(const HoraClasse& hcl : hcls){
             result[j].push_back(hcl);
           }
           found = true;
-          break;
+          //break;
         }
+        /*else if(mixGroups and result[j][0].assignatura() == _info[i].code() and result[j][0].grup() != _info[i].group())
+        {
+          if(abs(_info[i].group()-result[j][0].grup()) > 5)
+          {
+            result.push_back(std::vector<HoraClasse>());
+            int index = result.size()-1;
+
+            std::vector<HoraClasse> hclsTeoria;
+            for(int k = 0; k < _info[i].hours().size(); ++k)
+            {
+              HoraClasse hcl(_info[i].hours()[k],_info[i].group(),TipusClasse::teoria,_info[i].day(),false,_info[i].code());
+              hclsTeoria.push_back(hcl);
+            }   
+
+            for(const HoraClasse& hcl : hclsTeoria){
+              result[index].push_back(hcl);
+            }
+
+            for(const HoraClasse& hcl : hcls){
+              result[index].push_back(hcl);
+            }
+            found = true;
+          }
+        }*/
       }
-      if(not found){
+
+      if(not found)
+      {
         int index = result.size();
         result.push_back(std::vector<HoraClasse>());
-        for(const HoraClasse& hcl : hcls){
+        for(const HoraClasse& hcl : hcls)
+        {
           result[index].push_back(hcl);
         }
       }

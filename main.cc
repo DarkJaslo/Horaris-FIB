@@ -290,6 +290,19 @@ int main(int argc, char** argv)
 
   vector<assignatura> assigs = data.allAssignatures(mixGroups);
 
+  /* Print subjects
+  
+  for(int i = 0; i < assigs.size(); ++i)
+  {
+    for(int j = 0; j < assigs[i].size(); ++j)
+    {
+      cerr << assigs[i][j] << endl;
+    }
+    cerr << endl;
+  }
+
+  cerr << "sigue vivo" << endl;*/
+
   //Group all groups that share the same subject code/name (S1 Gr10, S1 Gr11, etc.)
   vector<vector<pair<string,int>>> obligatories(nomsObligatories.size());
   vector<vector<pair<string,int>>> resta(nomsAssignatures.size());
