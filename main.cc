@@ -196,9 +196,9 @@ int main(int argc, char** argv)
   sprintf(buffer,"python3 get.py %s > FIB_DATA.txt",semester.c_str());
 
   //Executes python program that gets the data
-  if(std::system(buffer) < 0)
+  if(std::system(buffer) != 0)
   {
-    std::cerr << "Error: couldn't execute get program" << std::endl;
+    std::cerr << "Error: get.py script couldn't be executed or ran into an error" << std::endl;
     exit(1);
   }
 
