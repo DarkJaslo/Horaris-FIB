@@ -554,6 +554,6 @@ bool Parser::isCorrect(int expectedSize, int substrSize, const std::string& str,
 
 void Parser::printParseError(const std::string& extraInfo = "")
 {
-  std::cerr << "A parsing error has occurred. Extra info: " << extraInfo << std::endl;
+  std::cerr << "The parser has found a problem / unexpected input in FIB_DATA.txt. Extra info: " << extraInfo << std::endl;
   exit(1);
 }
