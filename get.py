@@ -12,5 +12,7 @@ response = requests.get(url)
 if response.status_code == 200:
     response_text = html.unescape(response.text)
     print(response_text)
+    exit(0)
 else:
-    print('Request failed:', response.status_code)
+    sys.stderr.write('The request to the FIB API failed with code ' + str(response.status_code) + '\n')
+    exit(1)
