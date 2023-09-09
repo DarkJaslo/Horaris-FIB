@@ -48,6 +48,7 @@ int main(int argc, char** argv)
   int minute = currentTm->tm_min;
   int second = currentTm->tm_sec;
 
+  //Read the "SEMESTER"
   std::string semester;
   std::cin >> semester;
   std::cin >> semester;
@@ -73,22 +74,18 @@ int main(int argc, char** argv)
     data.pushHorariObj(obj);
   }
   data.pushHorariObj(obj);
-  //data.print();
 
-  {
+  int sizeHorari;
+  { //Read the "SUBJECTS_IN_SCHEDULE"
     std::string numberOfSubjects;
     cin >> numberOfSubjects;
+    cin >> sizeHorari;
   }
-  int sizeHorari;
-  cin >> sizeHorari;
-
-  {
-    std::string mixGroupsString;
-    cin >> mixGroupsString;
-  }  
 
   bool mixGroups = false;
-  {
+  { //Read the "MIX_GROUPS"
+    std::string mixGroupsString;
+    cin >> mixGroupsString;
     std::string doMixGroups;
     cin >> doMixGroups;
     if(doMixGroups == "true") mixGroups = true;
@@ -99,7 +96,7 @@ int main(int argc, char** argv)
 
   SchedulePreference preference = SchedulePreference::dont_care;
 
-  {
+  { //Read the "PREFER"
     std::string preferString;
     cin >> preferString;
     cin >> preferString;
@@ -153,9 +150,7 @@ int main(int argc, char** argv)
   data.joinGroups();
   data.deleteExcludedGroups(groupsToExclude);
   data.deleteRedundantGroups();
-
   data.makeGroups(mixGroups);
-
   data.makePermutations(sizeHorari,nomsObligatories,nomsAssignatures);
 
   cout << "Printing schedules for " << semester << "   ";
