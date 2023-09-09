@@ -1,188 +1,157 @@
 #ifndef Horari_hh
 #define Horari_hh
 
+#include <iostream>
 #include <vector>
 #include <string>
-#include <iostream>
 
-enum DiaSetmana{
-  dilluns,
-  dimarts,
-  dimecres,
-  dijous,
-  divendres
+namespace jaslo{
+
+enum Weekday{
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday
 };
-inline std::ostream& operator<<(std::ostream& os, const DiaSetmana& d){
+
+inline std::ostream& operator<<(std::ostream& os, const Weekday& d){
   switch(d){
-    case dilluns:   os << "dilluns";   break;
-    case dimarts:   os << "dimarts";   break;
-    case dimecres:  os << "dimecres";  break;
-    case dijous:    os << "dijous";    break;
-    case divendres: os << "divendres"; break;
+    case monday:    os << "dilluns";   break;
+    case tuesday:   os << "dimarts";   break;
+    case wednesday: os << "dimecres";  break;
+    case thursday:  os << "dijous";    break;
+    case friday:    os << "divendres"; break;
     default:        os << "error";     break;
   }
   return os;
 }
 
-const DiaSetmana dies[5] = {DiaSetmana::dilluns,DiaSetmana::dimarts,DiaSetmana::dimecres,DiaSetmana::dijous,DiaSetmana::divendres};
-
-enum TipusClasse{
-  teoria,
-  laboratori
+enum ClassType{
+  theory,
+  lab,
+  problems
 };
-inline std::ostream& operator<<(std::ostream& os, const TipusClasse& t){
+
+inline std::ostream& operator<<(std::ostream& os, const ClassType& t){
   switch(t){
-    case teoria:       os << "T";  break;
-    case laboratori:   os << "L";  break;
-    default:        os << "error"; break;
+    case theory:   os << "T";     break;
+    case lab:      os << "L";     break;
+    case problems: os << "P";     break;
+    default:       os << "error"; break;
   }
   return os;
 }
 
-class HoraClasse{
+//A unit of data in the FIB's API.
+class HorariObj{
 public:
-  HoraClasse(){}
-  HoraClasse(int hora, int grup, TipusClasse tipus, DiaSetmana dia, bool ocupada, std::string assignatura) 
-    : _hora(hora), _grup(grup), _tipus(tipus), _dia(dia), _ocupada(ocupada), ass(assignatura){}
-  std::string   assignatura() const { return ass;      }
-  int           grup()        const { return _grup;    }
-  DiaSetmana    dia()         const { return _dia;     }
-  int           hora()        const { return _hora;    }
-  bool          ocupada()     const { return _ocupada; }
-  void          ocupa()             { _ocupada = true; }
-  TipusClasse   tipus()       const { return _tipus;   }
-  friend std::ostream& operator<<(std::ostream& os, const HoraClasse& h);
-  void print() const{
-    std::cout << assignatura() << " " << grup() << tipus();
-  }
+
+  HorariObj();
+  //Name of the subject. Sometimes is referred as code too.
+  std::string             code()  const;
+  int                     group() const;
+  Weekday                 day()   const;
+  const std::vector<int>  hours() const;
+  ClassType               type()  const;
+  bool                    equivalent(const HorariObj& other) const;
+  
+  //Mainly used to debug
+  friend std::ostream& operator<<(std::ostream& os, const HorariObj& o);
+
 private:
-  int _hora;
-  int _grup;
-  TipusClasse _tipus;
-  DiaSetmana _dia;
-  bool _ocupada;
-  std::string ass;
+
+  friend class Parser;
+  friend class Data;
+
+  std::string       _code;
+  int               _group;
+  Weekday           _day;
+  std::vector<int>  _hours;
+  ClassType         _type;
+  std::string       _classroom;
+  std::string       _language;
+
 };
 
-inline std::ostream& operator<<(std::ostream& os, const HoraClasse& h){
-  os << h.ass << ": " << std::endl <<
-  h._grup << h._tipus << " " << h._dia << ": " << h._hora << "h" << std::endl;
+inline std::ostream& operator<<(std::ostream& os, const HorariObj& o){
+  os << "code:\t"  << o._code  << std::endl
+     << "group:\t" << o._group << std::endl
+     << "day:\t"   << o._day   << std::endl
+     << "hours:\t";
+  for(int h : o._hours){
+    os << h << ":00h, ";
+  }
+  os << std::endl;
+  os << "tipus:\t" << o._type << std::endl
+  <<    "class:\t" << o._classroom << std::endl
+  <<    "lang:\t"  << o._language << std::endl;
   return os;
 }
 
+class ClassHour{
+public:
 
+  ClassHour();
+  ClassHour(int hour, int group, ClassType type, Weekday day, bool taken, const std::string& subjectName);
+
+  std::string subjectName() const;
+  int         group() const;
+  Weekday     day() const;
+  int         hour() const;
+  bool        taken() const;
+  ClassType   type() const;
+  void        print()const;
+  void        take();
+
+private:
+
+  friend class Horari;
+
+  int         _hour;
+  int         _group;
+  ClassType   _type;
+  Weekday     _day;
+  bool        _taken;
+  std::string _subjectName;
+
+};
+
+enum SchedulePreference{
+  morning,
+  afternoon,
+  dont_care
+};
+
+//Represents a schedule for a week
 class Horari{
 public:
-  Horari(){
-    _valor = 0;
-    h = std::vector<std::vector<HoraClasse>>(5,std::vector<HoraClasse>(13));
-    for(int i = 0; i < h.size(); ++i){
-      for(int j = 0; j < h[i].size(); ++j)
-        h[i][j] = HoraClasse(j+8,-1,teoria,dies[i],false,"");
-    }
-  }
-  bool encaixa(const HoraClasse& hora)
-  {
-    return not h[hora.dia()][hora.hora()-8].ocupada();
-  }
-  bool encaixaAssig(const std::vector<HoraClasse>& assig)
-  {
-    int index = findInVector(assigs,assig[0].assignatura());
-    if(index != -1){
-      return false;
 
-      /*In theory, bad/unnecessary
-      int index2 = findInVector(grups,assig[0].grup());
-      if(index2 == -1) return false;*/
-    }
-    for(const HoraClasse& hcl : assig){
-      if(not encaixa(hcl)){ return false; }
-    }
-    return true;
-  }
-  void afegeix(const std::vector<HoraClasse>& hores)
-  {
-    int index = findInVector(assigs,hores[0].assignatura());
-    if(index == -1){
-      assigs.push_back(hores[0].assignatura());
-      grups.push_back(hores[0].grup());
-    }
-    for(int i = 0; i < hores.size(); ++i){
-      h[hores[i].dia()][hores[i].hora()-8] = hores[i];
-      h[hores[i].dia()][hores[i].hora()-8].ocupa();
-    }
-  }
-  int nassig(){return assigs.size();}
-  int valor()const { return _valor; }
-  bool operator<(const Horari& other)const{ return _valor > other._valor; }
-  void print()const
-  {
-    std::cout << "\tMonday" << "\t\tTuesday" << "\t\tWednesday" << "\tThursday" << "\tFriday" << std::endl;
+  Horari();
+  bool  doesItFit(const std::vector<HorariObj>& subj);
+  //Assumes subject fits (call doesItFit() to check) and that all HorariObjs in subj share the same subject name
+  void  addSubject(const std::vector<HorariObj>& subj);
+  int   subjectCount() const;
+  //Assumes computeValue() has been called
+  int   value() const;
+  bool  operator<(const Horari& other)const{ return _value > other._value; }
+  void  print() const;
+  void  computeValue(SchedulePreference pref);
 
-    for(int j = 0; j < h[0].size(); ++j){
-      std::cout << 8+j << "h\t";
-      for(int i = 0; i < h.size(); ++i){
-        if(h[i][j].ocupada()) h[i][j].print();
-        else std::cout << "  -  ";
-        std::cout << "\t";
-        if(h[i][j].assignatura().length()<=3) std::cout << "\t";
-      }
-      std::cout << std::endl;
-    }
-  }
-  void calculaValor()
-  {
-    _valor = 0;
-    for(int i = 0; i < h.size(); ++i){
-      bool diaLliure = true;
-      int horesBuides = 0;
-      int horesTotal = 0;
-      bool hiHaHoresBuides = false;
-      for(int j = 0; j < h[i].size(); ++j){
-        if(h[i][j].ocupada()){
-          diaLliure = false;
-          horesTotal++;
-          if(j == 0){ //Les 8
-            _valor -= 50;
-          }
-          else if(j == 1){ //Les 9
-            _valor -= 50;
-          }
-          else if(j >= 6){ //Les 14h o més
-            _valor -= 51;
-          }
-        }
-        if(not diaLliure and not h[i][j].ocupada()){
-          horesBuides++;
-        }
-        else if(not diaLliure and h[i][j].ocupada()){
-          _valor -= 201*horesBuides;
-          if(horesBuides > 0){
-            if(horesTotal == 4) _valor+=100*horesBuides;
-          }
-          horesBuides = 0;
-          if(not hiHaHoresBuides) hiHaHoresBuides = true;
-        }
-      }
-      if(diaLliure){_valor += 750;}
-      if(horesTotal < 3){_valor -= 150;}
-      else if(horesTotal == 4 and not hiHaHoresBuides){_valor += 100;}
-      else if(horesTotal == 6){_valor -= 100;}
-      else if(horesTotal > 6){ _valor -= 375*(horesTotal-6);}
-    }
-  }
+
 private:
-  template<typename T>
-  int findInVector(const std::vector<T>& vec, const T& thing){
-    for(int i = 0; i < vec.size(); ++i){
-      if(vec[i] == thing) return i;
-    }
-    return -1;
-  }
-  std::vector<std::vector<HoraClasse>> h;
-  std::vector<std::string> assigs;
-  std::vector<int> grups;
-  int _valor;
+  //To index the H vector
+  static int indexFor(Weekday day, int hour);
+  bool containsSubject(const std::string& name) const;
+
+  //ClassHour H[65];
+  std::vector<ClassHour>   H;
+  int                      _value;
+  std::vector<std::string> _subjectNames;
+
 };
+
+
+}; //namespace end
 
 #endif

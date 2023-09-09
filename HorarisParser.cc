@@ -1,27 +1,6 @@
 #include "HorarisParser.hh"
+#include <algorithm>
 using namespace jaslo;
-
-
-//HorariObj
-HorariObj::HorariObj()
-{
-
-}
-
-std::string             HorariObj::code()  const { return _code;  }
-int                     HorariObj::group() const { return _group; }
-DiaSetmana              HorariObj::day()   const { return _day;   }
-const std::vector<int>  HorariObj::hours() const { return _hours; }
-std::string             HorariObj::type()  const { return _type;  }
-bool                    HorariObj::equivalent(const HorariObj& other) const
-{
-  return (this->code() == other.code()) and (this->group() != other.group()) and ((this->group()/10) == (other.group()/10)) and (this->day() == other.day()) and (this->hours() == other.hours());
-}
-
-
-
-
-
 
 //Data
 
@@ -56,10 +35,10 @@ void Data::print()
   }
 }
 
-int Data::firstOccurrence(const std::string& assignatura)const
+int Data::firstOccurrence(const std::string& subjectName)const
 {
-  int index = binarySearch(0,_info.size()-1, assignatura);
-  while(index > 0 and _info[index-1].code() == assignatura){
+  int index = binarySearch(0,_info.size()-1, subjectName);
+  while(index > 0 and _info[index-1].code() == subjectName){
     index--;
   }
   return index;
@@ -216,145 +195,310 @@ void Data::deleteExcludedGroups(const std::vector<std::pair<std::string,int>>& g
   _info = newInfo;
 }
 
-
-std::vector<std::vector<HoraClasse>> Data::allAssignatures(bool mixGroups) const
+void Data::makeGroups(bool mix)
 {
-  std::vector<std::vector<HoraClasse>> result;
-  std::string currentSubj = "this will never be a name for a subject, but who knows, so let's make it as difficult as possible!";
-  std::vector<int> currentTheoryIndices;
-  bool foundNonTheory = false;
-
+  std::vector<std::string> names;
+  std::string current = "Not a subject";
   for(int i = 0; i < _info.size(); ++i)
   {
-    if(i == 0){
-      currentSubj = _info[i].code();
-    }
-    else if(_info[i].code() != currentSubj or i == _info.size()-1)
+    if(_info[i].code() != current)
     {
-
-      if(i == _info.size()-1){
-        if(_info[i].type() == "T" or _info[i].group()%10==0){
-          currentTheoryIndices.push_back(i);
-        }
-      }
-
-      //Look for every non-theory group of this subject and add these hours
-      //if it finds nothing, create a new subject with just the theory hours
-
-      bool foundOne = false;
-      for(int j = 0; j < result.size(); ++j)
-      {
-        if(result[j][0].assignatura() == currentSubj){
-          foundOne = true;
-
-          for(int k = 0; k < currentTheoryIndices.size(); ++k)
-          {
-            int index = currentTheoryIndices[k];
-            if(abs(_info[index].group()-result[j][0].grup()) > 5) continue;
-
-            for(int t = 0; t < _info[index].hours().size(); ++t)
-            {
-              HoraClasse hcl(_info[index].hours()[t],result[j][0].grup(),TipusClasse::teoria,_info[index].day(),false,_info[index].code());
-              result[j].push_back(hcl);
-            }
-          }
-        }
-      }
-
-      if(not foundOne)
-      {
-        int finalIndex = result.size();
-        result.push_back(std::vector<HoraClasse>());
-        for(int k = 0; k < currentTheoryIndices.size(); ++k)
-        {
-          int index = currentTheoryIndices[k];
-          for(int t = 0; t < _info[index].hours().size(); ++t)
-          {
-            HoraClasse hcl(_info[index].hours()[t],_info[index].group(),TipusClasse::teoria,_info[index].day(),false,_info[index].code());
-            result[finalIndex].push_back(hcl);
-          }
-        }
-        
-      }
-
-
-      if(i == _info.size()-1){
-        break;
-      }
-
-      currentSubj = _info[i].code();
-      currentTheoryIndices.clear();
-    }
-
-    if(_info[i].type() == "T" or _info[i].group()%10 == 0 ){
-      //std::cout << "es T, " << _info[i].code() << std::endl;
-      currentTheoryIndices.push_back(i);
-    }
-    else{
-
-      if(not foundNonTheory) foundNonTheory = true;
-
-      //std::cout << "no es T, " <<  _info[i].code()  << std::endl;
-      //Generate the HoraClasses
-      std::vector<HoraClasse> hcls;
-      for(int k = 0; k < _info[i].hours().size(); ++k){
-        HoraClasse hcl(_info[i].hours()[k],_info[i].group(),TipusClasse::laboratori,_info[i].day(),false,_info[i].code());
-        hcls.push_back(hcl);
-      }   
-
-      //Put into a vector
-      bool found = false;
-      for(int j = 0; j < result.size(); ++j)
-      {
-        if(result[j][0].assignatura() == _info[i].code() and result[j][0].grup() == _info[i].group()){
-          for(const HoraClasse& hcl : hcls){
-            result[j].push_back(hcl);
-          }
-          found = true;
-          //break;
-        }
-        /*else if(mixGroups and result[j][0].assignatura() == _info[i].code() and result[j][0].grup() != _info[i].group())
-        {
-          if(abs(_info[i].group()-result[j][0].grup()) > 5)
-          {
-            result.push_back(std::vector<HoraClasse>());
-            int index = result.size()-1;
-
-            std::vector<HoraClasse> hclsTeoria;
-            for(int k = 0; k < _info[i].hours().size(); ++k)
-            {
-              HoraClasse hcl(_info[i].hours()[k],_info[i].group(),TipusClasse::teoria,_info[i].day(),false,_info[i].code());
-              hclsTeoria.push_back(hcl);
-            }   
-
-            for(const HoraClasse& hcl : hclsTeoria){
-              result[index].push_back(hcl);
-            }
-
-            for(const HoraClasse& hcl : hcls){
-              result[index].push_back(hcl);
-            }
-            found = true;
-          }
-        }*/
-      }
-
-      if(not found)
-      {
-        int index = result.size();
-        result.push_back(std::vector<HoraClasse>());
-        for(const HoraClasse& hcl : hcls)
-        {
-          result[index].push_back(hcl);
-        }
-      }
+      current = _info[i].code();
+      if(not contains(names, current)) names.push_back(current);
     }
   }
 
-  return result;
+  for(int i = 0; i < names.size(); ++i)
+  {
+    std::string current = names[i];
+
+    _groups.push_back(std::pair<std::string,std::vector<std::vector<int>>>());
+    _groups[i].first = current;
+
+    //Add indices of HorariObjs of each possible group. Add more if mix == true
+
+    bool hasTheory = false;
+    int index = firstOccurrence(current);
+    std::vector<int> theoryGroups;
+    std::vector<int> extraTheoryGroups;
+
+    for(int j = index; j < _info.size(); ++j)
+    {
+      if(_info[j].code() != current) break;
+      else if(_info[j].group()%10 == 0){
+        hasTheory = true;
+
+        bool found = false;
+        for(int aux : theoryGroups) if(aux == _info[j].group()) found = true;
+        if(found) extraTheoryGroups.push_back(j);
+        else theoryGroups.push_back(_info[j].group());
+      }
+    }
+
+    if(hasTheory){
+
+      std::vector<bool> used(theoryGroups.size(),false);
+      
+
+      //For each theory group, add subgroups
+      for(int k = index; k < _info.size(); ++k)
+      {
+        if(_info[k].code() != current) break;
+
+        //Find one theory group
+        if(_info[k].group()%10 == 0)
+        {
+          bool isUsed = false;
+
+          //Save theory groups and extra theory groups
+          for(int aux = 0; aux < theoryGroups.size(); ++aux)
+          {
+            if(theoryGroups[aux] == _info[k].group()){
+              if(used[aux]){
+                isUsed = true;
+                break;
+              }
+              else{
+                used[aux] = true;
+                break;
+              }
+            }
+          }
+          if(isUsed) continue;
+
+          int group = _info[k].group();
+          std::vector<int> subgroups; //How many subgroups are there?
+
+          //Count and store subgroups
+          for(int l = index; l < _info.size(); ++l)
+          {
+            if(_info[l].code() != current) break;
+            if(_info[l].group()%10==0) continue;
+            if(mix or (abs(_info[l].group()-group) < 5))
+            {
+              bool found = false;
+              for(int m = 0; m < subgroups.size(); ++m)
+              {
+                if(subgroups[m] == _info[l].group()){
+                  found = true;
+                  break;
+                }
+              }
+              if(not found) subgroups.push_back(_info[l].group());
+            }
+          }
+
+          //Add permutations one subgroup at a time
+          for(int m = 0; m < subgroups.size(); ++m)
+          {
+            std::vector<int> indices;
+            indices.push_back(k); //Push back theory group
+            for(int extraGroup : extraTheoryGroups)
+            {
+              if(_info[extraGroup].group() == _info[k].group()){
+                indices.push_back(extraGroup);
+              }
+            }
+            for(int l = index; l < _info.size(); ++l)
+            {
+              if(_info[l].code() != current) break;
+              if(_info[l].group() == subgroups[m]){
+                indices.push_back(l);
+              }
+            }
+            _groups[i].second.push_back(indices);
+          }
+
+          //Subject only has a theory group or something (AC2 does this I think)
+          if(subgroups.size() == 0) 
+          {
+            std::vector<int> indices;
+            indices.push_back(k); //Push back theory group
+            for(int l = index; l < _info.size(); ++l)
+            {
+              if(_info[l].code() != current) break;
+              if(_info[l].group() == group and l != k) indices.push_back(l);
+            }
+            _groups[i].second.push_back(indices);
+          }
+        }
+      }
+    }
+    else{ //No theory, so no mixing
+      std::vector<int> subgroups;
+      for(int k = index; k < _info.size(); ++k)
+      {
+        if(_info[k].code() != current) break;
+        int group = _info[k].group();
+        bool found = false;
+        for(int l = 0; l < subgroups.size(); ++l)
+        {
+          if(subgroups[l] == group){
+            found = true;
+            break;
+          }
+        }
+        if(not found){
+          subgroups.push_back(group);
+        }
+      }
+
+      for(int k = 0; k < subgroups.size(); ++k)
+      {
+        std::vector<int> indices;
+        for(int l = index; l < _info.size(); ++l)
+        {
+          if(_info[l].group() == subgroups[k]) indices.push_back(l);
+        }
+        _groups[i].second.push_back(indices);
+      }
+    }
+  }
 }
 
+void Data::makePermutations(int subjNum, const std::vector<std::string>& always, const std::vector<std::string>& include)
+{
+  //Permutations of "ALWAYS:" subjects
+  std::vector<std::vector<int>> compulsoryPermutations;
+  {
+    
+    std::vector<int> permutation(always.size());
+    std::vector<int> options;
 
+    for(int i = 0; i < always.size(); ++i)
+    {
+      for(int j = 0; j < _groups.size(); ++j)
+      {
+        if(_groups[j].first == always[i]){
+          options.push_back(j);
+          break;
+        }
+      }
+    }
+
+    std::vector<bool> used(options.size(),false);
+    onePerGroupPermutations(0,0,options,used,permutation,compulsoryPermutations);
+  }
+
+  //Permutations of "INCLUDE:" subjects
+  std::vector<std::vector<int>> includePermutations;
+  {
+    std::vector<int> permutation(subjNum-always.size());
+    std::vector<int> options;
+    for(int i = 0; i < include.size(); ++i)
+    {
+      for(int j = 0; j < _groups.size(); ++j)
+      {
+        if(_groups[j].first == include[i]){
+          options.push_back(j);
+          break;
+        }
+      }
+    }
+
+    std::vector<bool> used(options.size(), false);
+    onePerGroupPermutations(0,0,options,used,permutation,includePermutations);
+  }
+
+  //Join permutations in _subjectPermutations (class member)
+  if(compulsoryPermutations.size() == 0)
+  {
+    _subjectPermutations = includePermutations; 
+  }
+  else if(includePermutations.size() == 0)
+  {
+    _subjectPermutations = compulsoryPermutations;
+  }
+  else
+  {
+    _subjectPermutations = std::vector<std::vector<int>>(compulsoryPermutations.size()*includePermutations.size(), std::vector<int>(compulsoryPermutations[0].size()+includePermutations[0].size()));
+
+    int cur = 0;
+    for(int i = 0; i < _subjectPermutations.size(); i += includePermutations.size())
+    {
+      copyVector(compulsoryPermutations[cur],includePermutations,_subjectPermutations,i);
+      ++cur;
+    }
+  }
+
+  //Make permutations 
+
+  for(int i = 0; i < _subjectPermutations.size(); ++i)
+  {
+    //Select one permutation
+    std::vector<int> groupsPerSubject(_subjectPermutations[0].size());
+    for(int j = 0; j < _subjectPermutations[i].size(); ++j)
+    {
+      groupsPerSubject[j] = _groups[_subjectPermutations[i][j]].second.size();
+    }
+    std::vector<std::vector<int>> permutations;
+    std::vector<int> current(subjNum);
+
+    //Make all permutations of groups in the subjects of that one permutation
+    manyPerGroupPermutations(0,groupsPerSubject,current,permutations);
+
+    //Add them to _perms
+    for(int j = 0; j < permutations.size(); ++j)
+    {
+
+      std::vector<std::pair<int,int>> subjectsAndGroups(subjNum);
+      for(int k = 0; k < subjNum; ++k)
+      {
+        subjectsAndGroups[k] = std::make_pair(_subjectPermutations[i][k],permutations[j][k]);
+      }
+      _perms.push_back(subjectsAndGroups);
+    }
+  }
+}
+
+void Data::makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSchedules)
+{
+  std::vector<Horari> hs;
+
+  for(int i = 0; i < _perms.size(); ++i)
+  {
+    Horari h;
+    bool ok = true;
+    for(int j = 0; j < _perms[0].size(); ++j)
+    {
+      std::vector<HorariObj> subjectGroup;
+
+      for(int k = 0; k < _groups[_perms[i][j].first].second[_perms[i][j].second].size(); ++k)
+      {
+        subjectGroup.push_back(_info[_groups[_perms[i][j].first].second[_perms[i][j].second][k]]);
+      }
+
+      if(h.doesItFit(subjectGroup))
+      {
+        h.addSubject(subjectGroup);
+        //h.print();
+      }
+      else{
+        ok = false;
+        break;
+      }
+    }
+    if(not ok) continue;
+    hs.push_back(h);
+  }
+
+  for(Horari& h : hs)
+  {
+    h.computeValue(preference);
+  }
+
+  sort(hs.begin(),hs.end());
+
+  int printedSchedules = 0;
+
+  for(const Horari& h : hs){
+    h.print();
+    std::cout << std::endl;
+    if(++printedSchedules == maxPrintedSchedules) break;
+  }
+  std::cout << "Printed: " << printedSchedules << std::endl; 
+  std::cout << "Total schedules: " << hs.size() << std::endl;
+}
 
 
 //Private Data
@@ -379,7 +523,51 @@ bool Data::contains(const std::vector<std::string>& names, const std::string& na
   return false;
 }
 
+void Data::onePerGroupPermutations(int minUsed, int cur, const std::vector<int>& options, std::vector<bool>& used, std::vector<int>& current, std::vector<std::vector<int>>& allPermutations)
+{
+  if(cur == current.size()) allPermutations.push_back(current);
+  else
+  {
+    for(int i = cur; i < options.size(); ++i){
+      if(used[i] or i < minUsed) continue;
+      minUsed = i;
+      current[cur] = options[i];
+      used[i] = true;
+      onePerGroupPermutations(minUsed, cur+1, options, used, current ,allPermutations);
+      used[i] = false;
+    }
+  }
+}
 
+void Data::manyPerGroupPermutations(int cur, const std::vector<int>& groupsPerSubject, std::vector<int>& current, std::vector<std::vector<int>>& allPermutations)
+{
+  if(cur == current.size()){
+    allPermutations.push_back(current);
+  }
+  else
+  {
+    for(int j = 0; j < groupsPerSubject[cur]; ++j)
+    {
+      current[cur] = j;
+      manyPerGroupPermutations(cur+1,groupsPerSubject,current,allPermutations);
+    }
+  }
+}
+
+void Data::copyVector(const std::vector<int>& source1, const std::vector<std::vector<int>>& source2, std::vector<std::vector<int>>& dest, int loc)
+{
+  for(int i = 0; i < source2.size(); ++i){
+    int j;
+    for(j = 0; j < source1.size(); ++j){
+      dest[loc+i][j] = source1[j];
+    }
+    int offset = j;
+    while(j-offset < source2[i].size()){
+      dest[loc+i][j] = source2[i][j-offset];
+      ++j;
+    }
+  }
+}
 
 
 //Parser
@@ -471,7 +659,7 @@ bool Parser::readHorariObj(HorariObj& o)
   {
     int auxint;
     iss >> auxint;
-    const DiaSetmana totsDies[5] = {DiaSetmana::dilluns,DiaSetmana::dimarts,DiaSetmana::dimecres,DiaSetmana::dijous,DiaSetmana::divendres};
+    const Weekday totsDies[5] = {Weekday::monday,Weekday::tuesday,Weekday::wednesday,Weekday::thursday,Weekday::friday};
     o._day = totsDies[auxint-1];
   }
   else{
@@ -528,7 +716,10 @@ bool Parser::readHorariObj(HorariObj& o)
   if(isCorrect(constant.length()+3,constant.length(),aux,constant))
   {
     iss >> aux;
-    o._type = aux.substr(1,aux.length()-3);
+    aux = aux.substr(1,aux.length()-3);
+    if(aux == "T") o._type = ClassType::theory;
+    else if(aux == "L") o._type = ClassType::lab;
+    else o._type = ClassType::problems;
   }
   else{
     printParseError("wrong tipus keyword");
