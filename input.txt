@@ -1,8 +1,10 @@
 SEMESTER: 2023Q1
 
-NUMBER_OF_SUBJECTS: 5
+SUBJECTS_IN_SCHEDULE: 5
 
 MIX_GROUPS: false
+
+PREFER: morning
 
 ALWAYS:
 
@@ -14,15 +16,28 @@ IA G LP LI PAR END_INPUT
 
 EXCLUDE:
 
-IA 12 13 PAR 41 END_INPUT
+IA 12 13 PAR 33 END_INPUT
 
+(English)
 Information for users:
 
-Anything after the third END_INPUT isn't read.
+Anything after the EXCLUDE: END_INPUT isn't read.
 
 '2023Q1' is the semester. Fall 2023 is 2023Q1, and Spring 2024 is 2023Q2, for reference.
-The first number (5) is the number of subjects you want in the generated schedules.
+MIX_GROUPS: mixes theory and lab groups (eg. G10T and G21L). Set to 'true' or 'false'.
+PREFER: morning / afternoon / any
 Under ALWAYS:, put mandatory subjects, which will appear in every schedule. There can be 0 mandatory subjects.
 Under INCLUDE:, put general subjects, which don't include mandatory subjects. These are the rest of subjects you want to include in the generation.
 Under EXCLUDE:, put subgroups you want to exclude. Enter the code of the subject and all subgroup numbers.
-MIX_GROUPS: doesn't work yet.
+
+(Español)
+Información para los usuarios:
+
+Todo después del END_INPUT de EXCLUDE: no se lee.
+
+'2023Q1' es el cuatrimestre. Formato de los códigos: otoño de 2023 es 2023Q1, y primavera de 2024 es 2023Q2.
+MIX_GROUPS: mezcla grupos de teoría y lab (ej: G10T y G21L). Puede valer 'true' o 'false'.
+PREFER: morning / afternoon / any  (mañanas / tardes / da igual)
+Debajo de ALWAYS:, pon las asignaturas que quieres que salgan en TODOS los horarios. Puede haber 0 asignaturas aquí.
+Debajo de INCLUDE:, pon el resto de asignaturas que quieres que puedan aparecer en los horarios. No se ponen las que ya están en ALWAYS:
+Debajo de EXCLUDE:, pon los subgrupos que quieres quitar. Sigue el formato del ejemplo
