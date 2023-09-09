@@ -19,17 +19,6 @@ using namespace std;
 
 #define MAX_PRINTED_SCHEDULES 1000 //Change to print more if needed. Aims to avoid more than 500kB/file
 
-//TODO: Do the combinations in a class, simplify main() as much as possible
-
-template<typename T>
-int findInVector(const vector<T>& vec, const T& thing)
-{
-  for(int i = 0; i < vec.size(); ++i){
-    if(vec[i] == thing) return i;
-  }
-  return -1;
-}
-
 bool isNumber(const std::string& str) {
   // Define the regex pattern for a number
   std::regex numRegex("^[0-9]*$");
@@ -196,4 +185,3 @@ int main(int argc, char** argv)
 
   data.makeAndPrintSchedules(preference, MAX_PRINTED_SCHEDULES);
 }
-
