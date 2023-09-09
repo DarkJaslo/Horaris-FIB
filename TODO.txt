@@ -1,3 +1,2 @@
 1. Hacer un .exe que haga todo en un click usando input y output prehechos
 2. Permitir excluir grupos enteros (G 10, G 20)
-3. Penalizar clase de 12 a 16
