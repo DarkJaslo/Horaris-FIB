@@ -161,6 +161,11 @@ void Horari::computeValue(SchedulePreference pref)
       }
     }
 
+    //Checks if hours from 12 to 16 are full
+    if(H[indexFor(ALL_DAYS[i],12)].taken() and H[indexFor(ALL_DAYS[i],13)].taken() and
+    H[indexFor(ALL_DAYS[i],14)].taken() and
+    H[indexFor(ALL_DAYS[i],15)].taken()){ _value -= 300; }
+
     if(dayOff){ _value += 750; }
     if(classHours < 3){ _value -= 150; }
     else if(classHours == 4 and not areThereEmptyHours){ _value += 100; }
