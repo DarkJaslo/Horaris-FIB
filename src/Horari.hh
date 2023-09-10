@@ -144,13 +144,11 @@ private:
   static int indexFor(Weekday day, int hour);
   bool containsSubject(const std::string& name) const;
 
-  //ClassHour H[65];
   std::vector<ClassHour>   H;
   int                      _value;
   std::vector<std::string> _subjectNames;
 
 };
-
 
 }; //namespace end
 
