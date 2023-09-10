@@ -1,4 +1,4 @@
-main.exe
+*.exe
 *.o
 *.out
 *.inp
