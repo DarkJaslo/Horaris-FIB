@@ -1,1 +1,0 @@
-1. Hacer un .exe que haga todo en un click usando input y output prehechos (pensando en windows)
