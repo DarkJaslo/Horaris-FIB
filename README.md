@@ -13,7 +13,7 @@ Generates all possible schedules given a set of subjects. Works in Linux (only t
 
 -Allows specifying preference between morning, afternoon or no preference at all.
 
--Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
+-Sorts the results, so good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
 ### How to build and use
 Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
@@ -43,7 +43,7 @@ Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Li
 
 -Se puede elegir si se prefieren horarios de mañanas o tardes (o si no se prefiere nada en particular).
 
--Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
+-Ordena los horarios, así que en general los horarios buenos saldrán primero. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt>C++11</tt>. El <tt>Makefile</tt> usa <tt>g++</tt>.
