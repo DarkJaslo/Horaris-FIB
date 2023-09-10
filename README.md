@@ -1,7 +1,7 @@
 # Horaris-FIB
 
-![Alt text](img/screenshot1.PNGraw=true)
-![Alt text](img/screenshot2.PNG?raw=true)
+![image 1](img/screenshot1.PNGraw=true)
+![image 2](img/screenshot2.PNG?raw=true)
 
 ## [English] Schedule generator for FIB-UPC 
 Generates all possible schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
