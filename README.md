@@ -1,6 +1,6 @@
 # Horaris-FIB
 
-<div>
+<div style="display: flex;">
 
 <div>
 <p>Normal output</p>
@@ -8,6 +8,7 @@
 </div>
 
 <div>
+<p>Mixed groups</p>
 <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" title = "Mixed groups" width="400" height="232">
 </div>
 
