@@ -1,7 +1,7 @@
 # Horaris-FIB
 
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" width="450" height="261">
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" width="450" height="261">
+<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" width="420" height="244">
+<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" width="420" height="244">
 
 ![image 1](img/screenshot1.PNGraw=true)
 ![image 2](img/screenshot2.PNG?raw=true)
