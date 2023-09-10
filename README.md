@@ -1,6 +1,6 @@
 # Horaris-FIB
 
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" width="200" height="100">
+<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" width="450" height="220">
 
 ![image 1](img/screenshot1.PNGraw=true)
 ![image 2](img/screenshot2.PNG?raw=true)
