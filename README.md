@@ -16,9 +16,9 @@ Generates all possible schedules given a set of subjects. Works in Linux (only t
 -Sorts the results, such that good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
 ### How to build and use
-Requirements: being able to use a Makefile, or at least being able to compile C++11. The Makefile uses g++.
+Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
 
-Having python3 installed (uses a python script to download data from https://api.fib.upc.edu). Downloading module 'requests' may be needed too.
+Having <tt>python3</tt> installed (uses a python script to download data from https://api.fib.upc.edu). Downloading module <tt>requests</tt> may be needed too.
 
 1. In any console, navigate to the repository's directory and enter <tt>make</tt>. 
 2. Then, type <tt>./main.exe < [input_file]</tt>, replacing these files with your actual files.
@@ -45,9 +45,9 @@ Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Li
 -Ordena los horarios, de forma que en general los horarios buenos saldrán primero y los malos después. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 
 ### Cómo compilar y ejecutar
-Requisitos: poder usar un Makefile (make) y poder compilar C++11. El Makefile usa g++.
+Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt>C++11</tt>. El <tt>Makefile</tt> usa <tt>g++</tt>.
 
-Tener python3 instalado (se usa un script en python para descargar la información de los horarios de https://api.fib.upc.edu). En algunos casos será necesario también instalar el módulo 'requests'.
+Tener <tt>python3</tt> instalado (se usa un script en python para descargar la información de los horarios de https://api.fib.upc.edu). En algunos casos será necesario también instalar el módulo <tt>requests</tt>.
 
 1. Desde una consola en el directorio del repositorio, escribir <tt>make</tt> 
 2. Escribir <tt>./main.exe < [input_file]</tt>, sustituyendo los valores por los ficheros que tú tengas.
