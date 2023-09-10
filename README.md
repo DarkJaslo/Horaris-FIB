@@ -3,7 +3,7 @@
 ## [English] Schedule generator for FIB-UPC 
 Generates all possible schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
 ### Good stuff:
--Automatically downloads and parses the document at FIB's API, simplifying input.
+-Downloads and parses the document at FIB's API.
 
 -Allows choosing which subjects appear always.
 
@@ -20,9 +20,10 @@ Requirements: being able to use a <tt>Makefile</tt>, or at least being able to c
 
 Having <tt>python3</tt> installed (uses a python script to download data from https://api.fib.upc.edu). Downloading module <tt>requests</tt> may be needed too.
 
-1. In any console, navigate to the repository's directory and enter <tt>make</tt>. 
-2. Then, type <tt>./main.exe < [input_file]</tt>, replacing these files with your actual files.
-3. The program's output can be redirected (so it does not appear in the console) by adding <tt> > [output_file]</tt>. The whole command would be <tt>./main.exe < [input_file] > [output_file]</tt>.
+1. Clone / download the repository.
+2. In any console, navigate to the repository's directory and execute <tt>make</tt>.
+3. Then, type <tt>./horaris.exe < [input_file]</tt>, replacing these files with your actual files.
+4. The program's output can be redirected (so it does not appear in the console) by adding <tt> > [output_file]</tt>. The whole command would be <tt>./horaris.exe < [input_file] > [output_file]</tt>.
 
 ### Input format
 
@@ -32,7 +33,7 @@ I recommend looking at <tt>input.txt</tt> and using it as a template.
 Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
 
--Descarga automáticamente y parsea el documento oficial de horarios de la API de la FIB, cosa que simplifica mucho el proceso de input.
+-Descarga y parsea el documento de horarios de la API de la FIB.
 
 -Permite indicar qué asignaturas aparecerán en todos los horarios.
 
@@ -49,9 +50,10 @@ Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt
 
 Tener <tt>python3</tt> instalado (se usa un script en python para descargar la información de los horarios de https://api.fib.upc.edu). En algunos casos será necesario también instalar el módulo <tt>requests</tt>.
 
-1. Desde una consola en el directorio del repositorio, escribir <tt>make</tt> 
-2. Escribir <tt>./main.exe < [input_file]</tt>, sustituyendo los valores por los ficheros que tú tengas.
-3. Se puede redirigir la salida (para que no aparezca en la consola) añadiendo <tt> > [output_file]</tt>, de forma que quedaría <tt>./main.exe < [input_file] > [output_file]</tt>.
+1. Clonar / descargar el repositorio.
+2. Desde una consola en el directorio del repositorio, ejecutar <tt>make</tt> 
+3. Escribir <tt>./horaris.exe < [input_file]</tt>, sustituyendo los valores por los ficheros que tú tengas.
+4. Se puede redirigir la salida (para que no aparezca en la consola) añadiendo <tt> > [output_file]</tt>, de forma que quedaría <tt>./horaris.exe < [input_file] > [output_file]</tt>.
 
 ### Formato de la entrada
 
