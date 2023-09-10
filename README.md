@@ -5,9 +5,7 @@
 <div style="display: inline-block; width: 50%;">
 <p>Normal output</p>
 <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" title = "Normal output">
-</div>
-
-<div style="display: inline-block; width: 50%;">
+</div> <div style="display: inline-block; width: 50%;">
 <p>Mixed groups</p>
 <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" title = "Mixed groups">
 </div>
