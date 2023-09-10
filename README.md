@@ -1,19 +1,6 @@
 # Horaris-FIB
 
-<div>
-
-<div style="float: left; width: 50%;">
-<p>Normal output</p>
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" title = "Normal output" width="400" height="232">
-</div> 
-
-<div style="float: left; width: 50%;">
-<p>Mixed groups</p>
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" title = "Mixed groups" width="400" height="232">
-</div>
-<div style="clear: both;"></div>
-
-</div>
+<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" title = "Normal output" width="400" height="232"> <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" title = "Mixed groups" width="400" height="232">
 
 ## [English] Schedule generator for FIB-UPC 
 Generates all possible schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
