@@ -2,20 +2,21 @@
 
 <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" title = "Normal output" width="49%" height="49%"> <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" title = "Mixed groups" width="49%" height="49%">
 
-## [English] Schedule generator for FIB-UPC 
-Generates all possible schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
+### Importante: hay una sección en [español](#español-generador-de-horarios-para-la-fib-upc) más abajo.
+
+## (English) Schedule generator for FIB-UPC 
+Generates good schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
 ### Good stuff:
-* Downloads and parses the document at FIB's API.
 
-* Allows choosing which subjects appear always.
+* You can request all the subjects you want, because you also can tell the program which ones must appear always (which can be none, too).
 
-* Allows choosing which subgroups don't appear in schedules, which can be useful when they appear a lot but are already full, expected to be full, or just not convenient.
+* Allows removing specific subgroups, which can be useful when they appear a lot but are already full, expected to be full, or just not convenient for you.
 
-* If needed, can generate schedules mixing theory and lab groups (eg. PAR23L, but going to PAR40T)
+* If needed, can generate schedules mixing theory and lab groups (eg. enrolling in PAR 23L, but going to PAR 40T)
 
 * Allows specifying preference between morning, afternoon or no preference at all.
 
-* Sorts the results, so good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
+* Most of the time, good schedules will be printed first. My own criteria are used here, but since unwanted subgroups can always be removed and the output is long (1000 different unique options!), I think it works for everyone.
 
 ### How to build and use
 Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
@@ -31,21 +32,19 @@ Uses the <tt>httplib</tt> header-only library (https://github.com/yhirose/cpp-ht
 
 I recommend looking at <tt>input.txt</tt> and using it as a template.
 
-## [Español] Generador de horarios para la FIB-UPC 
-Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Linux (probado solo en Ubuntu).
+## (Español) Generador de horarios para la FIB-UPC 
+Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
 
-* Descarga y parsea el documento de horarios de la API de la FIB.
-
-* Permite indicar qué asignaturas aparecerán en todos los horarios.
+* Puedes pedir que aparezcan todas las asignaturas que te interesen, pues especificas a parte cuáles quieres que salgan obligatoriamente siempre (si las hay).
 
 * Permite escoger qué subgrupos no aparecen en los horarios. Útil para mirar horarios alternativos si ciertos grupos se llenan, por ejemplo.
 
-* Se puede activar la generación de horarios que mezclen grupos de teoría y lab (ej: PAR23L, pero vas a teoría del PAR40T)
+* Se puede activar la generación de horarios que mezclen grupos de teoría y lab (ej: PAR 23L, pero vas a teoría del PAR 40T)
 
-* Se puede elegir si se prefieren horarios de mañanas o tardes (o si no se prefiere nada en particular).
+* Se puede decir si se prefieren horarios de mañanas o tardes (o si no se prefiere nada en particular).
 
-* Ordena los horarios, así que en general los horarios buenos saldrán primero. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
+* En general, los horarios buenos saldrán primero. Se usa mi criterio personal para ordenarlos y creo que funciona, pero siempre se pueden quitar subgrupos para ver otros horarios.
 
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt>C++11</tt>. El <tt>Makefile</tt> usa <tt>g++</tt>.
