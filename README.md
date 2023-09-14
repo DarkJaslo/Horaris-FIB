@@ -5,17 +5,17 @@
 ## [English] Schedule generator for FIB-UPC 
 Generates all possible schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
 ### Good stuff:
--Downloads and parses the document at FIB's API.
+* Downloads and parses the document at FIB's API.
 
--Allows choosing which subjects appear always.
+* Allows choosing which subjects appear always.
 
--Allows choosing which subgroups don't appear in schedules, which can be useful when they appear a lot but are already full, expected to be full, or just not convenient.
+* Allows choosing which subgroups don't appear in schedules, which can be useful when they appear a lot but are already full, expected to be full, or just not convenient.
 
--If needed, can generate schedules mixing theory and lab groups (eg. PAR23L, but going to PAR40T)
+* If needed, can generate schedules mixing theory and lab groups (eg. PAR23L, but going to PAR40T)
 
--Allows specifying preference between morning, afternoon or no preference at all.
+* Allows specifying preference between morning, afternoon or no preference at all.
 
--Sorts the results, so good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
+* Sorts the results, so good schedules will be printed first. My own criteria are used here, but it's way better than not having them ordered.
 
 ### How to build and use
 Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
@@ -35,17 +35,17 @@ I recommend looking at <tt>input.txt</tt> and using it as a template.
 Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
 
--Descarga y parsea el documento de horarios de la API de la FIB.
+* Descarga y parsea el documento de horarios de la API de la FIB.
 
--Permite indicar qué asignaturas aparecerán en todos los horarios.
+* Permite indicar qué asignaturas aparecerán en todos los horarios.
 
--Permite escoger qué subgrupos no aparecen en los horarios. Útil para mirar horarios alternativos si ciertos grupos se llenan, por ejemplo.
+* Permite escoger qué subgrupos no aparecen en los horarios. Útil para mirar horarios alternativos si ciertos grupos se llenan, por ejemplo.
 
--Se puede activar la generación de horarios que mezclen grupos de teoría y lab (ej: PAR23L, pero vas a teoría del PAR40T)
+* Se puede activar la generación de horarios que mezclen grupos de teoría y lab (ej: PAR23L, pero vas a teoría del PAR40T)
 
--Se puede elegir si se prefieren horarios de mañanas o tardes (o si no se prefiere nada en particular).
+* Se puede elegir si se prefieren horarios de mañanas o tardes (o si no se prefiere nada en particular).
 
--Ordena los horarios, así que en general los horarios buenos saldrán primero. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
+* Ordena los horarios, así que en general los horarios buenos saldrán primero. Se usa mi criterio personal, pero en general sirve muchísimo más que no ordenarlos.
 
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt>C++11</tt>. El <tt>Makefile</tt> usa <tt>g++</tt>.
