@@ -6,8 +6,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <regex>
-#include "HorarisParser.hh"
+#include "Parser.hh"
 #include "Horari.hh"
+#include "Data.hh"
 
 /*
   Schedule generator for FIB-UPC. Downloads data from https://api.fib.upc.edu.
@@ -145,13 +146,6 @@ int main(int argc, char** argv)
   for(const string& s : nomsObligatories) names.emplace_back(s);
   for(const string& s : nomsAssignatures) names.emplace_back(s);
 
-  data.deleteNonRequestedGroups(names);
-  data.joinGroups();
-  data.deleteExcludedGroups(groupsToExclude);
-  data.deleteRedundantGroups();
-  data.makeGroups(mixGroups);
-  data.makePermutations(sizeHorari,nomsObligatories,nomsAssignatures);
-
   cout << "Printing schedules for " << semester << "   ";
   std::cout << "Current Date: " << year << "-" << month << "-" << day << ", ";
   
@@ -177,5 +171,5 @@ int main(int argc, char** argv)
   std::cout << "Warning: remember to check if the schedule you want actually exists in https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/horaris." << std::endl;
   std::cout << "When there are equivalent lab groups, ONLY ONE (not necessarily the smallest number) is shown. Check if there are more should you need them." << std::endl << std::endl;
 
-  data.makeAndPrintSchedules(preference, MAX_PRINTED_SCHEDULES);
+  data.generateAndPrint(sizeHorari,mixGroups,preference,MAX_PRINTED_SCHEDULES,nomsObligatories,nomsAssignatures,groupsToExclude);
 }
