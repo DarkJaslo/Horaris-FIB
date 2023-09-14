@@ -3,7 +3,7 @@ OBJ_DIR := obj
 BIN_DIR := .
 EXE := $(BIN_DIR)/horaris.exe
 
-SRC = $(SRC_DIR)/main.cc $(SRC_DIR)/HorarisParser.cc $(SRC_DIR)/Horari.cc
+SRC = $(SRC_DIR)/main.cc $(SRC_DIR)/Parser.cc $(SRC_DIR)/Horari.cc $(SRC_DIR)/Data.cc
 OBJ = $(SRC:$(SRC_DIR)/%.cc=$(OBJ_DIR)/%.o)
 
 DEBUG = -g -O0 -fno-inline -D_GLIBCXX_DEBUG
