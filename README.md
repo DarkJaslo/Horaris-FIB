@@ -36,7 +36,7 @@ I recommend looking at <tt>input.txt</tt> and using it as a template.
 Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
 
-* Puedes pedir que aparezcan todas las asignaturas que te interesen, pues especificas a parte cuáles quieres que salgan obligatoriamente siempre (si las hay).
+* Puedes pedir que aparezcan tantas asignaturas como quieras, pues especificas a parte cuáles quieres que salgan obligatoriamente siempre (si las hay).
 
 * Permite escoger qué subgrupos no aparecen en los horarios. Útil para mirar horarios alternativos si ciertos grupos se llenan, por ejemplo.
 
