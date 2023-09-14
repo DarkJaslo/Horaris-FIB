@@ -20,7 +20,7 @@ Generates all possible schedules given a set of subjects. Works in Linux (only t
 ### How to build and use
 Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
 
-Having <tt>python3</tt> installed (uses a python script to download data from https://api.fib.upc.edu). Downloading module <tt>requests</tt> may be needed too.
+Uses the <tt>httplib</tt> header-only library (https://github.com/yhirose/cpp-httplib), which depends on <tt>openSSL</tt>. You will need the dev version (in Ubuntu/Debian, <tt>libssl-dev</tt>).
 
 1. Clone / download the repository.
 2. In any console, navigate to the repository's directory and execute <tt>make</tt>.
@@ -31,7 +31,7 @@ Having <tt>python3</tt> installed (uses a python script to download data from ht
 
 I recommend looking at <tt>input.txt</tt> and using it as a template.
 
-## [Español] Generador de horarios sencillo para la FIB-UPC 
+## [Español] Generador de horarios para la FIB-UPC 
 Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
 
@@ -50,7 +50,7 @@ Genera todos los horarios posibles de un conjunto de asignaturas. Funciona en Li
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt>C++11</tt>. El <tt>Makefile</tt> usa <tt>g++</tt>.
 
-Tener <tt>python3</tt> instalado (se usa un script en python para descargar la información de los horarios de https://api.fib.upc.edu). En algunos casos será necesario también instalar el módulo <tt>requests</tt>.
+Usa la librería header-only <tt>httplib</tt> (https://github.com/yhirose/cpp-httplib), la cual depende de <tt>openSSL</tt>. Es necesaria la versión de desarrollo (en Ubuntu/Debian, <tt>libssl-dev</tt>).
 
 1. Clonar / descargar el repositorio.
 2. Desde una consola en el directorio del repositorio, ejecutar <tt>make</tt> 
