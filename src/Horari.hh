@@ -17,11 +17,11 @@ enum Weekday{
 
 inline std::ostream& operator<<(std::ostream& os, const Weekday& d){
   switch(d){
-    case monday:    os << "dilluns";   break;
-    case tuesday:   os << "dimarts";   break;
-    case wednesday: os << "dimecres";  break;
-    case thursday:  os << "dijous";    break;
-    case friday:    os << "divendres"; break;
+    case monday:    os << "monday";    break;
+    case tuesday:   os << "tuesday";   break;
+    case wednesday: os << "wednesday"; break;
+    case thursday:  os << "thursday";  break;
+    case friday:    os << "friday";    break;
     default:        os << "error";     break;
   }
   return os;
