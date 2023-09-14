@@ -9,6 +9,7 @@
 #include "Parser.hh"
 #include "Horari.hh"
 #include "Data.hh"
+#include "HTTPSGetter.hh"
 
 /*
   Schedule generator for FIB-UPC. Downloads data from https://api.fib.upc.edu.
@@ -53,7 +54,7 @@ int main(int argc, char** argv)
   std::cin >> semester;
   std::cin >> semester;
 
-  char buffer[256];
+  /*char buffer[256];
   sprintf(buffer,"python3 get.py %s > FIB_DATA.txt",semester.c_str());
 
   //Executes python program that gets the data
@@ -61,6 +62,14 @@ int main(int argc, char** argv)
   {
     std::cerr << "Error: get.py script couldn't be executed or ran into an error" << std::endl;
     exit(1);
+  }*/
+
+  {
+    string url = "https://api.fib.upc.edu";
+    string path = "/v2/quadrimestres/";
+    path.append(semester);
+    path.append("/classes/?format=api&client_id=liSPe2KsaYUovErkk1WyqgMdYxOD1Wqd3VCXwhoy");
+    if(not HTTPSGetter::get(url,path,"FIB_DATA.txt")) exit(EXIT_FAILURE);
   }
 
   Parser parser;
