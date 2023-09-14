@@ -21,7 +21,7 @@ Generates good schedules given a set of subjects. Works in Linux (only tested in
 ### How to build and use
 Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
 
-Uses the <tt>httplib</tt> header-only library (https://github.com/yhirose/cpp-httplib), which depends on <tt>openSSL</tt>. You will need the dev version (in Ubuntu/Debian, <tt>libssl-dev</tt>).
+The <tt>httplib</tt> header-only library (https://github.com/yhirose/cpp-httplib) depends on <tt>openSSL</tt>. You will need the dev version (in Ubuntu/Debian, <tt>libssl-dev</tt>).
 
 1. Clone / download the repository.
 2. In any console, navigate to the repository's directory and execute <tt>make</tt>.
@@ -49,7 +49,7 @@ Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (
 ### Cómo compilar y ejecutar
 Requisitos: poder usar un <tt>Makefile</tt> <tt>(make)</tt> y poder compilar <tt>C++11</tt>. El <tt>Makefile</tt> usa <tt>g++</tt>.
 
-Usa la librería header-only <tt>httplib</tt> (https://github.com/yhirose/cpp-httplib), la cual depende de <tt>openSSL</tt>. Es necesaria la versión de desarrollo (en Ubuntu/Debian, <tt>libssl-dev</tt>).
+La librería ya incluída <tt>httplib</tt> (https://github.com/yhirose/cpp-httplib) depende de <tt>openSSL</tt>. Es necesaria la versión de desarrollo (en Ubuntu/Debian, <tt>libssl-dev</tt>).
 
 1. Clonar / descargar el repositorio.
 2. Desde una consola en el directorio del repositorio, ejecutar <tt>make</tt> 
