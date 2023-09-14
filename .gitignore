@@ -3,5 +3,6 @@
 *.out
 *.inp
 FIB_DATA.txt
+get.py
 .vscode/settings.json
 .vscode/c_cpp_properties.json
