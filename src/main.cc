@@ -54,16 +54,6 @@ int main(int argc, char** argv)
   std::cin >> semester;
   std::cin >> semester;
 
-  /*char buffer[256];
-  sprintf(buffer,"python3 get.py %s > FIB_DATA.txt",semester.c_str());
-
-  //Executes python program that gets the data
-  if(std::system(buffer) != 0)
-  {
-    std::cerr << "Error: get.py script couldn't be executed or ran into an error" << std::endl;
-    exit(1);
-  }*/
-
   {
     string url = "https://api.fib.upc.edu";
     string path = "/v2/quadrimestres/";
