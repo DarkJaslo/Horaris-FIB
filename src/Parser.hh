@@ -21,6 +21,7 @@ class Parser{
 public:
 
   Parser();
+  ~Parser();
 
   /*
     The number of different HorariObj that will have to be read

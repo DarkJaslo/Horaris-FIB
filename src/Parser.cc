@@ -10,6 +10,11 @@ Parser::Parser()
   _openedFile = false;
 }
 
+Parser::~Parser()
+{
+  if(_openedFile and _file.is_open()) _file.close();
+}
+
 int Parser::count()const{  return _count; }
 
 void Parser::openFile(const std::string& filename)
