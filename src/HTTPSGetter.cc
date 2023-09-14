@@ -10,7 +10,8 @@ bool HTTPSGetter::get(const std::string& serverUrl, const std::string& path, con
 {
 	httplib::Client cli(serverUrl);
 
-	if(auto res = cli.Get(path)){
+	if(auto res = cli.Get(path))
+	{
 		if(res->status == 200)
 		{
 			std::fstream file;
