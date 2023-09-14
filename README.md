@@ -32,6 +32,10 @@ The <tt>httplib</tt> header-only library (https://github.com/yhirose/cpp-httplib
 
 I recommend looking at <tt>input.txt</tt> and using it as a template.
 
+### Future upgrades
+
+A release with a full graphic UI is currently in the making.
+
 ## (Español) Generador de horarios para la FIB-UPC 
 Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
@@ -59,3 +63,8 @@ La librería ya incluída <tt>httplib</tt> (https://github.com/yhirose/cpp-httpl
 ### Formato de la entrada
 
 Recomiendo mirar el fichero <tt>input.txt</tt> y usarlo como plantilla.
+
+
+### Futuras actualizaciones
+
+Está en producción una release con interfaz gráfica completa.
