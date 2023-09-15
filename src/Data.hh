@@ -12,6 +12,7 @@ public:
 
   Data(){}
   Data(size_t size);
+  Data(const Data& other);
   void  pushHorariObj(const HorariObj& o);
 
   void  generateAndPrint(int subjectNumber, bool mixGroups, SchedulePreference preference, int maxPrintedSchedules,
@@ -76,6 +77,8 @@ private:
   /*First is the index "I" for _groups
   Second is the index for _groups[I].second */
   std::vector<std::vector<std::pair<int,int>>> _perms;
+
+  std::vector<Horari> _schedules;
 };
 
 }; //namespace end

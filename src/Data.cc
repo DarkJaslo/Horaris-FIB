@@ -5,7 +5,20 @@ using namespace jaslo;
 
 Data::Data(size_t size)
 {
+  _info.clear();
+  _groups.clear();
+  _subjectPermutations.clear();
+  _perms.clear();
+  
   _info.reserve(size);
+}
+
+Data::Data(const Data& other)
+{
+  _info = other._info;
+  _groups = other._groups;
+  _subjectPermutations = other._subjectPermutations;
+  _perms = other._perms;
 }
 
 HorariObj& Data::operator[](int i)
@@ -480,7 +493,7 @@ void Data::makePermutations(int subjNum, const std::vector<std::string>& always,
 
 void Data::makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSchedules)
 {
-  std::vector<Horari> hs;
+  _schedules.clear();
 
   for(int i = 0; i < _perms.size(); ++i)
   {
@@ -506,25 +519,25 @@ void Data::makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSc
       }
     }
     if(not ok) continue;
-    hs.push_back(h);
+    _schedules.push_back(h);
   }
 
-  for(Horari& h : hs)
+  for(Horari& h : _schedules)
   {
     h.computeValue(preference);
   }
 
-  sort(hs.begin(),hs.end());
+  sort(_schedules.begin(),_schedules.end());
 
   int printedSchedules = 0;
 
-  for(const Horari& h : hs){
+  for(const Horari& h : _schedules){
     h.print();
     std::cout << std::endl;
     if(++printedSchedules == maxPrintedSchedules) break;
   }
   std::cout << "Printed: " << printedSchedules << std::endl; 
-  std::cout << "Total schedules: " << hs.size() << std::endl;
+  std::cout << "Total schedules: " << _schedules.size() << std::endl;
 }
 
 
