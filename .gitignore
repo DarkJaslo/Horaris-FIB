@@ -2,6 +2,7 @@
 *.o
 *.out
 *.inp
+ui_*
 FIB_DATA.txt
 get.py
 .vscode/settings.json
