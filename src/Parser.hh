@@ -34,6 +34,11 @@ public:
   void openFile(const std::string& filename);
 
   /*
+    Closes the opened file if it was open
+  */
+  void closeFile();
+
+  /*
     Requires having opened a file.
     Reads everything until the "count": line in the file, and stores its value.
   */

@@ -12,15 +12,24 @@ Parser::Parser()
 
 Parser::~Parser()
 {
-  if(_openedFile and _file.is_open()) _file.close();
+  closeFile();
 }
 
 int Parser::count()const{  return _count; }
 
 void Parser::openFile(const std::string& filename)
 {
+  closeFile();
   _file.open(filename.c_str());
   _openedFile = true;
+}
+
+void Parser::closeFile()
+{
+  if(_openedFile and _file.is_open())
+  {
+    _file.close();
+  }
 }
 
 void Parser::getCount()
