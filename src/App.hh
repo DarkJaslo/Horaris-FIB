@@ -32,6 +32,7 @@ public slots:
   void removeSubjectAlways(const QString& subj);
   void excludeGroup(const QString& subjGr);
   void unExcludeGroup(const QString& subjGr);
+  void generate();
 
 signals:
   //Triggers when schedules are generated and printed
@@ -63,6 +64,9 @@ int     sizeHorari;
 bool    mixGroups;
 SchedulePreference preference;
 const static int   maxPrintedSchedules = 1000;
+std::fstream outputFile;
+const std::string outputFilename = "OUTPUT_SCHEDULES.txt"; 
+
 std::set<std::string> mustAppearSubjects;
 std::set<std::string> otherSubjects;
 std::set<std::pair<std::string,int>> groupsToExclude;
