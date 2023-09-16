@@ -101,7 +101,7 @@ public:
   int         hour() const;
   bool        taken() const;
   ClassType   type() const;
-  void        print()const;
+  void        print(std::ostream& out)const;
   void        take();
 
 private:
@@ -135,7 +135,7 @@ public:
   //Assumes computeValue() has been called
   int   value() const;
   bool  operator<(const Horari& other)const{ return _value > other._value; }
-  void  print() const;
+  void  print(std::ostream& out) const;
   void  computeValue(SchedulePreference pref);
 
 

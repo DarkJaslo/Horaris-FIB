@@ -15,9 +15,9 @@ Weekday     ClassHour::day()         const { return _day;         }
 int         ClassHour::hour()        const { return _hour;        }
 bool        ClassHour::taken()       const { return _taken;       }
 ClassType   ClassHour::type()        const { return _type;        }
-void ClassHour::print() const
+void ClassHour::print(std::ostream& out) const
 {
-  std::cout << _subjectName << " " << _group << _type;
+  out << _subjectName << " " << _group << _type;
 }
 void        ClassHour::take()              { _taken = true;       }
 
@@ -96,22 +96,22 @@ void Horari::addSubject(const std::vector<HorariObj>& subj)
 int Horari::subjectCount() const { return _subjectNames.size(); }
 int Horari::value()        const { return _value;               }
 
-void Horari::print() const
+void Horari::print(std::ostream& out) const
 {
-  std::cout << "\tMonday" << "\t\tTuesday" << "\t\tWednesday" << "\tThursday" << "\tFriday" << std::endl;
+  out << "\tMonday" << "\t\tTuesday" << "\t\tWednesday" << "\tThursday" << "\tFriday" << std::endl;
 
   for(int c = 0; c < 13; ++c) //For all hours in a day
   {
-    std::cout << 8+c << "h\t";
+    out << 8+c << "h\t";
     for(int v = 0; v < 5; ++v) //For all days
     {
       int index = indexFor(ALL_DAYS[v],8+c);
-      if(H[index].taken()) H[index].print();
-      else std::cout << "  -  ";
-      std::cout << "\t";
-      if(H[index].subjectName().length() <= 3) std::cout << "\t";
+      if(H[index].taken()) H[index].print(out);
+      else out << "  -  ";
+      out << "\t";
+      if(H[index].subjectName().length() <= 3) out << "\t";
     }
-    std::cout << std::endl;
+    out << std::endl;
   }
 }
 
