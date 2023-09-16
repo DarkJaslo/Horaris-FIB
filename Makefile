@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -Wall -Wno-sign-compare -O3 -O2 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -I/usr/include/x86_64-linux-gnu/qt5 -Isrc -Iui -Ilib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -56,12 +56,15 @@ SOURCES       = src/main.cc \
 		src/Data.cc \
 		src/Horari.cc \
 		src/HTTPSGetter.cc \
-		src/Parser.cc 
+		src/Parser.cc \
+		ui/MyForm.cc moc_MyForm.cpp
 OBJECTS       = main.o \
 		Data.o \
 		Horari.o \
 		HTTPSGetter.o \
-		Parser.o
+		Parser.o \
+		MyForm.o \
+		moc_MyForm.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -143,11 +146,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Horari.hh \
 		src/HTTPSGetter.hh \
 		src/Parser.hh \
-		lib/httplib.h src/main.cc \
+		lib/httplib.h \
+		ui/MyForm.h src/main.cc \
 		src/Data.cc \
 		src/Horari.cc \
 		src/HTTPSGetter.cc \
-		src/Parser.cc
+		src/Parser.cc \
+		ui/MyForm.cc
 QMAKE_TARGET  = Horaris-FIB.exe
 DESTDIR       = 
 TARGET        = Horaris-FIB.exe
@@ -156,7 +161,7 @@ TARGET        = Horaris-FIB.exe
 first: all
 ####### Build rules
 
-Horaris-FIB.exe: ui_Form.h $(OBJECTS)  
+Horaris-FIB.exe: ui_MyForm.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: Horaris-FIB.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -331,9 +336,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/Data.hh src/Horari.hh src/HTTPSGetter.hh src/Parser.hh lib/httplib.h $(DISTDIR)/
-	$(COPY_FILE) --parents src/main.cc src/Data.cc src/Horari.cc src/HTTPSGetter.cc src/Parser.cc $(DISTDIR)/
-	$(COPY_FILE) --parents ui/Form.ui $(DISTDIR)/
+	$(COPY_FILE) --parents src/Data.hh src/Horari.hh src/HTTPSGetter.hh src/Parser.hh lib/httplib.h ui/MyForm.h $(DISTDIR)/
+	$(COPY_FILE) --parents src/main.cc src/Data.cc src/Horari.cc src/HTTPSGetter.cc src/Parser.cc ui/MyForm.cc $(DISTDIR)/
+	$(COPY_FILE) --parents ui/MyForm.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -365,18 +370,25 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -Wall -Wno-sign-compare -O3 -O2 -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all:
+compiler_moc_header_make_all: moc_MyForm.cpp
 compiler_moc_header_clean:
+	-$(DEL_FILE) moc_MyForm.cpp
+moc_MyForm.cpp: ui/MyForm.h \
+		ui_MyForm.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/Desktop/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/Desktop/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/Desktop/code/Horaris-FIB/src -I/home/jon/Desktop/code/Horaris-FIB/ui -I/home/jon/Desktop/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ui/MyForm.h -o moc_MyForm.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_Form.h
+compiler_uic_make_all: ui_MyForm.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_Form.h
-ui_Form.h: ui/Form.ui \
+	-$(DEL_FILE) ui_MyForm.h
+ui_MyForm.h: ui/MyForm.ui \
 		/usr/lib/qt5/bin/uic
-	/usr/lib/qt5/bin/uic ui/Form.ui -o ui_Form.h
+	/usr/lib/qt5/bin/uic ui/MyForm.ui -o ui_MyForm.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -384,14 +396,12 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_uic_clean 
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
-main.o: src/main.cc src/Parser.hh \
-		src/Horari.hh \
-		src/Data.hh \
-		src/HTTPSGetter.hh
+main.o: src/main.cc ui/MyForm.h \
+		ui_MyForm.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o src/main.cc
 
 Data.o: src/Data.cc src/Data.hh \
@@ -408,6 +418,13 @@ HTTPSGetter.o: src/HTTPSGetter.cc src/HTTPSGetter.hh \
 Parser.o: src/Parser.cc src/Parser.hh \
 		src/Horari.hh
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Parser.o src/Parser.cc
+
+MyForm.o: ui/MyForm.cc ui/MyForm.h \
+		ui_MyForm.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MyForm.o ui/MyForm.cc
+
+moc_MyForm.o: moc_MyForm.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MyForm.o moc_MyForm.cpp
 
 ####### Install
 
