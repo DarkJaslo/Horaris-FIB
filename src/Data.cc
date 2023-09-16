@@ -1,5 +1,6 @@
 #include "Data.hh"
 #include <algorithm>
+#include <fstream>
 using namespace jaslo;
 
 
@@ -40,7 +41,7 @@ void Data::pushHorariObj(const HorariObj& o)
   _info.emplace_back(o);
 }
 
-void Data::generateAndPrint(int subjectNumber, bool mixGroups, SchedulePreference preference, int maxPrintedSchedules,
+void Data::generateSchedules(int subjectNumber, bool mixGroups, SchedulePreference preference, int maxPrintedSchedules,
 const std::vector<std::string>& alwaysAppearSubjects, 
 const std::vector<std::string>& otherSubjects, 
 const std::vector<std::pair<std::string,int>>& subgroupsToExclude)
@@ -65,7 +66,7 @@ const std::vector<std::pair<std::string,int>>& subgroupsToExclude)
 	deleteRedundantGroups();
 	makeGroups(mixGroups);
 	makePermutations(subjectNumber,alwaysAppearSubjects,otherSubjects);
-	makeAndPrintSchedules(preference, maxPrintedSchedules);
+	makeSchedules(preference, maxPrintedSchedules);
 }
 
 void Data::print()
@@ -491,7 +492,7 @@ void Data::makePermutations(int subjNum, const std::vector<std::string>& always,
   }
 }
 
-void Data::makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSchedules)
+void Data::makeSchedules(SchedulePreference preference, int maxPrintedSchedules)
 {
   _schedules.clear();
 
@@ -529,7 +530,16 @@ void Data::makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSc
 
   sort(_schedules.begin(),_schedules.end());
 
-  int printedSchedules = 0;
+  std::vector<Horari> newSchedules(maxPrintedSchedules);
+
+  for(int i = 0; i < maxPrintedSchedules; ++i)
+  {
+    newSchedules[i] = _schedules[i];
+  }
+
+  _schedules = newSchedules;
+
+  /*int printedSchedules = 0;
 
   for(const Horari& h : _schedules){
     h.print();
@@ -537,7 +547,12 @@ void Data::makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSc
     if(++printedSchedules == maxPrintedSchedules) break;
   }
   std::cout << "Printed: " << printedSchedules << std::endl; 
-  std::cout << "Total schedules: " << _schedules.size() << std::endl;
+  std::cout << "Total schedules: " << _schedules.size() << std::endl;*/
+}
+
+void Data::printSchedules(std::fstream& file)
+{
+  for(const Horari& h : _schedules) h.print(file);
 }
 
 

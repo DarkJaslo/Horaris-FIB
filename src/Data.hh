@@ -15,10 +15,12 @@ public:
   Data(const Data& other);
   void  pushHorariObj(const HorariObj& o);
 
-  void  generateAndPrint(int subjectNumber, bool mixGroups, SchedulePreference preference, int maxPrintedSchedules,
+  void  generateSchedules(int subjectNumber, bool mixGroups, SchedulePreference preference, int maxPrintedSchedules,
 		const std::vector<std::string>& alwaysAppearSubjects, 
 		const std::vector<std::string>& otherSubjects, 
 		const std::vector<std::pair<std::string,int>>& subgroupsToExclude);
+    //Prints the schedules to the file given
+  void  printSchedules(std::fstream& file);
 
   inline HorariObj&           operator[](int);
   inline const HorariObj&     operator[](int)const;
@@ -43,7 +45,7 @@ private:
   //Does the heavy work. subjNum is num of subjects wanted in every schedule, always are the names of must-appear subjects, and include are the names of the rest.
   void                        makePermutations(int subjNum, const std::vector<std::string>& always, const std::vector<std::string>& include);
   //Tries the permutations, saves valid schedules and prints them up to maxPrintedSchedules in order
-  void                        makeAndPrintSchedules(SchedulePreference preference, int maxPrintedSchedules);
+  void                        makeSchedules(SchedulePreference preference, int maxPrintedSchedules);
 
   static bool contains(const std::vector<std::string>& names, const std::string& name);
   int         binarySearch(int l, int r, const std::string& thing) const;
