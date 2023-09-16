@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = Horaris-FIB.exe
+TARGET = Horaris-FIB
 
 QT += widgets
 

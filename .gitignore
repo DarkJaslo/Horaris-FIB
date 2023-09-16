@@ -4,6 +4,7 @@
 *.inp
 ui_*
 moc_*
+Horaris-FIB
 FIB_DATA.txt
 get.py
 .vscode/settings.json
