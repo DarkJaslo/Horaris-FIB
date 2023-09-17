@@ -1,4 +1,7 @@
 #include "ui_MyForm.h"
+#include "Parser.hh"
+#include "Data.hh"
+#include <set>
 
 class MyForm : public QWidget
 {
