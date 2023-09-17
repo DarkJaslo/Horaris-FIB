@@ -1,16 +1,78 @@
 #include "App.hh"
+#include <sstream>
 using namespace jaslo;
+
+//Public
 
 App::App(QWidget* parent) : QWidget(parent)
 {
   setFocusPolicy(Qt::StrongFocus); //Can get keyboard events
+  init();
+}
+
+void App::getSemesters()
+{
+  if(not HTTPSGetter::get(url,pathSemesters,"SEMESTER.txt")) exit(EXIT_FAILURE);
+
+  std::fstream auxFile;
+  auxFile.open("SEMESTER.txt", std::ios::in);
+
+  bool gotSemester = false;
+
+  std::string semest;
+
+  while(not gotSemester and auxFile.is_open() and not auxFile.eof())
+  {
+    std::string line;
+    getline(auxFile,line);
+    std::istringstream iss(line);
+
+    std::string aux;
+    iss >> aux;
+    if(aux == "\"id\":")
+    {
+      iss >> aux;
+      semest = aux.substr(1,6);
+      gotSemester = true;
+    }
+  }
+
+  std::string aux = semest;
+  if(aux[5] == '1')
+  {
+    aux[5] = '2';
+  }
+  else if(aux[5] == '2')
+  {
+    semest[5] = '1';
+  }
+
+  //loadSemester no funciona
+  emit loadSemester(QString::fromStdString(semest));
+  emit loadSemester(QString::fromStdString(aux));
+}
+
+void App::getData()
+{
+  fillPath();
+  if(not HTTPSGetter::get(url,path,"FIB_DATA.txt")) exit(EXIT_FAILURE);
 }
 
 //Public slots
 
-void App::setSemester(const QString& s){ semester = s.toStdString(); }
-void App::setScheduleSize(int size)    { sizeHorari = size;          }
-void App::setMixGroups(bool mix)       { mixGroups = mix;            }
+void App::init(){}
+void App::setSemester(const QString& s)
+{ 
+  semester = s.toStdString();
+}
+void App::setScheduleSize(int size)
+{ 
+  sizeHorari = size; 
+}
+void App::setMixGroups(bool mix)       
+{ 
+  mixGroups = mix;           
+}
 void App::setSchedulePreference(const QString& pref)
 {
   std::string aux = pref.toStdString();
@@ -58,12 +120,6 @@ void App::fillPath()
   path = path1;
   path.append(semester);
   path.append(path2);
-}
-
-void App::getData()
-{
-  fillPath();
-  if(not HTTPSGetter::get(url,path,"FIB_DATA.txt")) exit(EXIT_FAILURE);
 }
 
 void App::parseData()
