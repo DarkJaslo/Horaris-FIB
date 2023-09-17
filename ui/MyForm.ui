@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>847</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>270</y>
+     <x>740</x>
+     <y>680</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -26,7 +26,150 @@
     <string>Quit</string>
    </property>
   </widget>
+  <widget class="QSpinBox" name="spinBox">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>30</y>
+     <width>44</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>6</number>
+   </property>
+   <property name="value">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>20</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Número de asignaturas</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>70</y>
+     <width>92</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mixto?</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>100</y>
+     <width>101</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Morning</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Afternoon</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Any</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>100</y>
+     <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Preferencia</string>
+   </property>
+  </widget>
+  <widget class="App" name="appWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>600</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="MyComboBox" name="semesterComboBox">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>40</y>
+     <width>111</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="semesterLabel">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>20</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Semester</string>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>App</class>
+   <extends>QWidget</extends>
+   <header location="global">App.hh</header>
+   <container>1</container>
+   <slots>
+    <signal>closeApp()</signal>
+    <signal>loadSemester(QString)</signal>
+    <slot>setMixGroups(bool)</slot>
+    <slot>setScheduleSize(int)</slot>
+    <slot>setSchedulePreference(QString)</slot>
+    <slot>setSemester(QString)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">MyComboBox.hh</header>
+   <slots>
+    <slot>addOption(QString)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
@@ -36,12 +179,108 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>354</x>
-     <y>277</y>
+     <x>794</x>
+     <y>687</y>
     </hint>
     <hint type="destinationlabel">
      <x>338</x>
      <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>appWidget</receiver>
+   <slot>setMixGroups(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>470</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>631</x>
+     <y>633</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>appWidget</sender>
+   <signal>closeApp()</signal>
+   <receiver>MyForm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>639</x>
+     <y>660</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>697</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>appWidget</receiver>
+   <slot>setScheduleSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>appWidget</receiver>
+   <slot>setSchedulePreference(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>488</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>608</x>
+     <y>656</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>appWidget</sender>
+   <signal>loadSemester(QString)</signal>
+   <receiver>semesterComboBox</receiver>
+   <slot>addOption(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>661</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>semesterComboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>appWidget</receiver>
+   <slot>setSemester(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>612</x>
+     <y>630</y>
     </hint>
    </hints>
   </connection>
