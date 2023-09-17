@@ -18,6 +18,8 @@ SOURCES += src/main.cc \
         src/HTTPSGetter.cc \
         src/Parser.cc \
         ui/MyForm.cc \
+        src/App.cc \
+        ui/MyComboBox.cc \
 
 HEADERS += src/Data.hh \
         src/Horari.hh \
@@ -25,6 +27,8 @@ HEADERS += src/Data.hh \
         src/Parser.hh \
         lib/httplib.h \
         ui/MyForm.h \
+        src/App.hh \
+        ui/MyComboBox.hh \
 
 QMAKE_CXXFLAGS += -Wall -Wno-sign-compare -O3
 LIBS += -lssl -lcrypto
