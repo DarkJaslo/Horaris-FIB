@@ -7,7 +7,6 @@ using namespace jaslo;
 App::App(QWidget* parent) : QWidget(parent)
 {
   setFocusPolicy(Qt::StrongFocus); //Can get keyboard events
-  init();
 }
 
 void App::getSemesters()
@@ -60,7 +59,6 @@ void App::getData()
 
 //Public slots
 
-void App::init(){}
 void App::setSemester(const QString& s)
 { 
   semester = s.toStdString();

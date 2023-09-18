@@ -22,8 +22,6 @@ public:
   void getData();
 
 public slots:
-  //Downloads data in FIB_DATA.txt
-  void init();
   void setSemester(const QString& s);
   void setScheduleSize(int size);
   void setMixGroups(bool mix);
