@@ -5,7 +5,7 @@
 ui_*
 moc_*
 Horaris-FIB
-FIB_DATA.txt
+FIB_DATA*
 SEMESTER.txt
 get.py
 .vscode/settings.json
