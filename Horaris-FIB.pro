@@ -30,7 +30,7 @@ HEADERS += src/Data.hh \
         src/App.hh \
         ui/MyComboBox.hh \
 
-QMAKE_CXXFLAGS += -Wall -Wno-sign-compare -O3
+QMAKE_CXXFLAGS += -Wall -Wno-sign-compare -g -D_GLIBCXX_DEBUG -O3
 LIBS += -lssl -lcrypto
 
 
