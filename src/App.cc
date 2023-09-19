@@ -1,5 +1,6 @@
 #include "App.hh"
 #include <sstream>
+#include <thread>
 using namespace jaslo;
 
 //Public
@@ -7,6 +8,8 @@ using namespace jaslo;
 App::App(QWidget* parent) : QWidget(parent)
 {
   setFocusPolicy(Qt::StrongFocus); //Can get keyboard events
+  data = std::vector<Data>(2);
+  allSubjectNames = std::vector<std::vector<std::string>>(2);
 }
 
 void App::getSemesters()
@@ -46,22 +49,42 @@ void App::getSemesters()
     semest[5] = '1';
   }
 
-  //loadSemester no funciona
+  semesters[0] = semest;
+  semesters[1] = aux;
+
   emit loadSemester(QString::fromStdString(semest));
   emit loadSemester(QString::fromStdString(aux));
 }
 
 void App::getData()
 {
-  fillPath();
-  if(not HTTPSGetter::get(url,path,"FIB_DATA.txt")) exit(EXIT_FAILURE);
+  std::thread th1(&App::getDataTask,this,0);
+  std::thread th2(&App::getDataTask,this,1);
+
+  th1.join();
+  th2.join();
+
+  initList();
+}
+
+void App::getStudies()
+{
+
+}
+
+void App::receiveListWidget(QListWidget* listWidget)
+{
+  this->list = listWidget;
 }
 
 //Public slots
 
 void App::setSemester(const QString& s)
 { 
-  semester = s.toStdString();
+  if(semesters[0] == s.toStdString()) semester = 0;
+  else semester = 1;
+
+  initList();
 }
 void App::setScheduleSize(int size)
 { 
@@ -112,26 +135,32 @@ void App::generate()
 
 //Private
 
-void App::fillPath()
+void App::parseData(int index, const std::string& filename)
 {
-  //Path = path1 + semester + path2
-  path = path1;
-  path.append(semester);
-  path.append(path2);
-}
-
-void App::parseData()
-{
-  parser.openFile("FIB_DATA.txt");
+  parser.openFile(filename);
   parser.getCount();
-  data = Data(parser.count());
+  data[index] = Data(parser.count());
+  std::set<std::string> names;
   
   HorariObj obj;
 
   while(parser.readHorariObj(obj)){
-    data.pushHorariObj(obj);
+    data[index].pushHorariObj(obj);
+    names.insert(obj.code());
   }
-  data.pushHorariObj(obj);
+
+  data[index].pushHorariObj(obj);
+  names.insert(obj.code());
+
+  parser.closeFile();
+
+  allSubjectNames[index].clear();
+  allSubjectNames[index].reserve(names.size());
+  for(const std::string& name : names)
+  {
+    allSubjectNames[index].emplace_back(name);
+  }
+  
 }
 
 void App::computeSchedules()
@@ -157,12 +186,47 @@ void App::computeSchedules()
     toExclude[i++] = p;
   }
 
-  data.generateSchedules(sizeHorari,mixGroups,preference,maxPrintedSchedules,mustAppear,other,toExclude);
+  data[dataIndex].generateSchedules(sizeHorari,mixGroups,preference,maxPrintedSchedules,mustAppear,other,toExclude);
 
   outputFile.open(outputFilename, std::ios::out | std::ios::trunc);
-  data.printSchedules(outputFile);
+  data[dataIndex].printSchedules(outputFile);
   outputFile.close();
   
   //Signal
   writtenSchedules();
+}
+
+void App::initList()
+{
+  list->clear();
+  for(const std::string& name : allSubjectNames[semester])
+  {
+    QListWidgetItem *item = new QListWidgetItem;
+    item->setText(QString::fromStdString(name));
+    item->setCheckState(Qt::CheckState::Unchecked);
+
+    list->addItem(item);
+  }
+}
+
+void App::sortList()
+{
+  list->sortItems(Qt::SortOrder::AscendingOrder);
+}
+
+void App::getDataTask(int semest)
+{
+  std::cout << "exec with semest " << semest << std::endl;
+  std::string path;
+  path = path1;
+  path.append(semesters[semest]);
+  path.append(path2);
+
+  std::string filename = "FIB_DATA";
+  if(semest == 0) filename.append("_0.txt");
+  else filename.append("_1.txt");
+
+  if(not HTTPSGetter::get(url,path,filename)) exit(EXIT_FAILURE);
+
+  parseData(semest,filename);
 }
