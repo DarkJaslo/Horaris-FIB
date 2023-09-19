@@ -145,6 +145,39 @@
     <string>Semester</string>
    </property>
   </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>80</y>
+     <width>301</width>
+     <height>601</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="MyComboBox" name="studiesComboBox">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>40</y>
+     <width>86</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="majorLabel">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>20</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Major</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
