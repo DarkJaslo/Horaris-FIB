@@ -9,7 +9,10 @@ App::App(QWidget* parent) : QWidget(parent)
 {
   setFocusPolicy(Qt::StrongFocus); //Can get keyboard events
   data = std::vector<Data>(2);
-  allSubjectNames = std::vector<std::vector<std::string>>(2);
+  allSubjectNamesByMajor = std::vector<std::map<std::string,std::vector<std::string>>>(2);
+  majors = std::vector<std::vector<std::string>>(2);
+  major = "GEI";
+  filter = "";
 }
 
 void App::getSemesters()
@@ -64,12 +67,8 @@ void App::getData()
   th1.join();
   th2.join();
 
+  initStudiesBox();
   initList();
-}
-
-void App::getStudies()
-{
-
 }
 
 void App::receiveListWidget(QListWidget* listWidget)
@@ -77,14 +76,26 @@ void App::receiveListWidget(QListWidget* listWidget)
   this->list = listWidget;
 }
 
+void App::receiveStudiesBox(MyComboBox* box)
+{
+  studiesBox = box;
+}
+
 //Public slots
 
+void App::setMajor(const QString& m)
+{
+  major = m.toStdString();
+
+  setFilter(QString::fromStdString(filter));
+}
 void App::setSemester(const QString& s)
 { 
   if(semesters[0] == s.toStdString()) semester = 0;
   else semester = 1;
 
-  initList();
+  changedSemester();
+  setFilter(QString::fromStdString(filter));
 }
 void App::setScheduleSize(int size)
 { 
@@ -125,6 +136,28 @@ void App::unExcludeGroup(const QString& subjGr)
 {
   //Unknown format at the moment
 }
+
+void App::setFilter(const QString& filt)
+{
+  if(filt.size() == 0)
+  {
+    filter = filt.toStdString();
+    initList();
+  }
+  else{
+    std::string stdFilter = filt.toStdString();
+    for(char& c : stdFilter)
+    {
+      if(c >= 'a' and c <= 'z')
+      {
+        c-=('a'-'A');
+      }
+    }
+    filter = stdFilter;
+    initList(filter);
+  }
+}
+
 void App::generate()
 {
   computeSchedules();
@@ -137,10 +170,12 @@ void App::generate()
 
 void App::parseData(int index, const std::string& filename)
 {
+  Parser parser;
   parser.openFile(filename);
   parser.getCount();
   data[index] = Data(parser.count());
   std::set<std::string> names;
+  std::set<std::string> allMajors;
   
   HorariObj obj;
 
@@ -154,13 +189,43 @@ void App::parseData(int index, const std::string& filename)
 
   parser.closeFile();
 
-  allSubjectNames[index].clear();
-  allSubjectNames[index].reserve(names.size());
+  std::cout << "parsed " << index << std::endl; 
+
+  allSubjectNamesByMajor[index].clear();
+
+  //allSubjectNames[index].clear();
+  //allSubjectNames[index].reserve(names.size());
   for(const std::string& name : names)
   {
-    allSubjectNames[index].emplace_back(name);
+    //Analyze name
+    std::string auxMajor = "GEI";
+
+    if(name.length() >= 3 and name.substr(0,3) == "AL-") //Aula lliure subject
+    {
+      auxMajor = "AL";
+    }
+    else{
+      int i = 0;
+      while(i < name.length())
+      {
+        if(name[i] == '-')
+        {
+          auxMajor = name.substr(i+1,name.length()-i+1);
+          break;
+        }
+        ++i;
+      }      
+    }
+    if(name == "MENTORIES" or name == "RESERVAT") continue;
+    allSubjectNamesByMajor[index][auxMajor].push_back(name);
+
+    allMajors.insert(auxMajor);
   }
   
+  for(const std::string& maj : allMajors)
+  {
+    majors[index].push_back(maj);
+  }
 }
 
 void App::computeSchedules()
@@ -199,12 +264,42 @@ void App::computeSchedules()
 void App::initList()
 {
   list->clear();
-  for(const std::string& name : allSubjectNames[semester])
+  for(const std::string& name : allSubjectNamesByMajor[semester][major])
   {
     QListWidgetItem *item = new QListWidgetItem;
     item->setText(QString::fromStdString(name));
     item->setCheckState(Qt::CheckState::Unchecked);
 
+    list->addItem(item);
+  }
+}
+
+void App::initList(const std::string& filter)
+{
+  std::vector<std::string> auxNames = allSubjectNamesByMajor[semester][major];
+  std::vector<bool> use(auxNames.size(),true);
+
+  for(int i = 0; i < filter.length(); ++i)
+  {
+    for(int j = 0; j < auxNames.size(); ++j)
+    {
+      if(use[j] and (auxNames[j].length() < i+1 or auxNames[j][i] != filter[i]))
+      {
+        use[j] = false;
+      }
+    }
+  }
+
+  list->clear();
+
+  int counter = 0;
+  for(const std::string& name : auxNames)
+  {
+    if(not use[counter++]) continue;
+    QListWidgetItem *item = new QListWidgetItem;
+    item->setText(QString::fromStdString(name));
+    //TODO: properly manage checkstate
+    item->setCheckState(Qt::CheckState::Unchecked);
     list->addItem(item);
   }
 }
@@ -229,4 +324,16 @@ void App::getDataTask(int semest)
   if(not HTTPSGetter::get(url,path,filename)) exit(EXIT_FAILURE);
 
   parseData(semest,filename);
+}
+
+void App::initStudiesBox()
+{
+  studiesBox->clear();
+
+  for(const std::string& study : majors[semester])
+  {
+    studiesBox->addOption(QString::fromStdString(study));
+  }
+
+  studiesBox->setCurrentIndex(studiesBox->findText(QString("GEI")));
 }
