@@ -148,8 +148,8 @@
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>80</y>
+     <x>30</x>
+     <y>100</y>
      <width>301</width>
      <height>601</height>
     </rect>
@@ -164,6 +164,11 @@
      <height>25</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>GEI</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="majorLabel">
    <property name="geometry">
@@ -178,6 +183,16 @@
     <string>Major</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -188,10 +203,13 @@
    <slots>
     <signal>closeApp()</signal>
     <signal>loadSemester(QString)</signal>
+    <signal>loadMajor(QString)</signal>
     <slot>setMixGroups(bool)</slot>
     <slot>setScheduleSize(int)</slot>
     <slot>setSchedulePreference(QString)</slot>
     <slot>setSemester(QString)</slot>
+    <slot>setMajor(QString)</slot>
+    <slot>setFilter(QString)</slot>
    </slots>
   </customwidget>
   <customwidget>
@@ -314,6 +332,54 @@
     <hint type="destinationlabel">
      <x>612</x>
      <y>630</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>studiesComboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>appWidget</receiver>
+   <slot>setMajor(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>643</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>appWidget</sender>
+   <signal>loadMajor(QString)</signal>
+   <receiver>studiesComboBox</receiver>
+   <slot>addOption(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>623</x>
+     <y>650</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>appWidget</receiver>
+   <slot>setFilter(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>648</y>
     </hint>
    </hints>
   </connection>
