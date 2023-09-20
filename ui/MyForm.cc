@@ -5,6 +5,7 @@ MyForm::MyForm(QWidget* parent) : QWidget(parent)
   ui.setupUi(this);
 
   ui.appWidget->receiveListWidget(ui.listWidget);
+  ui.appWidget->receiveStudiesBox(ui.studiesComboBox);
   //ui.listWidget->setSortingEnabled(true);
   
   std::cout << "setup ui" << std::endl;
