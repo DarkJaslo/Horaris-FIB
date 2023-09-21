@@ -10,6 +10,7 @@ Data::Data(size_t size)
   _groups.clear();
   _subjectPermutations.clear();
   _perms.clear();
+  _schedules.clear();
   
   _info.reserve(size);
 }
@@ -20,6 +21,7 @@ Data::Data(const Data& other)
   _groups = other._groups;
   _subjectPermutations = other._subjectPermutations;
   _perms = other._perms;
+  _schedules = other._schedules;
 }
 
 HorariObj& Data::operator[](int i)
@@ -46,6 +48,13 @@ const std::vector<std::string>& alwaysAppearSubjects,
 const std::vector<std::string>& otherSubjects, 
 const std::vector<std::pair<std::string,int>>& subgroupsToExclude)
 {
+  _groups.clear();
+  _subjectPermutations.clear();
+  _perms.clear();
+  _schedules.clear();
+
+  std::cout << "generateSchedules start" << std::endl;
+
 	std::vector<std::string> allRequestedSubjects(alwaysAppearSubjects.size()+otherSubjects.size());
 
 	{
