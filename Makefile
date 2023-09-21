@@ -402,6 +402,7 @@ moc_App.cpp: src/App.hh \
 		src/Parser.hh \
 		src/Horari.hh \
 		src/Data.hh \
+		ui/MyComboBox.hh \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/Desktop/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/Desktop/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/Desktop/code/Horaris-FIB/src -I/home/jon/Desktop/code/Horaris-FIB/ui -I/home/jon/Desktop/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/App.hh -o moc_App.cpp
@@ -425,7 +426,8 @@ ui_MyForm.h: ui/MyForm.ui \
 		src/HTTPSGetter.hh \
 		src/Parser.hh \
 		src/Horari.hh \
-		src/Data.hh
+		src/Data.hh \
+		ui/MyComboBox.hh
 	/usr/lib/qt5/bin/uic ui/MyForm.ui -o ui_MyForm.h
 
 compiler_yacc_decl_make_all:
@@ -477,7 +479,8 @@ App.o: src/App.cc src/App.hh \
 		src/HTTPSGetter.hh \
 		src/Parser.hh \
 		src/Horari.hh \
-		src/Data.hh
+		src/Data.hh \
+		ui/MyComboBox.hh
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o App.o src/App.cc
 
 MyComboBox.o: ui/MyComboBox.cc ui/MyComboBox.hh
