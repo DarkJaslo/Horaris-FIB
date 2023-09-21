@@ -13,6 +13,9 @@ App::App(QWidget* parent) : QWidget(parent)
   majors = std::vector<std::vector<std::string>>(2);
   major = "GEI";
   filter = "";
+  sizeHorari = 5;
+  preference = SchedulePreference::morning;
+  mixGroups = false;
 }
 
 void App::getSemesters()
@@ -81,6 +84,12 @@ void App::receiveStudiesBox(MyComboBox* box)
   studiesBox = box;
 }
 
+void App::receiveSelectionLists(QListWidget* listInclude, QListWidget* listAlways)
+{
+  this->listInclude = listInclude;
+  this->listAlways = listAlways;
+}
+
 //Public slots
 
 void App::setMajor(const QString& m)
@@ -95,6 +104,7 @@ void App::setSemester(const QString& s)
   else semester = 1;
 
   changedSemester();
+  clearSelection();
   setFilter(QString::fromStdString(filter));
 }
 void App::setScheduleSize(int size)
@@ -158,12 +168,59 @@ void App::setFilter(const QString& filt)
   }
 }
 
-void App::generate()
+void App::moveFromMainList(QListWidgetItem* item)
 {
-  computeSchedules();
+  //item->setCheckState(Qt::CheckState::Unchecked);
+  QListWidgetItem* newItem = new QListWidgetItem();
+  newItem->setText(item->text());
+  newItem->setCheckState(Qt::CheckState::Unchecked);
+
+  otherSubjects.insert(item->text().toStdString());
+  delete list->takeItem(list->row(item));
+  //list->removeItemWidget(item);
+
+  listInclude->addItem(newItem);
+  listInclude->sortItems(Qt::SortOrder::AscendingOrder);
 }
 
+void App::moveFromIncludeList(QListWidgetItem* item)
+{
+  QListWidgetItem* newItem = new QListWidgetItem();
+  newItem->setText(item->text());
+  newItem->setCheckState(Qt::CheckState::Unchecked);
 
+  if(item->checkState() == Qt::CheckState::Checked)
+  {
+    mustAppearSubjects.insert(item->text().toStdString());
+    listAlways->addItem(newItem);
+    listAlways->sortItems(Qt::SortOrder::AscendingOrder);
+  }
+  else{ //Never happens
+    list->addItem(newItem);
+    list->sortItems(Qt::SortOrder::AscendingOrder);
+  }
+
+  otherSubjects.erase(item->text().toStdString());
+  delete listInclude->takeItem(listInclude->row(item));
+}
+
+void App::moveFromAlwaysList(QListWidgetItem* item)
+{
+  QListWidgetItem* newItem = new QListWidgetItem();
+  newItem->setText(item->text());
+  newItem->setCheckState(Qt::CheckState::Unchecked);
+
+  mustAppearSubjects.erase(item->text().toStdString());
+  delete listAlways->takeItem(listAlways->row(item));
+  list->addItem(newItem);
+  list->sortItems(Qt::SortOrder::AscendingOrder);  
+}
+
+void App::generate()
+{
+  //TODO: a veces crashea, no veo el patrón
+  computeSchedules();
+}
 
 
 //Private
@@ -236,26 +293,43 @@ void App::computeSchedules()
   int i = 0;
   for(const std::string& s : mustAppearSubjects)
   {
+    std::cout << s << " ";
     mustAppear[i++] = s;
   }
+  std::cout << std::endl;
   std::vector<std::string> other(otherSubjects.size());
   i = 0;
   for(const std::string& s : otherSubjects)
   {
+    std::cout << s << " ";
     other[i++] = s;
   }
+  std::cout << std::endl;
   std::vector<std::pair<std::string,int>> toExclude(groupsToExclude.size());
   i = 0;
   for(const std::pair<std::string,int>& p : groupsToExclude)
   {
+    std::cout << p.first << " ";
     toExclude[i++] = p;
   }
+  std::cout << std::endl;
 
-  data[dataIndex].generateSchedules(sizeHorari,mixGroups,preference,maxPrintedSchedules,mustAppear,other,toExclude);
+  std::cout << "pre generateSchedules" << std::endl;
+
+  data[semester].generateSchedules(sizeHorari,mixGroups,preference,maxPrintedSchedules,mustAppear,other,toExclude);
+
+  std::cout << "outputfile open" << std::endl;
 
   outputFile.open(outputFilename, std::ios::out | std::ios::trunc);
-  data[dataIndex].printSchedules(outputFile);
+
+  std::cout << "print schedules" << std::endl;
+
+  data[semester].printSchedules(outputFile);
+
+  std::cout << "outputfile close" << std::endl;
   outputFile.close();
+
+  std::cout << "outputfile closed" << std::endl;
   
   //Signal
   writtenSchedules();
@@ -276,6 +350,8 @@ void App::initList()
 
 void App::initList(const std::string& filter)
 {
+  //TODO: don't show selected items
+
   std::vector<std::string> auxNames = allSubjectNamesByMajor[semester][major];
   std::vector<bool> use(auxNames.size(),true);
 
@@ -336,4 +412,9 @@ void App::initStudiesBox()
   }
 
   studiesBox->setCurrentIndex(studiesBox->findText(QString("GEI")));
+}
+
+void App::clearSelection()
+{
+  selectedSubjects.clear();
 }
