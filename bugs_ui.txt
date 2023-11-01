@@ -1,0 +1,10 @@
+1) Example:
+
+    write 'AA' in search bar
+    include in schedules
+    delete written text
+    'AA' will reappear, able to be added again
+
+2) Completely explodes for no reason when providing 5 different subjects, with errors such as:
+
+Error: attempt to subscript container with out-of-bounds index 7,but container only holds 7 elements. Objects involved in the operation: sequence "this" @ 0x55a974e7b9f8{type = std::debug::vector<jaslo::Horari, std::allocator<jaslo::Horari> >;}Aborted  
