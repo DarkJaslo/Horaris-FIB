@@ -192,12 +192,15 @@
      <height>25</height>
     </rect>
    </property>
+   <property name="placeholderText">
+    <string>Filter</string>
+   </property>
   </widget>
   <widget class="QListWidget" name="listInclude">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>210</y>
+     <x>340</x>
+     <y>190</y>
      <width>256</width>
      <height>192</height>
     </rect>
@@ -206,8 +209,8 @@
   <widget class="QListWidget" name="listAlways">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>450</y>
+     <x>340</x>
+     <y>430</y>
      <width>256</width>
      <height>192</height>
     </rect>
@@ -216,8 +219,8 @@
   <widget class="QLabel" name="labelInclude">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>180</y>
+     <x>350</x>
+     <y>160</y>
      <width>141</width>
      <height>17</height>
     </rect>
@@ -229,8 +232,8 @@
   <widget class="QLabel" name="labelAlways">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>420</y>
+     <x>340</x>
+     <y>400</y>
      <width>151</width>
      <height>17</height>
     </rect>
@@ -250,6 +253,35 @@
    </property>
    <property name="text">
     <string>Generate</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listExclude">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>190</y>
+     <width>141</width>
+     <height>431</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>160</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Excluded groups</string>
    </property>
   </widget>
  </widget>
