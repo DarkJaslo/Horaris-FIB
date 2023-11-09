@@ -325,6 +325,7 @@ void App::computeSchedules()
   {
     std::cout << s << " ";
   }
+  std::cout << "\n";
 
   data[semester].generateSchedules(sizeHorari,mixGroups,preference,maxPrintedSchedules,mustAppear,other,toExclude);
 

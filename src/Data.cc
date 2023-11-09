@@ -6,18 +6,20 @@ using namespace jaslo;
 
 Data::Data(size_t size)
 {
+  _allInfo.clear();
   _info.clear();
   _groups.clear();
   _subjectPermutations.clear();
   _perms.clear();
   _schedules.clear();
-  
-  _info.reserve(size);
+
+  _allInfo.reserve(size);
 }
 
 Data::Data(const Data& other)
 {
   _info = other._info;
+  _allInfo = other._allInfo;
   _groups = other._groups;
   _subjectPermutations = other._subjectPermutations;
   _perms = other._perms;
@@ -40,7 +42,7 @@ const HorariObj& Data::operator[](int i) const
 
 void Data::pushHorariObj(const HorariObj& o)
 {
-  _info.emplace_back(o);
+  _allInfo.emplace_back(o);
 }
 
 void Data::generateSchedules(int subjectNumber, bool mixGroups, SchedulePreference preference, int maxPrintedSchedules,
@@ -48,6 +50,7 @@ const std::vector<std::string>& alwaysAppearSubjects,
 const std::vector<std::string>& otherSubjects, 
 const std::vector<std::pair<std::string,int>>& subgroupsToExclude)
 {
+  _info = _allInfo;
   _groups.clear();
   _subjectPermutations.clear();
   _perms.clear();
@@ -422,18 +425,26 @@ void Data::makePermutations(int subjNum, const std::vector<std::string>& always,
   //Permutations of "ALWAYS:" subjects
   std::vector<std::vector<int>> compulsoryPermutations;
   {
-    
     std::vector<int> permutation(always.size());
     std::vector<int> options;
 
     for(int i = 0; i < always.size(); ++i)
     {
+      bool found = false;
       for(int j = 0; j < _groups.size(); ++j)
       {
         if(_groups[j].first == always[i]){
           options.push_back(j);
+          found = true;
           break;
         }
+      }
+
+      if(not found)
+      {
+        std::cerr << "error: subject " << always[i] << " was not found\n";
+        printGroups();
+        exit(1);
       }
     }
 
@@ -448,12 +459,21 @@ void Data::makePermutations(int subjNum, const std::vector<std::string>& always,
     std::vector<int> options;
     for(int i = 0; i < include.size(); ++i)
     {
+      bool found = false;
       for(int j = 0; j < _groups.size(); ++j)
       {
         if(_groups[j].first == include[i]){
           options.push_back(j);
+          found = true;
           break;
         }
+      }
+
+      if(not found)
+      {
+        std::cerr << "error: subject " << include[i] << " was not found\n";
+        printGroups();
+        exit(1);
       }
     }
 
@@ -601,7 +621,7 @@ bool Data::contains(const std::vector<std::string>& names, const std::string& na
 void Data::onePerGroupPermutations(int minUsed, int cur, const std::vector<int>& options, std::vector<bool>& used, std::vector<int>& current, std::vector<std::vector<int>>& allPermutations)
 {
   if(cur == current.size()) allPermutations.push_back(current);
-  else
+  else if(cur < current.size())
   {
     for(int i = cur; i < options.size(); ++i){
       if(used[i] or i < minUsed) continue;
@@ -619,7 +639,7 @@ void Data::manyPerGroupPermutations(int cur, const std::vector<int>& groupsPerSu
   if(cur == current.size()){
     allPermutations.push_back(current);
   }
-  else
+  else if (cur < current.size())
   {
     for(int j = 0; j < groupsPerSubject[cur]; ++j)
     {
@@ -642,4 +662,14 @@ void Data::copyVector(const std::vector<int>& source1, const std::vector<std::ve
       ++j;
     }
   }
+}
+
+void Data::printGroups()
+{
+  std::cout << "printing groups...\n";
+  for(int i = 0; i < _groups.size(); ++i)
+  {
+    std::cout << _groups[i].first << " ";
+  }
+  std::cout << "\n";
 }

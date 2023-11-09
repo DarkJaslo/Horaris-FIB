@@ -29,6 +29,7 @@ public:
 private:
 
 	void                        print();
+  void                        printGroups();
   int                         firstOccurrence(const std::string& subjectName) const;
   std::vector<std::string>    names() const;
 
@@ -67,6 +68,8 @@ private:
 	//Member variables
 
   std::vector<HorariObj> _info; //Input is ordered alphabetically
+
+  std::vector<HorariObj> _allInfo;
 
   /* A vector that stores subject groups for a schedule
   First of pair is the name of the subject
