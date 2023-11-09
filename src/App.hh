@@ -76,8 +76,6 @@ std::string       major;
 std::vector<std::vector<std::string>> majors;
 std::string       filter;
 
-std::set<std::string> selectedSubjects;
-
 const std::string url = "https://api.fib.upc.edu";
 const std::string path1 = "/v2/quadrimestres/";
 const std::string path2 = "/classes/?format=api&client_id=liSPe2KsaYUovErkk1WyqgMdYxOD1Wqd3VCXwhoy";

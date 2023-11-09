@@ -1,6 +1,0 @@
-1) Example:
-
-    write 'AA' in search bar
-    include in schedules
-    delete written text
-    'AA' will reappear, able to be added again

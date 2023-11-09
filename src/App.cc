@@ -305,7 +305,7 @@ void App::computeSchedules()
   }
   std::vector<std::pair<std::string,int>> toExclude(groupsToExclude.size());
   i = 0;
-  
+
   for(const std::pair<std::string,int>& p : groupsToExclude)
   {
     toExclude[i++] = p;
@@ -349,6 +349,9 @@ void App::initList()
   list->clear();
   for(const std::string& name : allSubjectNamesByMajor[semester][major])
   {
+    if(otherSubjects.find(name) != otherSubjects.end() or mustAppearSubjects.find(name) != mustAppearSubjects.end())
+      continue;
+    
     QListWidgetItem *item = new QListWidgetItem;
     item->setText(QString::fromStdString(name));
     item->setCheckState(Qt::CheckState::Unchecked);
@@ -359,10 +362,16 @@ void App::initList()
 
 void App::initList(const std::string& filter)
 {
-  //TODO: don't show selected items
-
   std::vector<std::string> auxNames = allSubjectNamesByMajor[semester][major];
   std::vector<bool> use(auxNames.size(),true);
+
+  for(int i = 0; i < auxNames.size(); ++i)
+  {
+    if(otherSubjects.find(auxNames[i]) != otherSubjects.end())
+      use[i] = false;
+    else if(mustAppearSubjects.find(auxNames[i]) != mustAppearSubjects.end())
+      use[i] = false;
+  }
 
   for(int i = 0; i < filter.length(); ++i)
   {
@@ -425,5 +434,8 @@ void App::initStudiesBox()
 
 void App::clearSelection()
 {
-  selectedSubjects.clear();
+  otherSubjects.clear();
+  mustAppearSubjects.clear();
+  listAlways->clear();
+  listInclude->clear();
 }
