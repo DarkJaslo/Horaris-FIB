@@ -96,6 +96,7 @@ void App::setMajor(const QString& m)
 {
   major = m.toStdString();
 
+  clearSelection();
   setFilter(QString::fromStdString(filter));
 }
 void App::setSemester(const QString& s)
