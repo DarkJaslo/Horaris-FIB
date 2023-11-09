@@ -291,30 +291,39 @@ void App::computeSchedules()
 
   std::vector<std::string> mustAppear(mustAppearSubjects.size());
   int i = 0;
+
   for(const std::string& s : mustAppearSubjects)
   {
-    std::cout << s << " ";
     mustAppear[i++] = s;
   }
-  std::cout << std::endl;
   std::vector<std::string> other(otherSubjects.size());
   i = 0;
+
   for(const std::string& s : otherSubjects)
   {
-    std::cout << s << " ";
     other[i++] = s;
   }
-  std::cout << std::endl;
   std::vector<std::pair<std::string,int>> toExclude(groupsToExclude.size());
   i = 0;
+  
   for(const std::pair<std::string,int>& p : groupsToExclude)
   {
-    std::cout << p.first << " ";
     toExclude[i++] = p;
   }
-  std::cout << std::endl;
 
   std::cout << "pre generateSchedules" << std::endl;
+
+  std::cout << "Must appear:\n"; 
+  for(const std::string& s : mustAppear)
+  {
+    std::cout << s << " ";
+  }
+
+  std::cout << "Can appear:\n";
+  for(const std::string& s : other)
+  {
+    std::cout << s << " ";
+  }
 
   data[semester].generateSchedules(sizeHorari,mixGroups,preference,maxPrintedSchedules,mustAppear,other,toExclude);
 

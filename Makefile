@@ -130,6 +130,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -232,6 +233,7 @@ Makefile: Horaris-FIB.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -310,6 +312,7 @@ Makefile: Horaris-FIB.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -384,9 +387,12 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_MyForm.cpp moc_App.cpp moc_MyComboBox.cpp
 moc_MyForm.cpp: ui/MyForm.h \
 		ui_MyForm.h \
+		src/App.hh \
+		src/HTTPSGetter.hh \
 		src/Parser.hh \
 		src/Horari.hh \
 		src/Data.hh \
+		ui/MyComboBox.hh \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/code/Horaris-FIB/src -I/home/jon/code/Horaris-FIB/ui -I/home/jon/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ui/MyForm.h -o moc_MyForm.cpp
@@ -436,9 +442,12 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 main.o: src/main.cc ui/MyForm.h \
 		ui_MyForm.h \
+		src/App.hh \
+		src/HTTPSGetter.hh \
 		src/Parser.hh \
 		src/Horari.hh \
-		src/Data.hh
+		src/Data.hh \
+		ui/MyComboBox.hh
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o src/main.cc
 
 Data.o: src/Data.cc src/Data.hh \
@@ -458,9 +467,12 @@ Parser.o: src/Parser.cc src/Parser.hh \
 
 MyForm.o: ui/MyForm.cc ui/MyForm.h \
 		ui_MyForm.h \
+		src/App.hh \
+		src/HTTPSGetter.hh \
 		src/Parser.hh \
 		src/Horari.hh \
-		src/Data.hh
+		src/Data.hh \
+		ui/MyComboBox.hh
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MyForm.o ui/MyForm.cc
 
 App.o: src/App.cc src/App.hh \

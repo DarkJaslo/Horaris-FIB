@@ -61,21 +61,32 @@ const std::vector<std::pair<std::string,int>>& subgroupsToExclude)
 		int i = 0;
 		for(int j = 0; j < alwaysAppearSubjects.size(); ++j)
 		{
-			allRequestedSubjects[i++] = alwaysAppearSubjects[j];
+			allRequestedSubjects[i] = alwaysAppearSubjects[j];
+      i++;
 		}
 		for(int j = 0; j < otherSubjects.size(); ++j)
 		{
-			allRequestedSubjects[i++] = otherSubjects[j];
+			allRequestedSubjects[i] = otherSubjects[j];
+      i++;
 		}
 	}
 
+  //std::cout << "delete non requested\n";
 	deleteNonRequestedGroups(allRequestedSubjects);
+  //std::cout << "join\n";
 	joinGroups();
+  //std::cout << "delete excluded\n";
 	deleteExcludedGroups(subgroupsToExclude);
+  //std::cout << "delete redundant\n";
 	deleteRedundantGroups();
+  //std::cout << "make groups\n";
 	makeGroups(mixGroups);
+  //std::cout << "make permutations\n";
 	makePermutations(subjectNumber,alwaysAppearSubjects,otherSubjects);
+  //std::cout << "make schedules\n";
 	makeSchedules(preference, maxPrintedSchedules);
+
+  std::cout << "generateSchedules end\n";
 }
 
 void Data::print()
@@ -541,7 +552,7 @@ void Data::makeSchedules(SchedulePreference preference, int maxPrintedSchedules)
 
   std::vector<Horari> newSchedules(maxPrintedSchedules);
 
-  for(int i = 0; i < maxPrintedSchedules; ++i)
+  for(int i = 0; i < maxPrintedSchedules and i < _schedules.size(); ++i)
   {
     newSchedules[i] = _schedules[i];
   }
