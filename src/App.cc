@@ -214,7 +214,8 @@ void App::moveFromAlwaysList(QListWidgetItem* item)
   mustAppearSubjects.erase(item->text().toStdString());
   delete listAlways->takeItem(listAlways->row(item));
   list->addItem(newItem);
-  list->sortItems(Qt::SortOrder::AscendingOrder);  
+  list->sortItems(Qt::SortOrder::AscendingOrder);
+  setFilter(QString::fromStdString(filter));  
 }
 
 void App::generate()
