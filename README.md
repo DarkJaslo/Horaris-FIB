@@ -65,7 +65,7 @@ La librería ya incluída <tt>httplib</tt> (https://github.com/yhirose/cpp-httpl
 1. Clonar / descargar el repositorio.
 2. Desde una consola en el directorio del repositorio, ejecutar <tt>make</tt> 
 3. Para ejecutar, escribir <tt>./Horaris-FIB</tt>.
-4. El programa vuelca los horariso en el fichero <tt>OUTPUT_SCHEDULES.txt</tt>, el cual se genera en el mismo directorio que el programa. Cada vez que se generen horarios se sobreescribirá, así que ten cuidado.
+4. El programa vuelca los horarios en el fichero <tt>OUTPUT_SCHEDULES.txt</tt>, el cual se genera en el mismo directorio que el programa. Cada vez que se generen horarios se sobreescribirá, así que ten cuidado.
 
 ### Instrucciones de uso
 
