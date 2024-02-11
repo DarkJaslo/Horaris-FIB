@@ -482,455 +482,456 @@
   <property name="windowTitle">
    <string>Horaris FIB</string>
   </property>
-  <widget class="App" name="appWidget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>828</x>
-     <y>9</y>
-     <width>16</width>
-     <height>616</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>110</y>
-     <width>551</width>
-     <height>411</height>
-    </rect>
-   </property>
-   <row>
-    <property name="text">
-     <string>8:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>9:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>10:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>11:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>12:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>13:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>14:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>15:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>16:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>17:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>18:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>19:00</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>20:00</string>
-    </property>
-   </row>
-   <column>
-    <property name="text">
-     <string>Monday</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Tuesday</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Wednesday</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Thursday</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Friday</string>
-    </property>
-   </column>
-   <item row="0" column="0">
-    <property name="text">
-     <string/>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_7">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="semesterLabel">
+             <property name="minimumSize">
+              <size>
+               <width>20</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Semester</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="MyComboBox" name="semesterComboBox">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="majorLabel">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Major</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="MyComboBox" name="studiesComboBox">
+             <item>
+              <property name="text">
+               <string>GEI</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="placeholderText">
+            <string>Filter</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="listWidget">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>No. subjects</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="spinBox">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>6</number>
+             </property>
+             <property name="value">
+              <number>5</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Preference</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox">
+             <item>
+              <property name="text">
+               <string>Morning</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Afternoon</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Any</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox">
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
+           </property>
+           <property name="text">
+            <string>Allow mixed groups</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="labelInclude">
+             <property name="text">
+              <string>Include in schedules</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListWidget" name="listInclude"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="labelAlways">
+             <property name="text">
+              <string>Force in all schedules</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListWidget" name="listAlways"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Excluded groups</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListWidget" name="listExclude">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </item>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>60</y>
-     <width>83</width>
-     <height>46</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_8">
-    <item>
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Language</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBox_2">
-      <item>
-       <property name="text">
-        <string>English</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Español</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Catala</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>400</y>
-     <width>258</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>Excluded groups</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QListWidget" name="listExclude">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>270</y>
-     <width>258</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QLabel" name="labelAlways">
-      <property name="text">
-       <string>Force in all schedules</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QListWidget" name="listAlways"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>110</y>
-     <width>258</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <widget class="QLabel" name="labelInclude">
-      <property name="text">
-       <string>Include in schedules</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QListWidget" name="listInclude"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>13</x>
-     <y>13</y>
-     <width>151</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
-      <item>
-       <widget class="QLabel" name="semesterLabel">
-        <property name="minimumSize">
-         <size>
-          <width>20</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Semester</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="MyComboBox" name="semesterComboBox">
-        <property name="editable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <widget class="QLabel" name="majorLabel">
-        <property name="minimumSize">
-         <size>
-          <width>10</width>
-          <height>10</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Major</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="MyComboBox" name="studiesComboBox">
-        <item>
-         <property name="text">
-          <string>GEI</string>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_13">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Language</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_2">
+           <item>
+            <property name="text">
+             <string>English</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Español</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Catala</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>12</x>
-     <y>66</y>
-     <width>151</width>
-     <height>461</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_6">
-    <item>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="placeholderText">
-       <string>Filter</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QListWidget" name="listWidget">
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>20</y>
-     <width>191</width>
-     <height>86</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_7">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>No. subjects</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="spinBox">
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>6</number>
-        </property>
-        <property name="value">
-         <number>5</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Preference</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>Morning</string>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
          </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Afternoon</string>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>78</width>
+           <height>20</height>
+          </size>
          </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Any</string>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="leftButton">
+           <property name="text">
+            <string>&lt;-</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="currentSchLabel">
+           <property name="text">
+            <string>1</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="rightButton">
+           <property name="text">
+            <string>-&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="checkBox">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Allow mixed groups</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>70</y>
-     <width>201</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
-    <item>
-     <widget class="QPushButton" name="leftButton">
-      <property name="text">
-       <string>&lt;-</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="currentSchLabel">
-      <property name="text">
-       <string>1</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="rightButton">
-      <property name="text">
-       <string>-&gt;</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QPushButton" name="pushButtonGenerate">
-   <property name="geometry">
-    <rect>
-     <x>910</x>
-     <y>50</y>
-     <width>83</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Generate</string>
-   </property>
-  </widget>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>68</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonGenerate">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Generate</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="minimumSize">
+          <size>
+           <width>545</width>
+           <height>400</height>
+          </size>
+         </property>
+         <row>
+          <property name="text">
+           <string>8:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>9:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>10:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>11:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>12:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>13:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>14:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>15:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>16:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>17:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>18:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>19:00</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>20:00</string>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>Monday</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tuesday</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Wednesday</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Thursday</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Friday</string>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="App" name="appWidget" native="true"/>
+   </item>
+  </layout>
  </widget>
  <customwidgets>
   <customwidget>

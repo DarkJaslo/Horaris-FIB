@@ -2,8 +2,7 @@
 
 ### Importante: hay una sección en [español](#español-generador-de-horarios-para-la-fib-upc) más abajo.
 
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image 1" title = "Normal output" width="49%" height="49%"> <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="image 2" title = "Mixed groups" width="49%" height="49%">
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot3.PNG" alt="image 3" title = "UI" width="99%" height="99%">
+<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot1.PNG" alt="image" title = "UI" width="99%" height="99%">
 
 ## (English) Schedule generator for FIB-UPC 
 Generates good schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
