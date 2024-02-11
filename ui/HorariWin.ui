@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HorariWin</class>
+ <widget class="QWidget" name="HorariWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1079</width>
+    <height>905</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HorariWin</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>30</y>
+     <width>551</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <row>
+    <property name="text">
+     <string>8:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>9:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>10:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>11:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>12:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>13:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>14:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>15:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>16:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>17:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>18:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>19:00</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>20:00</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>Monday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Tuesday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Wednesday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Thursday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Friday</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string>CI 69L</string>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

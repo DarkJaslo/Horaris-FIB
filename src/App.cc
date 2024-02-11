@@ -20,7 +20,9 @@ App::App(QWidget* parent) : QWidget(parent)
 
 void App::getSemesters()
 {
-  if(not HTTPSGetter::get(url,pathSemesters,"SEMESTER.txt")) exit(EXIT_FAILURE);
+  //Comentado temporalmente para que funcione offline
+  //if(not HTTPSGetter::get(url,pathSemesters,"SEMESTER.txt")) exit(EXIT_FAILURE);
+
 
   std::fstream auxFile;
   auxFile.open("SEMESTER.txt", std::ios::in);
@@ -88,6 +90,21 @@ void App::receiveSelectionLists(QListWidget* listInclude, QListWidget* listAlway
 {
   this->listInclude = listInclude;
   this->listAlways = listAlways;
+}
+
+void App::receiveMixedLabel(QCheckBox* checkBox)
+{
+  mixCheckBox = checkBox;
+}
+
+void App::receiveFilterLineEdit(QLineEdit* filterLineEdit)
+{
+  this->filterLineEdit = filterLineEdit;
+}
+
+void App::receiveGenerateButton(QPushButton* generateButton)
+{
+  this->generateButton = generateButton;
 }
 
 //Public slots
@@ -220,8 +237,74 @@ void App::moveFromAlwaysList(QListWidgetItem* item)
 
 void App::generate()
 {
-  //TODO: a veces crashea, no veo el patrón
   computeSchedules();
+}
+
+void App::changeLanguage(const QString& language)
+{
+  lang = language.toStdString();
+
+  QString auxMajor;
+  QString auxSemester;
+  QString auxNoSubjects;
+  QString auxPreference;
+  QString auxMixed;
+  QString auxInclude;
+  QString auxForce;
+  QString auxFilterHint;
+  QString auxGenerateButton;
+  QString auxLanguage;
+
+  if(lang == "English")
+  {
+    auxMajor = QString("Major");
+    auxSemester = QString("Semester");
+    auxNoSubjects = QString("No. subjects");
+    auxPreference = QString("Preference");
+    auxMixed = QString("Allow mixed groups");
+    auxInclude = QString("Include in schedules");
+    auxForce = QString("Force in all schedules");
+    auxFilterHint = QString("Filter");
+    auxGenerateButton = QString("Generate");
+    auxLanguage = QString("Language");
+  }
+  else if (lang == "Español")
+  {
+    auxMajor = QString("Grado");
+    auxSemester = QString("Cuatrimestre");
+    auxNoSubjects = QString("Num. asignaturas");
+    auxPreference = QString("Preferencia");
+    auxMixed = QString("Mezcla grupos");
+    auxInclude = QString("Incluidas en horarios");
+    auxForce = QString("Aparecen en todos los horarios");
+    auxFilterHint = QString("Filtro");
+    auxGenerateButton = QString("Genera");
+    auxLanguage = QString("Idioma");
+  }
+  else if(lang=="Catala")
+  {
+    auxMajor = QString("Grau");
+    auxSemester = QString("Quatrimestre");
+    auxNoSubjects = QString("Num. assignatures");
+    auxPreference = QString("Preferencia");
+    auxMixed = QString("Fes grups mesclats");
+    auxInclude = QString("Incloses als horaris");
+    auxForce = QString("Apareixen a tots els horaris");
+    auxFilterHint = QString("Filtre");
+    auxGenerateButton = QString("Genera");
+    auxLanguage = QString("Llengua");
+  }
+
+  majorTagChanged(auxMajor);
+  semesterTagChanged(auxSemester);
+  noSubjectsTagChanged(auxNoSubjects);
+  preferenceTagChanged(auxPreference);
+  mixCheckBox->setText(auxMixed);
+  includeTagChanged(auxInclude);
+  forceTagChanged(auxForce);
+  filterLineEdit->setPlaceholderText(auxFilterHint);
+  generateButton->setText(auxGenerateButton); 
+  languageTagChanged(auxLanguage);
 }
 
 
@@ -334,6 +417,9 @@ void App::computeSchedules()
 
   outputFile.open(outputFilename, std::ios::out | std::ios::trunc);
 
+  HorariWin hwin(nullptr);
+  hwin.show();
+
   std::cout << "print schedules" << std::endl;
 
   data[semester].printSchedules(outputFile);
@@ -418,7 +504,8 @@ void App::getDataTask(int semest)
   if(semest == 0) filename.append("_0.txt");
   else filename.append("_1.txt");
 
-  if(not HTTPSGetter::get(url,path,filename)) exit(EXIT_FAILURE);
+  // Comentado temporalmente para que funcione offline
+  //if(not HTTPSGetter::get(url,path,filename)) exit(EXIT_FAILURE);
 
   parseData(semest,filename);
 }

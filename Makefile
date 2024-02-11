@@ -59,9 +59,11 @@ SOURCES       = src/main.cc \
 		src/Parser.cc \
 		ui/MyForm.cc \
 		src/App.cc \
-		ui/MyComboBox.cc moc_MyForm.cpp \
+		ui/MyComboBox.cc \
+		ui/HorariWin.cc moc_MyForm.cpp \
 		moc_App.cpp \
-		moc_MyComboBox.cpp
+		moc_MyComboBox.cpp \
+		moc_HorariWin.cpp
 OBJECTS       = main.o \
 		Data.o \
 		Horari.o \
@@ -70,9 +72,11 @@ OBJECTS       = main.o \
 		MyForm.o \
 		App.o \
 		MyComboBox.o \
+		HorariWin.o \
 		moc_MyForm.o \
 		moc_App.o \
-		moc_MyComboBox.o
+		moc_MyComboBox.o \
+		moc_HorariWin.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -157,14 +161,16 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		lib/httplib.h \
 		ui/MyForm.h \
 		src/App.hh \
-		ui/MyComboBox.hh src/main.cc \
+		ui/MyComboBox.hh \
+		ui/HorariWin.h src/main.cc \
 		src/Data.cc \
 		src/Horari.cc \
 		src/HTTPSGetter.cc \
 		src/Parser.cc \
 		ui/MyForm.cc \
 		src/App.cc \
-		ui/MyComboBox.cc
+		ui/MyComboBox.cc \
+		ui/HorariWin.cc
 QMAKE_TARGET  = Horaris-FIB
 DESTDIR       = 
 TARGET        = Horaris-FIB
@@ -173,7 +179,7 @@ TARGET        = Horaris-FIB
 first: all
 ####### Build rules
 
-Horaris-FIB: ui_MyForm.h $(OBJECTS)  
+Horaris-FIB: ui_MyForm.h ui_HorariWin.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: Horaris-FIB.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -348,9 +354,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/Data.hh src/Horari.hh src/HTTPSGetter.hh src/Parser.hh lib/httplib.h ui/MyForm.h src/App.hh ui/MyComboBox.hh $(DISTDIR)/
-	$(COPY_FILE) --parents src/main.cc src/Data.cc src/Horari.cc src/HTTPSGetter.cc src/Parser.cc ui/MyForm.cc src/App.cc ui/MyComboBox.cc $(DISTDIR)/
-	$(COPY_FILE) --parents ui/MyForm.ui $(DISTDIR)/
+	$(COPY_FILE) --parents src/Data.hh src/Horari.hh src/HTTPSGetter.hh src/Parser.hh lib/httplib.h ui/MyForm.h src/App.hh ui/MyComboBox.hh ui/HorariWin.h $(DISTDIR)/
+	$(COPY_FILE) --parents src/main.cc src/Data.cc src/Horari.cc src/HTTPSGetter.cc src/Parser.cc ui/MyForm.cc src/App.cc ui/MyComboBox.cc ui/HorariWin.cc $(DISTDIR)/
+	$(COPY_FILE) --parents ui/MyForm.ui ui/HorariWin.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -382,9 +388,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -Wall -Wno-sign-compare -g -D_GLIBCXX_DEBUG -O3 -O2 -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_MyForm.cpp moc_App.cpp moc_MyComboBox.cpp
+compiler_moc_header_make_all: moc_MyForm.cpp moc_App.cpp moc_MyComboBox.cpp moc_HorariWin.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_MyForm.cpp moc_App.cpp moc_MyComboBox.cpp
+	-$(DEL_FILE) moc_MyForm.cpp moc_App.cpp moc_MyComboBox.cpp moc_HorariWin.cpp
 moc_MyForm.cpp: ui/MyForm.h \
 		ui_MyForm.h \
 		src/App.hh \
@@ -393,6 +399,8 @@ moc_MyForm.cpp: ui/MyForm.h \
 		src/Horari.hh \
 		src/Data.hh \
 		ui/MyComboBox.hh \
+		ui/HorariWin.h \
+		ui_HorariWin.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/code/Horaris-FIB/src -I/home/jon/code/Horaris-FIB/ui -I/home/jon/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ui/MyForm.h -o moc_MyForm.cpp
@@ -403,6 +411,8 @@ moc_App.cpp: src/App.hh \
 		src/Horari.hh \
 		src/Data.hh \
 		ui/MyComboBox.hh \
+		ui/HorariWin.h \
+		ui_HorariWin.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/code/Horaris-FIB/src -I/home/jon/code/Horaris-FIB/ui -I/home/jon/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include src/App.hh -o moc_App.cpp
@@ -412,13 +422,19 @@ moc_MyComboBox.cpp: ui/MyComboBox.hh \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/code/Horaris-FIB/src -I/home/jon/code/Horaris-FIB/ui -I/home/jon/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ui/MyComboBox.hh -o moc_MyComboBox.cpp
 
+moc_HorariWin.cpp: ui/HorariWin.h \
+		ui_HorariWin.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jon/code/Horaris-FIB/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jon/code/Horaris-FIB -I/usr/include/x86_64-linux-gnu/qt5 -I/home/jon/code/Horaris-FIB/src -I/home/jon/code/Horaris-FIB/ui -I/home/jon/code/Horaris-FIB/lib -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ui/HorariWin.h -o moc_HorariWin.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_MyForm.h
+compiler_uic_make_all: ui_MyForm.h ui_HorariWin.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_MyForm.h
+	-$(DEL_FILE) ui_MyForm.h ui_HorariWin.h
 ui_MyForm.h: ui/MyForm.ui \
 		/usr/lib/qt5/bin/uic \
 		src/App.hh \
@@ -427,8 +443,14 @@ ui_MyForm.h: ui/MyForm.ui \
 		src/Parser.hh \
 		src/Horari.hh \
 		src/Data.hh \
-		ui/MyComboBox.hh
+		ui/MyComboBox.hh \
+		ui/HorariWin.h \
+		ui_HorariWin.h
 	/usr/lib/qt5/bin/uic ui/MyForm.ui -o ui_MyForm.h
+
+ui_HorariWin.h: ui/HorariWin.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ui/HorariWin.ui -o ui_HorariWin.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -447,7 +469,9 @@ main.o: src/main.cc ui/MyForm.h \
 		src/Parser.hh \
 		src/Horari.hh \
 		src/Data.hh \
-		ui/MyComboBox.hh
+		ui/MyComboBox.hh \
+		ui/HorariWin.h \
+		ui_HorariWin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o src/main.cc
 
 Data.o: src/Data.cc src/Data.hh \
@@ -472,7 +496,9 @@ MyForm.o: ui/MyForm.cc ui/MyForm.h \
 		src/Parser.hh \
 		src/Horari.hh \
 		src/Data.hh \
-		ui/MyComboBox.hh
+		ui/MyComboBox.hh \
+		ui/HorariWin.h \
+		ui_HorariWin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MyForm.o ui/MyForm.cc
 
 App.o: src/App.cc src/App.hh \
@@ -480,11 +506,17 @@ App.o: src/App.cc src/App.hh \
 		src/Parser.hh \
 		src/Horari.hh \
 		src/Data.hh \
-		ui/MyComboBox.hh
+		ui/MyComboBox.hh \
+		ui/HorariWin.h \
+		ui_HorariWin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o App.o src/App.cc
 
 MyComboBox.o: ui/MyComboBox.cc ui/MyComboBox.hh
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MyComboBox.o ui/MyComboBox.cc
+
+HorariWin.o: ui/HorariWin.cc ui/HorariWin.h \
+		ui_HorariWin.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o HorariWin.o ui/HorariWin.cc
 
 moc_MyForm.o: moc_MyForm.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MyForm.o moc_MyForm.cpp
@@ -494,6 +526,9 @@ moc_App.o: moc_App.cpp
 
 moc_MyComboBox.o: moc_MyComboBox.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MyComboBox.o moc_MyComboBox.cpp
+
+moc_HorariWin.o: moc_HorariWin.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_HorariWin.o moc_HorariWin.cpp
 
 ####### Install
 

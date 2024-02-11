@@ -10,6 +10,7 @@
 #include "Parser.hh"
 #include "Data.hh"
 #include "MyComboBox.hh"
+#include "HorariWin.h"
 
 class App : public QWidget
 {
@@ -25,6 +26,9 @@ public:
   void receiveListWidget(QListWidget* list);
   void receiveStudiesBox(MyComboBox* box);
   void receiveSelectionLists(QListWidget* listInclude, QListWidget* listAlways);
+  void receiveMixedLabel(QCheckBox* checkBox);
+  void receiveFilterLineEdit(QLineEdit* filterLineEdit);
+  void receiveGenerateButton(QPushButton* generateButton);
 
 public slots:
   void setMajor(const QString& m);
@@ -43,6 +47,7 @@ public slots:
   void moveFromIncludeList(QListWidgetItem* item);
   void moveFromAlwaysList(QListWidgetItem* item);
   void generate();
+  void changeLanguage(const QString& language);
 
 signals:
   void writtenSchedules();
@@ -50,6 +55,13 @@ signals:
   void loadSemester(const QString& s);
   void changedSemester();
   void loadMajor(const QString& m);
+  void majorTagChanged(const QString& text);
+  void semesterTagChanged(const QString& text);
+  void noSubjectsTagChanged(const QString& text);
+  void preferenceTagChanged(const QString& text);
+  void includeTagChanged(const QString& text);
+  void forceTagChanged(const QString& text);
+  void languageTagChanged(const QString& text);
 
 private:
 
@@ -98,10 +110,15 @@ QListWidget* list;
 QListWidget* listInclude;
 QListWidget* listAlways;
 MyComboBox* studiesBox;
+QCheckBox* mixCheckBox;
+QLineEdit* filterLineEdit;
+QPushButton* generateButton;
 
 std::vector<std::vector<std::string>> allSubjectNames;
 
 std::vector<std::map<std::string,std::vector<std::string>>> allSubjectNamesByMajor;
+
+std::string lang = "English"; //Options are English, Español, Catala
 };
 
 #endif

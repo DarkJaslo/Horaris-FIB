@@ -5,7 +5,7 @@ QT += widgets
 
 CONFIG += qt warn_on release
 
-FORMS += ui/MyForm.ui
+FORMS += ui/MyForm.ui ui/HorariWin.ui
 
 INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5 \
             ./src \
@@ -20,6 +20,7 @@ SOURCES += src/main.cc \
         ui/MyForm.cc \
         src/App.cc \
         ui/MyComboBox.cc \
+        ui/HorariWin.cc
 
 HEADERS += src/Data.hh \
         src/Horari.hh \
@@ -29,6 +30,7 @@ HEADERS += src/Data.hh \
         ui/MyForm.h \
         src/App.hh \
         ui/MyComboBox.hh \
+        ui/HorariWin.h
 
 QMAKE_CXXFLAGS += -Wall -Wno-sign-compare -g -D_GLIBCXX_DEBUG -O3
 LIBS += -lssl -lcrypto

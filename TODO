@@ -1,8 +1,7 @@
+- Devolver a la normalidad lo de getDataTask y getSemesters
 - Que se puedan excluir grupos 
     - Arrastrando
     - De otra forma
-- Ponerle colores para que no sea blanco
-- Selector de idioma
 - Enseñar errores que pueden pasar
     - No esta actualizado el cuatrimestre
     - El get no ha funcionado

@@ -7,6 +7,9 @@ MyForm::MyForm(QWidget* parent) : QWidget(parent)
   ui.appWidget->receiveListWidget(ui.listWidget);
   ui.appWidget->receiveSelectionLists(ui.listInclude, ui.listAlways);
   ui.appWidget->receiveStudiesBox(ui.studiesComboBox);
+  ui.appWidget->receiveMixedLabel(ui.checkBox);
+  ui.appWidget->receiveGenerateButton(ui.pushButtonGenerate);
+  ui.appWidget->receiveFilterLineEdit(ui.lineEdit);
   //ui.listWidget->setSortingEnabled(true);
   ui.listWidget->setFocusPolicy(Qt::FocusPolicy::ClickFocus);
   ui.listInclude->setFocusPolicy(Qt::FocusPolicy::ClickFocus);
