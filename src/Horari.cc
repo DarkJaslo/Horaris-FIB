@@ -174,6 +174,21 @@ void Horari::computeValue(SchedulePreference pref)
   }
 }
 
+std::vector<std::vector<ClassHour>> Horari::getHoursMatrix() const
+{
+  //13 each day
+
+  std::vector<std::vector<ClassHour>> res(5, std::vector<ClassHour>(13));
+  for(int i = 0; i < 5; ++i)
+  {
+    for(int j = 0; j < 13; ++j)
+    {
+      res[i][j] = H[i*13+j];
+    }
+  }
+  return res;
+}
+
 
 //Private
 int Horari::indexFor(Weekday day, int hour){ return 13*int(day)+hour-8; }

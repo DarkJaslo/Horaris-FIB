@@ -10,7 +10,6 @@
 #include "Parser.hh"
 #include "Data.hh"
 #include "MyComboBox.hh"
-#include "HorariWin.h"
 
 class App : public QWidget
 {
@@ -29,6 +28,10 @@ public:
   void receiveMixedLabel(QCheckBox* checkBox);
   void receiveFilterLineEdit(QLineEdit* filterLineEdit);
   void receiveGenerateButton(QPushButton* generateButton);
+  void receiveTable(QTableWidget* table);
+  void receiveNumLabel(QLabel* label);
+  void changeCurrentSchedule(int change);
+  void displaySchedule();
 
 public slots:
   void setMajor(const QString& m);
@@ -48,6 +51,8 @@ public slots:
   void moveFromAlwaysList(QListWidgetItem* item);
   void generate();
   void changeLanguage(const QString& language);
+  void decreaseCurrentSchedule();
+  void increaseCurrentSchedule();
 
 signals:
   void writtenSchedules();
@@ -119,6 +124,10 @@ std::vector<std::vector<std::string>> allSubjectNames;
 std::vector<std::map<std::string,std::vector<std::string>>> allSubjectNamesByMajor;
 
 std::string lang = "English"; //Options are English, Español, Catala
+
+QTableWidget* table;
+QLabel* numLabel;
+int currentSchedule;
 };
 
 #endif

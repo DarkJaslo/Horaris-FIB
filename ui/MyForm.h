@@ -1,3 +1,6 @@
+#ifndef MYFORM_H
+#define MYFORM_H
+
 #include "ui_MyForm.h"
 #include "Parser.hh"
 #include "Data.hh"
@@ -12,3 +15,5 @@ class MyForm : public QWidget
   private:
     Ui::MyForm ui;
 };
+
+#endif

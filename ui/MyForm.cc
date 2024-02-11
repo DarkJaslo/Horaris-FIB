@@ -10,6 +10,8 @@ MyForm::MyForm(QWidget* parent) : QWidget(parent)
   ui.appWidget->receiveMixedLabel(ui.checkBox);
   ui.appWidget->receiveGenerateButton(ui.pushButtonGenerate);
   ui.appWidget->receiveFilterLineEdit(ui.lineEdit);
+  ui.appWidget->receiveTable(ui.tableWidget);
+  ui.appWidget->receiveNumLabel(ui.currentSchLabel);
   //ui.listWidget->setSortingEnabled(true);
   ui.listWidget->setFocusPolicy(Qt::FocusPolicy::ClickFocus);
   ui.listInclude->setFocusPolicy(Qt::FocusPolicy::ClickFocus);

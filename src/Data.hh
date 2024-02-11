@@ -21,7 +21,9 @@ public:
 		const std::vector<std::pair<std::string,int>>& subgroupsToExclude);
     //Prints the schedules to the file given
   void  printSchedules(std::fstream& file);
+  int getNumSchedules() const;
 
+  Horari                      getSchedule(int index) const;
   inline HorariObj&           operator[](int);
   inline const HorariObj&     operator[](int)const;
 

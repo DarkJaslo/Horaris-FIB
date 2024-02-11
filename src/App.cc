@@ -1,6 +1,8 @@
 #include "App.hh"
 #include <sstream>
 #include <thread>
+#include <sstream>
+#include <functional>
 using namespace jaslo;
 
 //Public
@@ -20,9 +22,7 @@ App::App(QWidget* parent) : QWidget(parent)
 
 void App::getSemesters()
 {
-  //Comentado temporalmente para que funcione offline
-  //if(not HTTPSGetter::get(url,pathSemesters,"SEMESTER.txt")) exit(EXIT_FAILURE);
-
+  if(not HTTPSGetter::get(url,pathSemesters,"SEMESTER.txt")) exit(EXIT_FAILURE);
 
   std::fstream auxFile;
   auxFile.open("SEMESTER.txt", std::ios::in);
@@ -105,6 +105,81 @@ void App::receiveFilterLineEdit(QLineEdit* filterLineEdit)
 void App::receiveGenerateButton(QPushButton* generateButton)
 {
   this->generateButton = generateButton;
+}
+
+void App::receiveTable(QTableWidget* table)
+{
+  this->table = table;
+}
+
+void App::receiveNumLabel(QLabel* label)
+{
+  this->numLabel = label;
+}
+
+void App::changeCurrentSchedule(int change)
+{
+  currentSchedule += change;
+  if(currentSchedule < 0) currentSchedule = 0;
+  else if(currentSchedule > data[semester].getNumSchedules()-1) currentSchedule = data[semester].getNumSchedules()-1;
+  displaySchedule();
+}
+
+void App::displaySchedule()
+{
+  Horari auxHorari = data[semester].getSchedule(currentSchedule);
+  auto auxScheduleInfo = auxHorari.getHoursMatrix();
+  std::vector<QColor> colors = {QColor("#bddce9"),QColor("#dfc6e7"),QColor("#e3ebcc"),QColor("#fff4bc"),QColor("#ffd2a4"),QColor("#ffa4a4")};
+  std::vector<std::string> auxNames;
+
+  for(int i = 0; i < auxScheduleInfo.size(); ++i)
+  {
+    for(int j = 0; j < auxScheduleInfo[0].size(); ++j)
+    {
+      ClassHour& ch = auxScheduleInfo[i][j];
+      QTableWidgetItem* item = table->item(j,i);
+      if(not item)
+      {
+        item = new QTableWidgetItem;
+        table->setItem(j,i,item);
+      }
+      std::string text = ch.subjectName() + " " + std::to_string(ch.group());
+      std::stringstream ss;
+      ss << ch.type();
+      text += ss.str();
+      item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+      item->setTextAlignment(Qt::Alignment::enum_type::AlignCenter);
+      item->setText(QString::fromStdString(text));
+      item->setTextColor(Qt::black);
+
+      if(ch.group() == -1)
+      {
+        item->setText(QString(""));
+        item->setBackground(QBrush(QColor("#232323")));
+      }
+      else
+      {
+        int index = -1;
+        for(int k = 0; k < auxNames.size(); ++k)
+        {
+          if(auxNames[k] == ch.subjectName())
+          {
+            index = k;
+            break;
+          }
+        }
+        if(index == -1)
+        {
+          index = auxNames.size();
+          auxNames.push_back(ch.subjectName());
+        }
+
+        item->setBackground(QBrush(colors[index]));
+      }
+      //table->setItem(j,i,item);
+    }
+  }
+  numLabel->setText(QString::fromStdString(std::to_string(currentSchedule+1)));
 }
 
 //Public slots
@@ -237,6 +312,7 @@ void App::moveFromAlwaysList(QListWidgetItem* item)
 
 void App::generate()
 {
+  if(mustAppearSubjects.size() + otherSubjects.size() < sizeHorari) return;
   computeSchedules();
 }
 
@@ -305,6 +381,16 @@ void App::changeLanguage(const QString& language)
   filterLineEdit->setPlaceholderText(auxFilterHint);
   generateButton->setText(auxGenerateButton); 
   languageTagChanged(auxLanguage);
+}
+
+void App::decreaseCurrentSchedule()
+{
+  changeCurrentSchedule(-1);
+}
+
+void App::increaseCurrentSchedule()
+{
+  changeCurrentSchedule(1);
 }
 
 
@@ -415,10 +501,7 @@ void App::computeSchedules()
 
   std::cout << "outputfile open" << std::endl;
 
-  outputFile.open(outputFilename, std::ios::out | std::ios::trunc);
-
-  HorariWin hwin(nullptr);
-  hwin.show();
+  outputFile.open(outputFilename, std::ios::out | std::ios::trunc);  
 
   std::cout << "print schedules" << std::endl;
 
@@ -428,6 +511,15 @@ void App::computeSchedules()
   outputFile.close();
 
   std::cout << "outputfile closed" << std::endl;
+
+  //Pass data to window
+  currentSchedule = 0;
+  if(data[semester].getNumSchedules() > 0)
+  {
+    changeCurrentSchedule(0);
+    std::cout << "displayed\n";
+  }
+  else std::cout << "no schedules available with the given subjects\n";
   
   //Signal
   writtenSchedules();
@@ -504,8 +596,7 @@ void App::getDataTask(int semest)
   if(semest == 0) filename.append("_0.txt");
   else filename.append("_1.txt");
 
-  // Comentado temporalmente para que funcione offline
-  //if(not HTTPSGetter::get(url,path,filename)) exit(EXIT_FAILURE);
+  if(not HTTPSGetter::get(url,path,filename)) exit(EXIT_FAILURE);
 
   parseData(semest,filename);
 }

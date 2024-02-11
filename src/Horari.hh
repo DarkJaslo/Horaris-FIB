@@ -137,7 +137,7 @@ public:
   bool  operator<(const Horari& other)const{ return _value > other._value; }
   void  print(std::ostream& out) const;
   void  computeValue(SchedulePreference pref);
-
+  std::vector<std::vector<ClassHour>> getHoursMatrix() const;
 
 private:
   //To index the H vector

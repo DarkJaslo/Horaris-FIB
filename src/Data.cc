@@ -26,6 +26,18 @@ Data::Data(const Data& other)
   _schedules = other._schedules;
 }
 
+int Data::getNumSchedules()const
+{
+  return _schedules.size();
+}
+
+Horari Data::getSchedule(int index) const
+{
+  if(index >= _schedules.size()){ std::__throw_out_of_range("ERROR: tried to access Data with too big of an index."); }
+  else if(index < 0){ std::__throw_out_of_range("ERROR: tried to access Data with a negative index"); }
+  return _schedules[index];
+}
+
 HorariObj& Data::operator[](int i)
 {
   if(i >= _info.size()){ std::__throw_out_of_range("ERROR: tried to access Data with too big of an index."); }
@@ -570,11 +582,11 @@ void Data::makeSchedules(SchedulePreference preference, int maxPrintedSchedules)
 
   sort(_schedules.begin(),_schedules.end());
 
-  std::vector<Horari> newSchedules(maxPrintedSchedules);
+  std::vector<Horari> newSchedules;
 
   for(int i = 0; i < maxPrintedSchedules and i < _schedules.size(); ++i)
   {
-    newSchedules[i] = _schedules[i];
+    newSchedules.push_back(_schedules[i]);
   }
 
   _schedules = newSchedules;
@@ -586,8 +598,8 @@ void Data::makeSchedules(SchedulePreference preference, int maxPrintedSchedules)
     std::cout << std::endl;
     if(++printedSchedules == maxPrintedSchedules) break;
   }
-  std::cout << "Printed: " << printedSchedules << std::endl; 
-  std::cout << "Total schedules: " << _schedules.size() << std::endl;*/
+  std::cout << "Printed: " << printedSchedules << std::endl; */
+  std::cout << "Total schedules: " << _schedules.size() << std::endl;
 }
 
 void Data::printSchedules(std::fstream& file)
