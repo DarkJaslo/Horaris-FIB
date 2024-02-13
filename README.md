@@ -14,7 +14,7 @@ Generates good schedules given a set of subjects. Works in Linux (only tested in
 
 * Allows specifying preference between morning, afternoon or no preference at all.
 
-* Most of the time, good schedules will be printed first. My own criteria are used here, but since the output is long (1000 different unique options!), I think it works for everyone.
+* Most of the time, good schedules will be displayed first. My own criteria are used here, but since the output is long (1000 different unique options!), I think it works for everyone.
 
 ### How to build and use
 Requirements: being able to use a <tt>Makefile</tt>, or at least being able to compile <tt>C++11</tt>. The <tt>Makefile</tt> uses <tt>g++</tt>.
@@ -26,7 +26,7 @@ The application also uses the <tt>Qt5 library</tt>.
 1. Clone / download the repository.
 2. In any console, navigate to the repository's directory and execute <tt>make</tt>.
 3. Then, type <tt>./Horaris-FIB</tt> to execute the program built by <tt>make</tt>.
-4. The program outputs schedules to the <tt>OUTPUT_SCHEDULES.txt</tt> file, which will be generated in the same directory. Every new schedule generation overwrites this file, so be careful.
+4. The program displays schedules at the side, one by one, with buttons to move between them. If no compatible schedule is found, it will display nothing.
 
 ### Program usage
 
@@ -40,7 +40,7 @@ You need to specify:
 
 ### Future upgrades
 
-Explicitly excluding subgroups of selected subjects, Spanish and Catalan UI, a more comfortable way of viewing generated schedules, and so on. I cannot guarantee I'll implement any of this for the time being.
+Being able to explicitly exclude subgroups of selected subjects.
 
 ## (Español) Generador de horarios para la FIB-UPC 
 Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (probado solo en Ubuntu).
@@ -64,7 +64,7 @@ La librería ya incluída <tt>httplib</tt> (https://github.com/yhirose/cpp-httpl
 1. Clonar / descargar el repositorio.
 2. Desde una consola en el directorio del repositorio, ejecutar <tt>make</tt> 
 3. Para ejecutar, escribir <tt>./Horaris-FIB</tt>.
-4. El programa vuelca los horarios en el fichero <tt>OUTPUT_SCHEDULES.txt</tt>, el cual se genera en el mismo directorio que el programa. Cada vez que se generen horarios se sobreescribirá, así que ten cuidado.
+4. El programa enseña los horarios a un lado, con botones para moverse entre ellos. Si no aparece ninguno, es seguramente porque ningún horario con esos grupos es compatible.
 
 ### Instrucciones de uso
 
@@ -78,4 +78,4 @@ Debes especificar:
 
 ### Futuras actualizaciones
 
-Poder excluir de forma explícita subgrupos de asignaturas seleccionadas, interfaz en español y catalán, una forma más cómoda de ver los horarios generados, y más. No puedo garantizar que llegue a implementar nada de esto por ahora.
+Poder excluir de forma explícita subgrupos de asignaturas seleccionadas.
