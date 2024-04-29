@@ -8,7 +8,7 @@
 Generates good schedules given a set of subjects. Works in Linux (only tested in Ubuntu).
 ### Good stuff:
 
-* You can request all the subjects you want, because you also can tell the program which ones must appear always (which can be none, too).
+* You can request all the subjects you want, because you also can tell the program which ones must always appear (which can be none, too).
 
 * If needed, can generate schedules mixing theory and lab groups (eg. enrolling in PAR 23L, but going to PAR 40T)
 
@@ -34,7 +34,7 @@ You need to specify:
 
 1. Semester (Q1 is fall and Q2 is next year's spring).
 2. Major (especially if you're not an Informatics Engineering student [GEI]).
-3. Number of subjects: the default is 5, but if you want 4 or 6, remember to change it.
+3. Number of subjects: the default is 5, but if you want less or 6 (the maximum they allow), remember to change it.
 4. Preference: Morning -> will output morning schedules first; Afternoon -> same thing with afternoon schedules.
 5. Allow mixed groups: allows generating 'illegal' schedules where, for instance, the theory group is 20 but the lab group (your real enrollment here) is 11, which can be useful if your intended theory group (10 here) is impossible or very inconvenient for you. This is playing a dangerous game, but you can enable it if needed.
 
