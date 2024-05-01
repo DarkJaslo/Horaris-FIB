@@ -58,18 +58,30 @@ Then, you can generate schedules. An example for a third-year student majoring i
 
 Here, the semester is 2023Q1 (fall 2023-24), for the Informatics Engineering major, with 5 subjects, preferring morning and allowing mixed groups.
 
-Since attending PROP is must to enroll in anything else, it is marked as a forced subject. All other subjects are marked as optional, letting the generator decide which option is best.
+Since attending PROP is a must to enroll in anything else, it is marked as a forced subject. All other subjects are marked as optional, letting the generator decide which option is best.
 
 The first four (and best) results are:
 
 <div style="display: flex;">
   <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot3.PNG" alt="example" title = "UI" width="49%">
   <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot4.PNG" alt="example" title = "UI" width="49%">
+</div>
+<div style="display: flex;">
   <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot5.PNG" alt="example" title = "UI" width="49%">
   <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot6.PNG" alt="example" title = "UI" width="49%">
 </div>
 
 See how the first one mixes PAR groups. The last one mixes PAR and PROP groups. Good schedules, right? You can see up to 1000 options, provided they exist. As you go on, schedules start to get worse.
+
+### Efficiency notes
+
+The program is highly combinatorial, so some extreme configurations may halt or run out of memory. If you run into this issue, I recommend, in this order:
+1. Waiting for a minute or two.
+2. Disabling mixed groups.
+3. Making more subjects compulsory.
+4. Putting in less subjects.
+
+However, this is usually not a problem, especially if you don't use mixed groups.
 
 ### Future upgrades
 
@@ -119,7 +131,40 @@ Debes especificar:
 2. **Grado** (especialmente si no haces ingeniería informática [GEI]).
 3. **Número de asignaturas**: por defecto son 5, pero si quieres 4 o 6 recuerda cambiarlo.
 4. **Preferencia**: Mañana -> sacará en general primero los horarios de mañanas; Tarde -> lo mismo pero por la tarde.
-5. **Grupos mixtos**: permite generar horarios 'ilegales' donde, por ejemplo, el grupo de teoría que te indica es el 20, pero tu grupo de laboratorio (en el que te matriculas) es el 11, cosa que te puede ser útil si el grupo al que deberías ir (el 10 en este ejemplo) no te es posible o es demasiado incómodo para ti. Esto es jugársela, pues en algunas asignaturas de una forma u otra es obligatorio ir a teoría de tu grupo específicamente, pero la opción está ahí y la puedes activar.
+5. **Grupos mixtos**: permite generar horarios 'ilegales' donde, por ejemplo, el grupo de teoría que te indica es el 20, pero tu grupo de laboratorio (en el que te matriculas) es el 11, cosa que te puede ser útil si el grupo al que deberías ir (el 10 en este ejemplo) no te es posible o es demasiado incómodo para ti. Esto es jugársela, pues en algunas asignaturas de una forma u otra es obligatorio ir a teoría de tu grupo específicamente, pero la opción está ahí y la puedes activar. Desactiva para mejorar la eficiencia.
+6. **Asignaturas**: busca y selecciona todas las asignaturas que quieras incluir.
+7. **Asignaturas obligatorias**: para forzar que una asignatura aparezca en todos los horarios, haz click otra vez en ella en el menú `Incluidas en horarios`. Puedes quitar asignaturas de los menús haciendo lo mismo pero desde `Aparecen en todos los horarios`.
+
+Una vez esté todo, genera los horarios. Un ejemplo para un estudiante de tercer año de Computación sería:
+
+<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot2.PNG" alt="example" title = "UI" width="99%" height="99%">
+
+El semestre es 2023Q1 (otoño 2023-24), el grado es Ingeniería Informática (GEI), con 5 asignaturas, preferencia de mañanas y grupos mixtos activados.
+
+Pongo PROP como obligatoria ya que en Computación hay que matricularla para matricular más asignaturas sí o sí. Pongo el resto como opcionales para ver qué hace el generador.
+
+Los primeros cuatro (y por lo tanto mejores) resultados son:
+
+<div style="display: flex;">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot3.PNG" alt="example" title = "UI" width="49%">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot4.PNG" alt="example" title = "UI" width="49%">
+</div>
+<div style="display:flex;">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot5.PNG" alt="example" title = "UI" width="49%">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot6.PNG" alt="example" title = "UI" width="49%">
+</div>
+
+Obsérvese que el primer resultado mezcla grupos de PAR, y que el último mezcla grupos tanto de PAR como de PROP. Genera horarios interesantes, ¿eh? Puedes ver hasta 1000 (si los hay), pero irán empeorando a medida que avances.
+
+### Consejos sobre eficiencia
+
+El programa tiene un componente combinatorio bastante importante, así que algunas opciones pueden hacer que se quede colgado o se quede sin memoria. Si te llegara a pasar esto, recomiendo, en este orden:
+1. Esperar un poco. Dale un minuto o dos.
+2. Desactivar los grupos mixtos.
+3. Hacer que más asignaturas salgan siempre.
+4. Poner menos asignaturas.
+
+De todas formas, es difícil que eso sea un problema, especialmente si no usas grupos mixtos.
 
 ### Futuras actualizaciones
 
