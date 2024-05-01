@@ -62,10 +62,12 @@ Since attending PROP is must to enroll in anything else, it is marked as a force
 
 The first four (and best) results are:
 
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot3.PNG" alt="example" title = "UI" width="49%" height="99%">
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot4.PNG" alt="example" title = "UI" width="49%" height="99%">
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot5.PNG" alt="example" title = "UI" width="49%" height="99%">
-<img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot6.PNG" alt="example" title = "UI" width="49%" height="99%">
+<div style="display: flex;">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot3.PNG" alt="example" title = "UI" width="49%">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot4.PNG" alt="example" title = "UI" width="49%">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot5.PNG" alt="example" title = "UI" width="49%">
+  <img src="https://raw.githubusercontent.com/DarkJaslo/Horaris-FIB/master/img/screenshot6.PNG" alt="example" title = "UI" width="49%">
+</div>
 
 See how the first one mixes PAR groups. The last one mixes PAR and PROP groups. Good schedules, right? You can see up to 1000 options, provided they exist. As you go on, schedules start to get worse.
 
