@@ -24,18 +24,18 @@ The `httplib` header-only library (https://github.com/yhirose/cpp-httplib) depen
 The application also uses the `Qt5 library`.
 
 1. Clone / download the repository.
-```.sh
+```sh
 git clone https://github.com/DarkJaslo/Horaris-FIB .
 ```
 2. Compile the source code.
-```.sh
+```sh
 cd /path/to/repository
 make
 ```
 Running `qmake` before `make` may be needed.
 
 3. Execute.
-```.sh
+```sh
 ./Horaris-FIB
 ```
 4. The program displays schedules at the side, one by one, with buttons to move between them. If no compatible schedule is found, it will display nothing.
@@ -107,18 +107,18 @@ La librería ya incluída `httplib` (https://github.com/yhirose/cpp-httplib) dep
 `Qt5` para la interfaz gráfica.
 
 1. Clonar / descargar el repositorio.
-```.sh
+```sh
 git clone https://github.com/DarkJaslo/Horaris-FIB .
 ```
 2. Compilar el código fuente.
-```.sh
+```sh
 cd path/del/repositorio
 make
 ```
 Puede ser necesario ejecutar `qmake` antes de `make`.
 
 3. Ejecutar.
-```.sh
+```sh
 ./Horaris-FIB
 ```
 4. El programa enseña los horarios a un lado, con botones para moverse entre ellos. Si no aparece ninguno, es seguramente porque ningún horario con esos grupos es compatible.
