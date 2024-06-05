@@ -97,7 +97,7 @@ const std::string url = "https://api.fib.upc.edu";
 const std::string path1 = "/v2/quadrimestres/";
 const std::string path2 = "/classes/?format=api&client_id=liSPe2KsaYUovErkk1WyqgMdYxOD1Wqd3VCXwhoy";
 
-const std::string pathSemesters = "/v2/quadrimestres/actual/?format=api&client_id=liSPe2KsaYUovErkk1WyqgMdYxOD1Wqd3VCXwhoy";
+const std::string pathSemesters = "/v2/quadrimestres/actual-horaris/?format=api&client_id=liSPe2KsaYUovErkk1WyqgMdYxOD1Wqd3VCXwhoy";
 const std::string pathStudies = "";
 
 std::vector<jaslo::Data>  data;
