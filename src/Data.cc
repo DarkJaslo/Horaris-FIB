@@ -430,6 +430,30 @@ void Data::makeGroups(bool mix)
       }
     }
   }
+
+  // This is a patch
+  // It prioritizes solving the problem over solving error in the program behind it
+  // Delete possible wrong subgroups, happens with groups that don't have a theory group I think
+  for(auto& s : _groups)
+  {
+    for(auto& vec : s.second)
+    {
+      // Ignore subjects with theory group (most of them)
+      if(_info[vec[0]].group() % 10 == 0) continue;
+
+      for(int i1 = 0; i1 < vec.size(); ++i1)
+      {
+        for(int i2 = i1+1; i2 < vec.size(); ++i2)
+        {
+          if(_info[vec[i1]].code() != _info[vec[i2]].code())
+          {
+            vec.erase(vec.begin()+i2);
+            break;
+          }
+        }
+      }
+    }
+  }
 }
 
 void Data::makePermutations(int subjNum, const std::vector<std::string>& always, const std::vector<std::string>& include)
