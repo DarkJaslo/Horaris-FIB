@@ -3,6 +3,7 @@
 #include <thread>
 #include <sstream>
 #include <functional>
+#include <QMessageBox>
 using namespace jaslo;
 
 //Public
@@ -519,7 +520,34 @@ void App::computeSchedules()
     changeCurrentSchedule(0);
     std::cout << "displayed\n";
   }
-  else std::cout << "no schedules available with the given subjects\n";
+  else
+  {
+    std::cout << "no schedules available with the given subjects\n";
+    QString errorHeader = "Error:";
+    QString errorText = "No schedules.";
+
+    if(lang == "English")
+    {
+      errorText = "No schedules available with these subjects. Try mixed groups or check the FIB's website to see overlaps.";
+    }
+    else if(lang == "Español")
+    {
+      errorText = "No hay horarios con estas asignaturas. Prueba los grupos mixtos o dirígete a la web de la FIB para ver si hay solapamientos.";
+    }
+    else if(lang == "Catala")
+    {
+      errorText = "No s'ha trobat cap horari amb aquestes assignatures. Prova els grups mixtos o mira al web de la FIB si hi ha algun solapament.";
+    }
+
+    QMessageBox msgBox(this);
+    msgBox.setIcon(QMessageBox::Critical);
+    msgBox.setText(errorHeader);
+    msgBox.setInformativeText(errorText);
+    msgBox.setStandardButtons(QMessageBox::Ok);
+    msgBox.setDefaultButton(QMessageBox::Ok);
+    msgBox.setFixedWidth(800);
+    msgBox.exec();
+  }
   
   //Signal
   writtenSchedules();
