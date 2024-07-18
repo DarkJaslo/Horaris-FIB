@@ -17,11 +17,11 @@ Generates good schedules given a set of subjects. Works in Linux (only tested in
 * Most of the time, good schedules will be displayed first. My own criteria are used here, but since the output is long (1000 different unique options!), I think it works for everyone.
 
 ### How to build
-Requirements: being able to use a `Makefile`, or at least being able to compile `C++11`. The `Makefile` uses `g++`.
+(Note: if you have previously used `qmake`, the also existing qmake setup may already work for you, try it once you meet all requirements. If it's not the case, use `cmake`.)
+
+Requirements: `cmake` and `qt5`.
 
 The `httplib` header-only library (https://github.com/yhirose/cpp-httplib) depends on `openSSL`. You will need the dev version (in Ubuntu/Debian, `libssl-dev`).
-
-The application also uses the `Qt5 library`.
 
 1. Clone / download the repository.
 ```sh
@@ -30,13 +30,15 @@ git clone https://github.com/DarkJaslo/Horaris-FIB .
 2. Compile the source code.
 ```sh
 cd /path/to/repository
+mkdir build
+cd build
+cmake ..
 make
 ```
-Running `qmake` before `make` may be needed.
 
 3. Execute.
 ```sh
-./Horaris-FIB
+./HorarisFIB
 ```
 4. The program displays schedules at the side, one by one, with buttons to move between them. If no compatible schedule is found, it will display nothing.
 
@@ -100,26 +102,29 @@ Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (
 * En general, los horarios buenos saldrán primero. Se usa mi criterio personal para ordenarlos y creo que funciona, pero de todas formas se imprimen hasta 1000 horarios (¡unos cuantos!), así que creo que debería servir a todo el mundo.
 
 ### Cómo compilar y ejecutar
-Requisitos: poder usar un `Makefile` `(make)` y poder compilar `C++11`. El `Makefile` usa `g++`.
+
+(Nota: si has usado `qmake` antes quizás te funcione el setup de qmake, pruébalo una vez comprobados los requisitos. Si no, usa `cmake`.)
+
+Requisitos: `cmake` y `qt5`.
 
 La librería ya incluída `httplib` (https://github.com/yhirose/cpp-httplib) depende de `openSSL`. Es necesaria la versión de desarrollo (en Ubuntu/Debian, `libssl-dev`).
-
-`Qt5` para la interfaz gráfica.
 
 1. Clonar / descargar el repositorio.
 ```sh
 git clone https://github.com/DarkJaslo/Horaris-FIB .
 ```
-2. Compilar el código fuente.
+2. Compilar.
 ```sh
-cd path/del/repositorio
+cd /path/del/repositorio
+mkdir build
+cd build
+cmake ..
 make
 ```
-Puede ser necesario ejecutar `qmake` antes de `make`.
 
 3. Ejecutar.
 ```sh
-./Horaris-FIB
+./HorarisFIB
 ```
 4. El programa enseña los horarios a un lado, con botones para moverse entre ellos. Si no aparece ninguno, es seguramente porque ningún horario con esos grupos es compatible.
 
