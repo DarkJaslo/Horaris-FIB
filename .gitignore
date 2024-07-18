@@ -12,3 +12,4 @@ get.py
 .vscode/settings.json
 .vscode/c_cpp_properties.json
 .qmake.stash
+build
