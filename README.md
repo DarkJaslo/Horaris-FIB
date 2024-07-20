@@ -89,6 +89,8 @@ However, this is usually not a problem, especially if you don't use mixed groups
 
 Being able to explicitly exclude subgroups of selected subjects, so that annoying subgroup you can't attend but keeps getting in all the good schedules disappears.
 
+This won't be working in Windows anytime soon. Not for any particular reason, it's just that Windows and compiling C++ with libraries don't get along. 
+
 ## (Español) Generador de horarios para la FIB-UPC 
 Genera buenos horarios a partir de una lista de asignaturas. Funciona en Linux (probado solo en Ubuntu).
 ### Utilidades: 
@@ -174,3 +176,5 @@ De todas formas, es difícil que eso sea un problema, especialmente si no usas g
 ### Futuras actualizaciones
 
 Poder excluir de forma explícita subgrupos de asignaturas seleccionadas.
+
+No está previsto que jamás funcione en Windows. No es por nada en particular, es que es imposible conseguir que compile con las librerías.
