@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-if (WIN32)
-    project(HorarisFIB LANGUAGES CXX)
-elseif(UNIX)
-    project(HorarisFIB)
-endif()
+project(HorarisFIB)
 
 set(CMAKE_CONFIGURATION_TYPES "Release;Debug" CACHE STRING "" FORCE)
 
@@ -43,11 +39,7 @@ qt5_wrap_cpp(horaris_SRC ${INCLUDE_DIR}/MyComboBox.hh ${INCLUDE_DIR}/MyForm.h ${
 qt5_wrap_ui(horaris_UI ${FORMS_DIR}/MyFormWindow.ui)
 
 # Add exec
-if (WIN32)
-    add_executable(HorarisFIB WIN32 ${SOURCES} ${HEADERS} ${horaris_UI} ${horaris_SRC}) #removes the command line
-elseif(UNIX)
-    add_executable(HorarisFIB ${SOURCES} ${HEADERS} ${horaris_UI} ${horaris_SRC})
-endif()
+add_executable(HorarisFIB ${SOURCES} ${HEADERS} ${horaris_UI} ${horaris_SRC})
 
 # Target includes
 target_include_directories(HorarisFIB PRIVATE ${FORMS_DIR})
