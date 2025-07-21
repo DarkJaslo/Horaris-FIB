@@ -3,8 +3,10 @@
 #include <thread>
 #include <sstream>
 #include <functional>
+#include "../lib/json.hpp"
 #include <QMessageBox>
 using namespace jaslo;
+using json = nlohmann::json;
 
 //Public
 
@@ -27,26 +29,9 @@ void App::getSemesters()
 
   std::fstream auxFile;
   auxFile.open("SEMESTER.txt", std::ios::in);
+  json data = json::parse(auxFile);
 
-  bool gotSemester = false;
-
-  std::string semest;
-
-  while(not gotSemester and auxFile.is_open() and not auxFile.eof())
-  {
-    std::string line;
-    getline(auxFile,line);
-    std::istringstream iss(line);
-
-    std::string aux;
-    iss >> aux;
-    if(aux == "\"id\":")
-    {
-      iss >> aux;
-      semest = aux.substr(1,6);
-      gotSemester = true;
-    }
-  }
+  std::string semest = data["id"];
 
   std::string aux = semest;
   if(aux[5] == '1')

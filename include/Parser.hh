@@ -6,6 +6,7 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include "../lib/json.hpp"
 #include "Horari.hh"
 
 /*
@@ -16,6 +17,8 @@
 */
 
 namespace jaslo{
+
+using json = nlohmann::json;
 
 class Parser{
 public:
@@ -52,11 +55,11 @@ public:
 
 private:
 
-  bool isCorrect(int expectedSize, int substrSize, const std::string& str, const std::string& substr)const;
   void printParseError(const std::string& extraInfo);
 
 
   std::ifstream _file;
+  json          _data;
   std::string   _info;
   int           _curIndex;
   int           _count;
