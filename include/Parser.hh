@@ -9,13 +9,6 @@
 #include "../lib/json.hpp"
 #include "Horari.hh"
 
-/*
-  My attempt at writing a static parser for a FIB schedule generator.
-  It can read, parse and store the Class list the FIB API provides (https://api.fib.upc.edu).
-  
-  That is the only thing it can do, so don't try to use it for anything else. It only "looks generic" because that way it's more reusable.
-*/
-
 namespace jaslo{
 
 using json = nlohmann::json;
