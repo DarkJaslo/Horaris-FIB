@@ -108,6 +108,10 @@ void App::changeCurrentSchedule(int change)
   currentSchedule += change;
   if(currentSchedule < 0) currentSchedule = 0;
   else if(currentSchedule > data[semester].getNumSchedules()-1) currentSchedule = data[semester].getNumSchedules()-1;
+  
+  if (data[semester].getNumSchedules() == 0)
+    return;
+
   displaySchedule();
 }
 
